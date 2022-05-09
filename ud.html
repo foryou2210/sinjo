@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    #container {
+        position: relative;
+        width: 1000px;
+        height: 969px;
+        background-color: aliceblue;
+    }
+
+    .ud_result {
+        position: absolute;
+        width: 298px;
+        height: 100px;
+        bottom: 42%;
+        left: 41%;
+    }
+
+    .ud_main {
+        position: absolute;
+        width: 700px;
+        height: 460px;
+        top: 1%;
+        left: 14%;
+        background-color: bisque;
+    }
+
+    .ud_main .upup {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: 5%;
+    }
+
+    .ud_main .downdown {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        right: 5%;
+    }
+
+    .ud_main .ud_start {
+        position: absolute;
+        width: 120px;
+        height: 70px;
+        bottom: 5%;
+        left: 42%;
+    }
+
+    .ud_main .ud_start button {
+        width: 120px;
+        height: 70px;
+    }
+
+    .udbet_main {
+        position: absolute;
+        width: 780px;
+        height: 338px;
+        bottom: 12%;
+        left: 10%;
+        background-color: bisque;
+    }
+
+    .ud_main .upup img {
+        position: absolute;
+
+    }
+
+    .ud_main .downdown img {
+        position: absolute;
+
+    }
+
+    .udbet_main .checknum {
+        position: absolute;
+        width: 210px;
+        height: 76px;
+        top: 71%;
+        left: 39%;
+        z-index: 1;
+    }
+
+    
+
+    .udbet_main .checknum input {
+        width: 120px;
+        height: 70px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .udbet_main .checknum button {
+        position: absolute;
+        width: 70px;
+        height: 76px;
+        right: 0%;
+    }
+
+    .ud_bet {
+        position: absolute;
+        width: 700px;
+        height: 300px;
+        top: 0%;
+        left: 4%;
+    }
+
+    .ud_btn_1 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        left: 11%;
+        font-size: 16px;
+    }
+
+    .ud_btn_2 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        left: 41%;
+        font-size: 16px;
+    }
+
+    .ud_btn_3 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        right: 9%;
+        font-size: 16px;
+    }
+
+    .ud_btn_4 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        left: 11%;
+        font-size: 16px;
+    }
+
+    .ud_btn_5 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        left: 41%;
+        font-size: 16px;
+    }
+
+    .ud_btn_6 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        right: 9%;
+        font-size: 16px;
+    }
+
+    .ud_chogiwha button {
+        position: absolute;
+        width: 157px;
+        height: 50px;
+        bottom: 0%;
+        right: 4%;
+        font-size: 16px;
+    }
+
+    .ud_pandon {
+        position: absolute;
+        width: 278px;
+        height: 26px;
+        top: 12%;
+        left: 33%;
+    }
+
+    .ud_jasan {
+        position: absolute;
+        width: 250px;
+        height: 69px;
+        bottom: 2%;
+        right: 67%;
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .ud_chogi button{
+        position: absolute;
+        width: 109px;
+        height: 60px;
+        top: 4%;
+        left: 2%;
+    }
+
+    .gamecheck {
+        position: absolute;
+        width: 50px;
+        height: 30px;
+        top: 0%;
+        right: 10%;
+    }
+
+</style>
+<body>
+    <div id="container">
+        <div class="ud_result">
+            <p id="ud_displayResult"></p>
+        </div>
+        <div class="ud_main">
+            <div class="upup">
+                <img id="upImg" src="img/up.png" alt="">
+            </div>
+            <div class="downdown">
+                <img id="downImg" src="img/down.png" alt="">
+            </div>
+            <div class="ud_start">
+                <button onclick="ud_start()">
+                    게임 시작
+                </button>
+            </div>
+        </div>
+        <div class="udbet_main">
+            <div class="checknum">
+                <input type="text" id="ud_num" maxlength="2">
+                <button onclick="start()">입력</button>
+            </div>
+            <div class="ud_bet">
+                <div>
+                    <div class="ud_btn_1">
+                        <button onclick="ud_bet_btn(100)">100원<br>(백원)</button>
+                    </div>
+                    <div class="ud_btn_2">
+                        <button onclick="ud_bet_btn(1000)">1000원<br>(천원)</button>
+                    </div>
+                    <div class="ud_btn_3">
+                        <button onclick="ud_bet_btn(10000)">10,000원<br>(만원)</button>
+                    </div>
+                    <div class="ud_btn_4">
+                        <button onclick="ud_bet_btn(100000)">100,000원<br>(십만원)</button>
+                    </div>
+                    <div class="ud_btn_5">
+                        <button onclick="ud_bet_btn(1000000)">1,000,000원<br>(백만원)</button>
+                    </div>
+                    <div class="ud_btn_6">
+                        <button onclick="ud_bet_btn(10000000)">10,000,000원<br>(천만원)</button>
+                    </div>   
+                    <div class="ud_chogiwha">
+                        <button onclick="ud_bet_cho()">베팅 초기화</button>
+                    </div>
+                    <div class="ud_pandon">
+                        판돈 : <input type="number" id="ud_pandon" value="0" readonly>원
+                    </div>
+                    <div class="ud_jasan">
+                        소유자산 - <br><span id="asset">0</span>원
+                    </div>
+                    <div class="ud_chogi">
+                        <button onclick="setAsset();">초기 비용 셋팅</button>
+                    </div>
+                    <div class="gamecheck">
+                        결과 : <p id="gg"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+var asset = 0;
+var pcnum; // 랜덤 숫자 변수
+var count = 0; // 카운트 변수
+var pandon;
+
+function setAsset(){
+
+
+if(asset!=0||asset>=5000000){
+
+document.querySelector("#ud_displayResult").innerText = "판돈이 충분하여 셋팅 할 수 없습니다"; 
+return;
+
+}
+
+asset=1000000;
+
+document.getElementById("asset").innerHTML=asset;
+
+}
+
+function ud_bet_btn(betting) {
+    var inputvalue = parseInt(document.querySelector('#ud_pandon').value);
+    document.querySelector('#ud_pandon').value = inputvalue + betting;
+}
+
+function ud_bet_cho() {
+    document.querySelector('#ud_pandon').value = 0;
+}
+
+
+function ud_start() {
+    // 시작할때 카운트 초기화
+    count = 0;
+    // 1~50까지의 랜덤한 숫자를 만들기 (소숫점 버림)
+    pcnum = Math.floor(Math.random() * 49) + 1;
+    document.querySelector('#ud_displayResult').innerText = "숫자가 생성되었습니다."
+        console.log(pcnum)
+
+    pandon = parseInt(document.getElementById('ud_pandon').value);
+
+    if(asset<=0||asset>=500000000){
+    document.querySelector("#ud_displayResult").innerText = "판돈이 부족합니다. 리필 받으세요"; 
+    return;
+    }
+
+    if(pandon>asset){
+    document.querySelector("#ud_displayResult").innerText = "소유 자산보다 베팅한 금액이 더 많습니다."; 
+    return;
+    }
+
+    if(pandon<=0){
+    document.querySelector("#ud_displayResult").innerText = "판돈은 0 이하로 걸 수 없습니다."; 
+    return;
+    }
+
+}
+
+function start() {
+
+    // 숫자 입력 후 확인시 카운트 주기
+    count = count + 1;    
+    console.log(count)
+
+    var userNum = parseInt(document.getElementById('ud_num').value);
+        pandon = parseInt(document.getElementById('ud_pandon').value);
+
+    if(userNum>50){
+    document.querySelector("#ud_displayResult").innerText = "숫자는 1부터 50까지만 입력이 가능합니다"; 
+    return;
+    }
+    
+    //사람이 적은 숫자가 PC에서 제시된 숫자보다 작을경우 업에 백그라운드 컬러 레드 추가
+    if (userNum < pcnum) {
+        document.querySelector('#upImg').setAttribute('src', 'img/up1.png');
+        document.querySelector('#downImg').setAttribute('src', 'img/down.png');
+        if (count == 5) {
+        document.querySelector('#upImg').setAttribute('src', 'img/up1.png');
+        document.querySelector('#downImg').setAttribute('src', 'img/down1.png');
+        document.querySelector('#ud_displayResult').innerText = "5회 이상 틀려서 게임이 종료되었습니다."; 
+        asset = asset - pandon;
+        document.querySelector('#ud_pandon').value = 0;
+        document.querySelector('#gg').innerText = pcnum;
+    }
+    } 
+        
+    //사람이 적은 숫자가 PC에서 제시된 숫자보다 클경우 다운에 백그라운드 컬러 레드 추가
+    else if (userNum > pcnum) {
+        document.querySelector('#upImg').setAttribute('src', 'img/up.png');
+        document.querySelector('#downImg').setAttribute('src', 'img/down1.png');
+        if (count == 5) {
+        document.querySelector('#upImg').setAttribute('src', 'img/up1.png');
+        document.querySelector('#downImg').setAttribute('src', 'img/down1.png');
+        document.querySelector('#ud_displayResult').innerText = "5회 이상 틀려서 게임이 종료되었습니다."; 
+        asset = asset - pandon;
+        document.querySelector('#ud_pandon').value = 0;
+        document.querySelector('#gg').innerText = pcnum;
+    }
+    } else {
+    // 사람이 적은 숫자와 pc에서 제시된 숫자가 같은 경우 맞추셨습니다 + 업,다운클래스 컬러 없음 + 금액 지급
+        document.querySelector('#upImg').setAttribute('src', 'img/up.png');
+        document.querySelector('#downImg').setAttribute('src', 'img/down.png');
+        document.querySelector('#ud_displayResult').innerText = "정답입니다."; 
+        asset = asset + pandon;
+        document.querySelector('#asset').innerText = asset;
+        document.querySelector('#ud_pandon').value = 0;
+        document.querySelector('#gg').innerText = pcnum;
+        
+    }
+
+
+
+}
+
+</script>
+
