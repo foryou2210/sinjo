@@ -12,7 +12,7 @@ https://foryou2210.github.io/sinjo/#Portfolio
 
 업,다운 게임 - https://foryou2210.github.io/sinjo/ud
 
-경마 게임(코드 따옴) - https://foryou2210.github.io/sinjo/gyungma
+경마 게임(코드 따옴, 참고용) - https://foryou2210.github.io/sinjo/gyungma
 
 애니메이션 효과 부여 사이트 - http://www.justinaguilar.com/animations/index.html
 
