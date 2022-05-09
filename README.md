@@ -8,6 +8,8 @@
 
 https://foryou2210.github.io/sinjo/#Portfolio
 
+https://foryou2210.github.io/sinjo/myDiary/index
+
 홀짝 게임 - https://foryou2210.github.io/sinjo/nhj
 
 업,다운 게임 - https://foryou2210.github.io/sinjo/ud
