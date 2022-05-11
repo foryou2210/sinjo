@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<style>
+
+
+     @font-face {
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Katuri';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+     body {
+          margin: 0;
+     }
+
+     #container {
+        position: relative;
+        width: 1000px;
+        height: 912px;
+        background-color: lavender;
+    }
+
+     #result {
+          position: absolute;
+          width: 700px;
+          height: 310px;
+          top: 3%;
+          left: 23%;
+          background-color: #26A69A;
+     }
+
+     #result .result_main {
+          position: absolute;
+          width: 560px;
+          height: 280px;
+          top: 5%;
+          left: 10%;
+          background-color: beige;
+     }
+
+     #result .result_check{
+          position: absolute;
+          width: 280px;
+          height: 280px;
+          left: 25%;
+     }
+
+     #result .result_check span {
+          position: absolute;
+          font-size: 50px;
+          top: 33%;
+          left: 45%;
+     }
+
+     #hl_btn {
+          position: absolute;
+          width: 700px;
+          height: 210px;
+          top: 41%;
+          left: 23%;
+          background-color: #3D4C53;
+     }
+
+     #hl_btn .high {
+          position: absolute;
+          width: 200px;
+          height: 190px;
+          top: 5%;
+          left: 4%;
+          background-color: white;
+     }
+
+     #hl_btn .middle {
+          position: absolute;
+          width: 200px;
+          height: 190px;
+          top: 5%;
+          left: 36%;
+          background-color: white;
+     }
+
+     #hl_btn .low {
+          position: absolute;
+          width: 200px;
+          height: 190px;
+          top: 5%;
+          right: 4%;
+          background-color: white;
+     }
+
+     #hl_btn .double_high {
+          position: absolute;
+          width: 200px;
+          height: 190px;
+          top: 5%;
+          left: 4%;
+          background-color: white;
+          display: none;
+     }
+
+     #hl_btn .double_middle {
+          position: absolute;
+          width: 200px;
+          height: 190px;
+          top: 5%;
+          left: 36%;
+          background-color: white;
+          display: none;
+     }
+
+     #hl_btn .double_low {
+          position: absolute;
+          width: 200px;
+          height: 190px;
+          top: 5%;
+          right: 4%;
+          background-color: white;
+          display: none;
+     }
+
+     #betting {
+          position: absolute;
+          width: 700px;
+          height: 300px;
+          bottom: 2%;
+          left: 23%;
+          background-color: aliceblue;
+     }
+
+
+     .button {
+          background: #3D4C53;
+          width: 198px;
+          margin: 1px;
+          height: 188px;
+          overflow: hidden;
+          text-align: center;
+          transition: .2s;
+          cursor: pointer;
+          border-radius: 3px;
+          box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
+     }
+
+     .btnTwo {
+          position: relative;
+          width: 200px;
+          height: 186px;
+          margin-top: -100px;
+          padding-top: 2px;
+          background: #26A69A;
+          top: 53%;
+          left: -250px;
+          transition: .3s;
+     }
+
+     .btnText {
+          color: white;
+          position: absolute;
+          top: 35%;
+          left: 16%;
+          transition: .3s;
+          font-family: 'ROKAFSansBold';
+     }
+
+     .mid {
+          left: 15%;
+     }
+
+     .btnText2 {
+          margin-top : 81px;
+          margin-right : -130px;
+          color : #FFF;
+          font-family: 'ROKAFSansBold';
+     }
+
+     .button:hover {
+          background-color: aliceblue;
+     }
+
+     .button:hover .btnTwo{ /*When hovering over .button change .btnTwo*/
+          left: -130px;
+     }
+
+     .button:hover .btnText{ /*When hovering over .button change .btnText*/
+          margin-left : 75px;
+          color: #3D4C53;
+     }
+
+     .button:active { /*Clicked and held*/
+          box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+     }
+
+     .btn_1 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        left: 11%;
+        font-size: 16px;
+    }
+
+    .btn_2 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        left: 41%;
+        font-size: 16px;
+    }
+
+    .btn_3 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        right: 9%;
+        font-size: 16px;
+    }
+
+    .btn_4 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        left: 11%;
+        font-size: 16px;
+    }
+
+    .btn_5 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        left: 41%;
+        font-size: 16px;
+    }
+
+    .btn_6 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        right: 9%;
+        font-size: 16px;
+    }
+
+    .chogiwha button {
+        position: absolute;
+        width: 157px;
+        height: 50px;
+        bottom: 10%;
+        right: 12%;
+        font-size: 16px;
+    }
+
+    .pandon {
+        position: absolute;
+        width: 278px;
+        height: 26px;
+        bottom: 13%;
+        left: 28%;
+    }
+
+    .chogi {
+          position: absolute;
+          width: 157px;
+          height: 50px;
+          top: 4%;
+          left: 4%;
+     }    
+
+     .chogi button{
+        position: absolute;
+        width: 157px;
+        height: 50px;
+        top: 4%;
+        left: 2%;
+    }
+
+    .jasan {
+          position: absolute;
+          width: 157px;
+          height: 50px;
+          bottom: 11%;
+          left: 11%;
+    }
+
+    .di_result {
+          position: absolute;
+          width: 700px;
+          height: 50px;
+          top: 36%;
+          left: 23%;
+          text-align: center;
+    }
+
+    .double {
+          position: absolute;
+          width: 157px;
+          height: 50px;
+          top: 4%;
+          right: 4%;
+     }    
+
+     .double button{
+          position: absolute;
+          width: 157px;
+          height: 50px;
+          top: 4%;
+          left: 2%;
+    }
+
+    .double p {
+          opacity: 0;
+          position: absolute;
+          width: 450px;
+          top: 71%;
+          left: -165%;
+    }
+
+    .double:hover p {
+          opacity: 1;
+    }
+
+
+
+</style>
+<body>
+     <div id="container">
+          <div id="result">
+               <div class="result_main">
+                    <div class="result_check">
+                         <span id="check"></span>
+                    </div>
+               </div>
+          </div>
+          <div class="di_result">
+               <p id="displayResult"></p>
+          </div>
+          <div id="hl_btn">
+               <div class="high">
+                    <div class="button" onclick="play(1)">
+                         <p class="btnText">High</p>
+                         <div class="btnTwo">
+                           <p class="btnText2">BET!<br>2x</p>
+                         </div>
+                      </div>
+               </div>
+               <div class="middle">
+                    <div class="button" onclick="play(2)">
+                         <p class="btnText mid">Middle</p>
+                         <div class="btnTwo">
+                           <p class="btnText2">BET!<br>4x</p>
+                         </div>
+                      </div>
+               </div>
+               <div class="low">
+                    <div class="button" onclick="play(3)">
+                         <p class="btnText">Low</p>
+                         <div class="btnTwo">
+                           <p class="btnText2">BET!<br>2x</p>
+                         </div>
+                      </div>
+               </div>
+               <div class="double_high">
+                    <div class="button" onclick="double_play(1)">
+                         <p class="btnText">High</p>
+                         <div class="btnTwo">
+                           <p class="btnText2">BET!<br>6x</p>
+                         </div>
+                      </div>
+               </div>
+               <div class="double_middle">
+                    <div class="button" onclick="double_play(2)">
+                         <p class="btnText mid">Middle</p>
+                         <div class="btnTwo">
+                           <p class="btnText2">BET!<br>12x</p>
+                         </div>
+                      </div>
+               </div>
+               <div class="double_low">
+                    <div class="button" onclick="double_play(3)">
+                         <p class="btnText">Low</p>
+                         <div class="btnTwo">
+                           <p class="btnText2">BET!<br>6x</p>
+                         </div>
+                      </div>
+               </div>
+          </div>
+          <div id="betting">
+               <div class="btn_1">
+                    <button class="bet_btn" onclick="bet_btn(100)">100원<br>(백원)</button>
+                </div>
+                <div class="btn_2">
+                    <button class="bet_btn" onclick="bet_btn(1000)">1000원<br>(천원)</button>
+                </div>
+                <div class="btn_3">
+                    <button class="bet_btn" onclick="bet_btn(10000)">10,000원<br>(만원)</button>
+                </div>
+                <div class="btn_4">
+                    <button class="bet_btn" onclick="bet_btn(100000)">100,000원<br>(십만원)</button>
+                </div>
+                <div class="btn_5">
+                    <button class="bet_btn" onclick="bet_btn(1000000)">1,000,000원<br>(백만원)</button>
+                </div>
+                <div class="btn_6">
+                    <button class="bet_btn" onclick="bet_btn(10000000)">10,000,000원<br>(천만원)</button>
+                </div>   
+                <div class="chogiwha">
+                    <button class="money_back"onclick="bet_cho()">금액 회수</button>
+                </div>
+                <div class="jasan">
+                    소유자산 - <br><span id="asset">0</span>원
+                </div>
+                <div class="pandon">
+                    판돈 : <input type="number" id="pandon" value="0" readonly>원
+                </div>
+                <div class="chogi">
+                    <button onclick="setAsset();">초기 비용 셋팅</button>
+                </div>
+                <div class="double">
+                    <button onclick="double()">연승 도전</button>
+                    <br>
+                    <p>연승 도전에 성공시 판돈의 2배가 지급됩니다. (Middle은 8배)</p>
+                </div>
+          </div>
+     </div>
+</body>
+</html>
+<script>
+var asset = 0;
+var pandon;
+
+// 초기 비용 셋팅
+function setAsset(){
+
+     pandon = parseInt(document.getElementById('pandon').value);
+
+if(pandon > 1){
+
+document.querySelector("#displayResult").innerText = "판돈이 충분하여 셋팅 할 수 없습니다"; 
+return;
+
+}
+
+asset=1000000;
+
+document.getElementById("asset").innerHTML=asset;
+document.querySelector("#displayResult").innerText = "충전이 완료되었습니다"; 
+
+}
+
+// 베팅 초기화
+function bet_cho() {
+     pandon = parseInt(document.getElementById('pandon').value);
+     asset = asset + pandon;
+     document.querySelector('#pandon').value = 0;  
+     document.querySelector('#asset').innerText = asset;
+     console.log(asset)
+
+}
+
+// 베팅 진행
+function bet_btn(betting) {
+     if(asset == 0) {
+          document.querySelector("#displayResult").innerText = "0원 이하로 베팅할 수 없습니다"; 
+     } else {
+          var inputvalue = parseInt(document.querySelector('#pandon').value);
+          document.querySelector('#pandon').value = inputvalue + betting;    
+          asset = asset - betting
+          document.querySelector('#asset').innerText = asset;
+     }
+    
+
+
+
+}
+
+// 하이 미들 로우 클릭시 1~13까지 랜덤 숫자 생성
+// 1~6까지는 로우, 7은 미들(middle), 8~9까지는 하이라는 값을 줘서 ID check에 값을 표시
+// 하이, 로우 성공시 2배 미들 성공시 4배
+
+    // 다른알고리즘
+//     if(pcnum < 7) {
+//           if(select == 3) {
+//                console.log('승리');
+//           }
+//     } 
+//     else if(pcnum == 7) {
+
+//     } else {
+
+//     }    
+
+function play(select) {
+     //1~13
+    pcnum = Math.floor(Math.random() * 12) + 1;
+
+    pandon = parseInt(document.getElementById('pandon').value);
+
+     if(pandon<=0){
+          document.querySelector("#displayResult").innerText = "판돈은 0 이하로 걸 수 없습니다."; 
+     return;
+     }
+ 
+    if (select == 2) {
+         // 미들
+         // 같으면 승리
+         if(pcnum == 7) {
+          document.querySelector("#displayResult").innerText = "승리"; 
+               pandon = pandon * 4;
+         } else {
+          document.querySelector("#displayResult").innerText = "패배"; 
+               pandon = pandon - pandon;
+         }
+          document.querySelector('#check').innerText = pcnum;
+          document.querySelector('#pandon').value = pandon;
+    } 
+    
+    else if (select == 1){
+         // 하이
+         if(pcnum > 7) {
+          document.querySelector("#displayResult").innerText = "승리"; 
+               pandon = pandon * 2;
+         } else {
+          document.querySelector("#displayResult").innerText = "패배"; 
+               pandon = pandon - pandon;
+         }
+          document.querySelector('#check').innerText = pcnum;
+          document.querySelector('#pandon').value = pandon;
+    } else {
+         // 로우
+         if(pcnum < 7) {
+          document.querySelector("#displayResult").innerText = "승리"; 
+               pandon = pandon * 2;
+         } else {
+          document.querySelector("#displayResult").innerText = "패배"; 
+               pandon = pandon - pandon;
+         }
+          document.querySelector('#check').innerText = pcnum;
+          document.querySelector('#pandon').value = pandon;
+     }
+}
+
+
+
+// 연속 도전 버튼 만들어서 누를시 이어서 숫자가 생성되고 건 돈의 2배를 제공
+function double() {
+
+     // 이기면 start 함수의 판돈을 가져옴
+     document.querySelector('#pandon').value = pandon;  
+     document.querySelector('#check').innerText = "";
+     // 더블 클릭시 금액 회수 버튼 클릭 불가
+     const target = document.querySelector('.money_back');
+     target.disabled = true; 
+     document.querySelectorAll('.bet_btn').forEach((v) => v.disabled = true)
+}
+
+// 판돈 추가
+
+
+
+</script>
