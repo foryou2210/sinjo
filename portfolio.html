@@ -817,11 +817,157 @@
     border-radius: 15%;
     }
 
+    .contect_main {
+        position: absolute;
+        width: 462px;
+        height: 514px;
+        top: 10%;
+        left: 6%;
+    } 
+
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.75em;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #ffffff;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        background: #282828;
+    }
+
+    .msg {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        color: white;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        background: #282828;
+    }
+
+    form textarea {
+    height: 15em;
+    }
+
+    .contect {
+        position: absolute;
+        width: 521px;
+        height: 587px;
+        top: 18%;
+        left: 29%;
+        background-color: #303030;
+        display: none;
+        opacity: 1;
+    }
+
+    .btn-close {
+        cursor: pointer;
+        position: absolute;
+        left: 4%;
+        font-size: 24px;
+    }
+
+    .form_btn {
+    cursor: pointer;
+    background-color: #444;
+    box-shadow: inset 0px 0px 0px 1px #242424, inset 0px 2px 1px 0px rgb(255 255 255 / 20%);
+    border-color: #444;
+    }
+
+    .btn-16 {
+        border: none;
+        color: #000;
+    }
+    .btn-16:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        direction: rtl;
+        z-index: -1;
+        box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+        transition: all 0.3s ease;
+    }
+    .btn-16:hover {
+        color: #000;
+    }
+    .btn-16:hover:after {
+        left: auto;
+        right: 0;
+        width: 100%;
+    }
+    .btn-16:active {
+        top: 2px;
+    }
+
+    .work_main figure img {
+        -webkit-filter: blur(3px);
+        filter: blur(3px);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    .work_main:hover img {
+        -webkit-filter: blur(0);
+        filter: blur(0);
+    }
+
+    .SMN_effect-68 p:hover{
+  animation: blur-a 3s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+@keyframes blur-a {
+  from {
+    text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+
+  
+}
+
 </style>
 <body style="margin: 0;">
     <div class="container">
         <div class="item">
-            <div class="main_side">
+            <div class="main_side SMN_effect-68">
                 <div class="side1" onclick="menu1()">
                     <p>H o m e</p>
                 </div>
@@ -889,28 +1035,28 @@
                     </div>
                     <div class="work">
                     <div class="work_main element" >
-                        <img src="img/ph1.jpg" alt="">
+                        <figure><img src="img/ph1.jpg" alt=""></figure>
                         <div class="carousel-caption1 d-none d-md-block" style="opacity: 1;">
                             <h5>코딩</h5>
                             <p>웹 사이트 제작을 위한 단계로 초기 제작부터 유지, 보수까지 진행합니다.</p>
                           </div>
                     </div>
                     <div class="work_main element1" >
-                        <img src="img/ph2.jpg" alt="">
+                        <figure><img src="img/ph2.jpg" alt=""></figure>
                         <div class="carousel-caption1 d-none d-md-block" style="opacity: 1;">
                             <h5>촬영</h5>
                             <p>작업 외 여러 단계에 필요한 사진을 촬영하여 업무에 활용합니다.</p>
                           </div>
                     </div>
                     <div class="work_main element2" >
-                        <img src="img/ph3.jpg" alt="">
+                        <figure><img src="img/ph3.jpg" alt=""></figure>
                         <div class="carousel-caption1 d-none d-md-block" style="opacity: 1;">
                             <h5>유지,보수</h5>
                             <p>서버 유지 및 보수를 통해 각종 오류 및 문제 해결을 진행합니다.</p>
                           </div>
                     </div>
                     <div class="work_main element3" > 
-                        <img src="img/ph5.jpg" alt="">
+                        <figure><img src="img/ph5.jpg" alt=""></figure>
                         <div class="carousel-caption1 d-none d-md-block" style="opacity: 1;">
                             <h5>블로그 제작</h5>
                             <p>주제의 재료들을 수집하여 블로그 사이트를 제작하며 유지, 보수까지 진행합니다</p>
@@ -967,8 +1113,34 @@
 
                 </div>
                 <div class="menu4 pullDown">
-
                 </div>
+                <div class="contect">
+                    <button type="button" class="btn-close" onclick="close2()" style="z-index: 1; background-color: white;">
+                    </button>
+                    <div class="contect_main">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputId4" class="form-label"></label>
+                                <input type="name" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label"></label>
+                                <input type="email" class="form-control"  placeholder="Email">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputSubject" class="form-label"></label>
+                                <input type="text" class="form-control"  placeholder="Subject">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputMessage" class="form-label"></label>
+                                <textarea name="message" id="message" class="msg form-control" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-dark form_btn">Sand Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>    
                 <div class="menu5 pullDown">
 
                 </div>
@@ -986,6 +1158,7 @@
         document.querySelector('.menu4').style.display = "none";
         document.querySelector('.menu5').style.display = "none";
         document.querySelector('.menu1').classList.remove('fade-in-box');
+        document.querySelector('.contect').classList.add('fade-out-box');
 
     }
     function menu2() {
@@ -994,6 +1167,7 @@
         document.querySelector('.menu3').style.display = "none";
         document.querySelector('.menu4').style.display = "none";
         document.querySelector('.menu5').style.display = "none"; 
+        document.querySelector('.contect').classList.add('fade-out-box');
     }
     function menu3() {
         document.querySelector('.menu3').style.display = "block";
@@ -1001,9 +1175,14 @@
         document.querySelector('.menu2').style.display = "none";
         document.querySelector('.menu4').style.display = "none";
         document.querySelector('.menu5').style.display = "none";
+        document.querySelector('.contect').classList.add('fade-out-box');
     }
     function menu4() {
         document.querySelector('.menu4').style.display = "block";
+        document.querySelector('.contect').style.display = "block";
+        document.querySelector('.menu4').classList.add('fade-out-box');
+        document.querySelector('.contect').classList.add('fade-in-box');
+        document.querySelector('.contect').classList.remove('fade-out-box');
         document.querySelector('.menu1').style.display = "none";
         document.querySelector('.menu2').style.display = "none";
         document.querySelector('.menu3').style.display = "none";
@@ -1015,6 +1194,7 @@
         document.querySelector('.menu2').style.display = "none";
         document.querySelector('.menu3').style.display = "none";
         document.querySelector('.menu4').style.display = "none";
+        document.querySelector('.contect').classList.add('fade-out-box');
     }
 
     function new_window() {
@@ -1034,11 +1214,19 @@
         // document.querySelector('.main_nw').style.display = "none";
         document.querySelector('.menu1').classList.add('fade-in-box');
         document.querySelector('.menu1').classList.remove('fade-out-box');
-
-
-        
+       
     }
     
+    function close2() {
+        document.querySelector('.contect').classList.add('fade-out-box');
+        // document.querySelector('.main_nw').style.display = "none";
+        document.querySelector('.menu1').classList.add('fade-in-box');
+        document.querySelector('.menu1').style.display = "block";
+        document.querySelector('.menu4').style.display = "none";
+        document.querySelector('.menu4').classList.remove('fade-out-box');
+       
+    }
+
     // function menu1() {        
     //     document.querySelector('.menu1').style.opacity = "1";
     //     document.querySelector('.menu1').style.transform = 'translate(100px, 300px)'
