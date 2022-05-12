@@ -270,6 +270,15 @@
         font-size: 16px;
     }
 
+    .btn_7 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 6%;
+        right: 9%;
+        font-size: 16px;
+    }
+
     .chogiwha button {
         position: absolute;
         width: 157px;
@@ -348,11 +357,153 @@
           opacity: 1;
     }
 
+    .shop {
+          position: absolute;
+          width: 210px;
+          height: 850px;
+          top: 4%;
+          left: 1%;
+     }
+
+     .shop_menu {
+          position: absolute;
+          width: 190px;
+          height: 100px;
+          top: -3%;
+          left: 15%;
+          font-family: 'ACCchildrenheartOTF-Regular';
+          font-size: 40px;
+     }
+
+     .gacha1 {
+          position: absolute;
+          width: 190px;
+          height: 200px;
+          top: 14%;
+          left: 5%;
+     }
+
+
+     .gacha2 {
+          position: absolute;
+          width: 190px;
+          height: 200px;
+          top: 41%;
+          left: 5%;
+     }
+
+     .gacha3 {
+          position: absolute;
+          width: 190px;
+          height: 200px;
+          top: 68%;
+          left: 5%;
+     }
+
+     .gacha_img {
+          position: absolute;
+          width: 150px;
+          height: 100px;
+          top: 0%;
+          left: 8%;
+     }
+
+     .gacha_text {
+          position: absolute;
+          width: 156px;
+          height: 100px;
+          top: 39%;
+          left: 9%;
+          font-family: 'ROKAFSansBold';
+          text-align: center;
+     }
+
+     .gacha_button {
+          position: absolute;
+          width: 70px;
+          height: 24px;
+          top: 75%;
+          left: 28%;
+
+     }
+
+     .gacha_button:hover + .gacha_hover {
+          opacity: 1;
+     }
+          
+     .gacha_hover {
+          position: absolute;
+          width: 186px;
+          height: 100px;
+          top: -26%;
+          left: 8%;
+          opacity: 0;
+     }
 
 
 </style>
 <body>
      <div id="container">
+          <div class="shop">
+               <div class="shop_menu">
+                    <h4>뽑기 상점</h4>
+               </div>
+               <div class="gacha1">
+                    <div class="gacha_img">
+                         <img src="img/보상1.png" alt="">
+                    </div>
+                    <div class="gacha_text">
+                         <p>
+                              소형 보물상자
+                              <br>
+                              1,000,000 KRW
+                         </p>
+                    </div>
+                    <div class="gacha_button">
+                         <button class="gc_btn1" onclick="gacha1()">구매하기</button>
+                    </div>
+                    <div class="gacha_hover">
+                         <p>50만원 ~ 200만원까지<br>획득이 가능합니다.</p>
+                    </div>
+               </div>
+
+               <div class="gacha2">
+                    <div class="gacha_img">
+                         <img src="img/보상2.png" alt="">
+                    </div>
+                    <div class="gacha_text">
+                         <p>
+                              중형 보물상자   
+                              <br>
+                              5,000,000 KRW
+                         </p>
+                    </div>
+                    <div class="gacha_button">
+                         <button class="gc_btn2" onclick="gacha2()">구매하기</button>
+                    </div>
+                    <div class="gacha_hover">
+                         <p>250만원 ~ 1000만원까지<br>획득이 가능합니다.</p>
+                    </div>
+               </div>
+               <div class="gacha3">
+                    <div class="gacha_img">
+                         <img src="img/보상3.png" alt="">
+                    </div>
+                    <div class="gacha_text">
+                         <p>
+                              대형 보물상자
+                              <br>
+                              10,000,000 KRW
+                         </p>
+                    </div>
+                    <div class="gacha_button">
+                         <button class="gc_btn3" onclick="gacha3()">구매하기</button>
+                    </div>
+                    <div class="gacha_hover">
+                         <p>500만원 ~ 2000만원 까지<br>획득이 가능합니다.</p>
+                    </div>
+               </div>
+          </div>
           <div id="result">
                <div class="result_main">
                     <div class="result_check">
@@ -435,6 +586,9 @@
                 <div class="chogiwha">
                     <button class="money_back"onclick="bet_cho()">금액 회수</button>
                 </div>
+                <div class="btn_7">
+                    <button class="bet_btn" onclick="full_bet()">올인 하기</button>
+                </div>
                 <div class="jasan">
                     소유자산 - <br><span id="asset">0</span>원
                 </div>
@@ -442,7 +596,7 @@
                     판돈 : <input type="number" id="pandon" value="0" readonly>원
                 </div>
                 <div class="chogi">
-                    <button onclick="setAsset();">초기 비용 셋팅</button>
+                    <button id="chogi_set" onclick="setAsset();">초기 비용 셋팅</button>
                 </div>
                 <!-- <div class="double">
                     <button onclick="double()">연승 도전</button>
@@ -459,21 +613,40 @@ var pandon;
 
 // 초기 비용 셋팅
 function setAsset(){
-
      pandon = parseInt(document.getElementById('pandon').value);
 
-if(pandon > 1){
+     if(pandon > 0){
 
-document.querySelector("#displayResult").innerText = "판돈이 충분하여 셋팅 할 수 없습니다"; 
-return;
+     document.querySelector("#displayResult").innerText = "판돈이 충분하여 셋팅 할 수 없습니다"; 
+     return;
+
+     }
+
+     if(asset > 0){
+
+     document.querySelector("#displayResult").innerText = "소유 자산이 충분하여 셋팅 할 수 없습니다"; 
+     return;
+
+     }
+
+
+     asset=1000000;
+
+     document.getElementById("asset").innerHTML=asset;
+     document.querySelector("#displayResult").innerText = "충전이 완료되었습니다 1분간 충전 버튼이 비활성화 됩니다"; 
+
+     // button 비활성화
+     // const target = document.querySelector('#chogi_set');
+     // target.disabled = true; 
+     document.querySelectorAll('#chogi_set').forEach((stop) => stop.disabled = true)
+
+     // 3분후에 활성화
+     setTimeout(set_st, 60000); 
 
 }
 
-asset=1000000;
-
-document.getElementById("asset").innerHTML=asset;
-document.querySelector("#displayResult").innerText = "충전이 완료되었습니다"; 
-
+function set_st() {
+     document.querySelectorAll('#chogi_set').forEach((start) => start.disabled = false)
 }
 
 // 베팅 초기화
@@ -488,19 +661,28 @@ function bet_cho() {
 
 // 베팅 진행
 function bet_btn(betting) {
-     if(asset == 0) {
-          document.querySelector("#displayResult").innerText = "0원 이하로 베팅할 수 없습니다"; 
+     if(asset < betting) {
+          document.querySelector("#displayResult").innerText = "소유 자산이 충분하지 않습니다"; 
      } else {
           var inputvalue = parseInt(document.querySelector('#pandon').value);
           document.querySelector('#pandon').value = inputvalue + betting;    
           asset = asset - betting
           document.querySelector('#asset').innerText = asset;
-     }
-    
-
-
-
+     }   
 }
+
+function full_bet() {
+
+     if (asset == 0) {
+          document.querySelector("#displayResult").innerText = "올인을 하기에는 소유 자산이 없습니다.";
+          return;
+     }
+
+          var inputvalue = parseInt(document.querySelector('#pandon').value);
+          document.querySelector('#pandon').value = inputvalue + asset;
+          asset = 0
+          document.querySelector('#asset').innerText = asset;
+     }
 
 // 하이 미들 로우 클릭시 1~13까지 랜덤 숫자 생성
 // 1~6까지는 로우, 7은 미들(middle), 8~9까지는 하이라는 값을 줘서 ID check에 값을 표시
@@ -582,8 +764,149 @@ function double() {
      document.querySelectorAll('.bet_btn').forEach((v) => v.disabled = true)
 }
 
-// 판돈 추가
+function gacha1() {
 
+     // 소유 자산이 100만원 이하인 경우 구매 불가
+     if(asset < 1000000){
+
+     document.querySelector("#displayResult").innerText = "소유 금액이 부족하여 구매 할 수 없습니다"; 
+     return;
+     }
+     
+     // 소유 자산이 충분 한 경우 클릭시 100만원 회수
+     asset = asset - 1000000;
+     // 소유 자산에 표시하기
+     document.querySelector('#asset').innerText = asset;
+
+     // gacha 변수에 1~100까지 랜덤 숫자 생성
+     gacha = Math.floor(Math.random() * 99) + 1;
+
+     // 랜덤으로 생성된 숫자가 1~5 일경우 200만원 지급 (5%)
+     // && and
+     // || or
+     if( 1 <= gacha && gacha <= 5 ) {
+          asset = asset + 2000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "축하합니다. 200만원에 당첨되셨습니다";
+     } 
+     // 랜덤으로 생성된 숫자가 6~15 일 경우 150만원 지급 (10%)
+     else if (6 <= gacha && gacha <= 15 ) {
+          asset = asset + 1500000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "축하합니다. 150만원에 당첨되셨습니다";
+     }
+     // 랜덤으로 생성된 숫자가 16~50 일 경우 100만원 지급 (35%)
+     else if (16 <= gacha && gacha <= 50 ) {
+          asset = asset + 1000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "아쉽군요. 100만원 당첨으로 본전입니다.";
+     }
+     // 랜덤으로 생성된 숫자가 51~100 일 경우 100만원 지급 (50%)
+     else if (52 <= gacha && gacha <= 100 ) {
+          asset = asset + 500000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "꽝!! 위로금으로 50만원 지급됩니다"
+     }
+     else if (gacha == 51) {
+          asset = asset + 10000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "1%의 확률을 뚫은자!! 1000만원 지급됩니다"
+     }
+}
+
+function gacha2() {
+     // 소유 자산이 100만원 이하인 경우 구매 불가
+     if(asset < 5000000){
+
+     document.querySelector("#displayResult").innerText = "소유 금액이 부족하여 구매 할 수 없습니다"; 
+     return;
+     }
+
+     // 소유 자산이 충분 한 경우 클릭시 100만원 회수
+     asset = asset - 5000000;
+     // 소유 자산에 표시하기
+     document.querySelector('#asset').innerText = asset;
+
+     // gacha 변수에 1~100까지 랜덤 숫자 생성
+     gacha = Math.floor(Math.random() * 99) + 1;
+
+     // 랜덤으로 생성된 숫자가 1~5 일경우 200만원 지급 (5%)
+     if( 1 <= gacha && gacha <= 5 ) {
+          asset = asset + 10000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "축하합니다. 1000만원에 당첨되셨습니다";
+     } 
+     // 랜덤으로 생성된 숫자가 5~15 일 경우 150만원 지급 (10%)
+     else if (6 <= gacha && gacha <= 15 ) {
+          asset = asset + 7500000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "축하합니다. 750만원에 당첨되셨습니다";
+     }
+     // 랜덤으로 생성된 숫자가 15~50 일 경우 100만원 지급 (35%)
+     else if (16 <= gacha && gacha <= 50 ) {
+          asset = asset + 5000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "아쉽군요. 500만원 당첨으로 본전입니다.";
+     }
+     // 랜덤으로 생성된 숫자가 51~100 일 경우 100만원 지급 (50%)
+     else if (52 <= gacha && gacha <= 100 ) {
+          asset = asset + 2500000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "꽝!! 위로금으로 250만원 지급됩니다"
+     }
+     else if (gacha == 51) {
+          asset = asset + 50000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "1%의 확률을 뚫은자!! 5000만원 지급됩니다"
+     }
+}
+
+function gacha3() {
+     // 소유 자산이 100만원 이하인 경우 구매 불가
+     if(asset < 10000000){
+
+     document.querySelector("#displayResult").innerText = "소유 금액이 부족하여 구매 할 수 없습니다"; 
+     return;
+     }
+
+     // 소유 자산이 충분 한 경우 클릭시 1000만원 회수
+     asset = asset - 10000000;
+     // 소유 자산에 표시하기
+     document.querySelector('#asset').innerText = asset;
+
+     // gacha 변수에 1~100까지 랜덤 숫자 생성
+     gacha = Math.floor(Math.random() * 99) + 1;
+
+     // 랜덤으로 생성된 숫자가 1~5 일경우 2000만원 지급 (5%)
+     if( 1 <= gacha && gacha <= 5 ) {
+          asset = asset + 20000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "축하합니다. 2000만원에 당첨되셨습니다";
+     } 
+     // 랜덤으로 생성된 숫자가 5~15 일 경우 150만원 지급 (10%)
+     else if (6 <= gacha && gacha <= 15 ) {
+          asset = asset + 15000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "축하합니다. 1500만원에 당첨되셨습니다";
+     }
+     // 랜덤으로 생성된 숫자가 15~50 일 경우 100만원 지급 (35%)
+     else if (16 <= gacha && gacha <= 50 ) {
+          asset = asset + 10000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "아쉽군요. 1000만원 당첨으로 본전입니다.";
+     }
+     // 랜덤으로 생성된 숫자가 51~100 일 경우 100만원 지급 (50%)
+     else if (52 <= gacha && gacha <= 100 ) {
+          asset = asset + 5000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "꽝!! 위로금으로 500만원 지급됩니다"
+     }
+     else if (gacha == 51) {
+          asset = asset + 100000000;
+          document.querySelector('#asset').innerText = asset;
+          document.querySelector("#displayResult").innerText = "1%의 확률을 뚫은자!! 1억원 지급됩니다"
+     }
+}
 
 
 </script>
