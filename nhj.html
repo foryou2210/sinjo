@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,8 +34,8 @@
 
     #container {
         position: relative;
-        width: 100%;
-        height: 95vh;
+        width: 1000px;
+        height: 969px;
     }
 
     .main {
@@ -86,9 +85,6 @@
         font-family: 'Katuri';
     }
 
-    .jak_btn button:hover {
-        content: "클릭";
-    }
 
     .chogi button{
         position: absolute;
@@ -283,6 +279,8 @@
 
     body {
         margin: 0;
+        position: relative;
+        width: 1000px;
     }
 
     .result {
@@ -298,6 +296,25 @@
         font-weight: bolder;
         text-align: center;
     }
+
+    #resultList {
+        position: absolute;
+        width: 700px;
+        height: 969px;
+        top: 0%;
+        right: -70%;
+        background-color: aliceblue;
+
+    }
+
+    @media ( max-width: 480px ) {
+        #resultList {
+            top: 100%;
+            width: 100%;
+            left: 0%;
+            right: 0%;
+        }
+      }
 
 </style>
 <body>
@@ -366,6 +383,9 @@
             </div>
         </div>    
     </div>
+    <div id="resultList">
+
+    </div>
 
 
 </body>
@@ -373,6 +393,7 @@
 <script>
 
 var asset = 0;
+var pandon;
 
 function bet_btn(betting) {
     var inputvalue = parseInt(document.querySelector('#pandon').value);
@@ -419,7 +440,7 @@ function play(select) {
     }
     // 사용자 선택한 버튼 랜덤한 숫자를 비교해서 
 
-        var pandon = parseInt(document.getElementById('pandon').value);
+        pandon = parseInt(document.getElementById('pandon').value);
         console.log(pandon);
         console.log(typeof(pandon));
 
@@ -455,9 +476,7 @@ function play(select) {
         document.querySelector('#pandon').value = 0;
   
     }
-    // 판돈만큼 금액을 더할시 pandon을 문자열로 인식함
-    // 1000 + 1000이면 숫자열 인식시 2000이 되야하지만
-    // 10001000 이 되어버림
-    // asset는 정상적으로 숫자로 인식하지만 pandon만 문제을 일으킴
-    }
+}
+
+
 </script>

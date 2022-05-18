@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    * {margin:0px; padding:0px; *font-weight:normal;}
+
+    html {height:100%;}
+
+    body {	 
+        scrollbar-3dlight-color:#b4b4b4;
+        scrollbar-arrow-color:#333333;
+        scrollbar-base-color:#eeeeee;
+        scrollbar-darkshadow-color:#efefef;
+        scrollbar-face-color:#efefef;
+        scrollbar-highlight-color:#ffffff;
+        scrollbar-shadow-color:#b4b4b4;
+        height:100%;
+        font-family:"MalgunGothic", "맑은고딕";
+        font-weight:normal;
+        font-size:13px;
+        line-height:normal;
+        color:#333333;
+        -webkit-font-smoothing:antialiased;
+        -webkit-text-size-adjust :none;
+        }
+
+    address, article, aside, canvas, figure, footer, header, hgroup, menu, nav, section {display:block;}
+    hr {display:none;}
+    caption,figcaption  {width:0; height:0; font-size:0px; text-indent:-9999px;}
+    h1, h2, h3, h4, h5, h6 ,h7 {font-weight:normal;}
+    img {border:none; vertical-align:middle;}
+    ol, ul, li, dl, dt, dd {list-style:none;}
+    table {width:100%; border:0px; border-spacing:0px; border-collapse:collapse; table-layout:fixed}
+    th {color:#333; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+    th, td {border:0px; word-break:break-all; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+    fieldset {width:100%; border:0px;}
+    legend {position:absolute; left:-99999px; width:1px; height:1px; margin:0; padding:0; background:none; font-size:0px; line-height:0; text-indent:-99999px;} 
+    frameset {border:0px;}
+    iframe {width:100%; border:0px;}
+    em, address {font-style:normal;}
+    small {display:block; font-size:9px; line-height:0px;}
+
+    button {overflow:visible; line-height:normal !important; cursor:pointer; background:transparent; border:0px;}
+    button, a, select, input, label {vertical-align:middle;}
+
+    a {color:#333333; text-decoration:none; vertical-align:middle;}
+    a:active, visited, link {text-decoration:none;}
+    a:hover {text-decoration:none;}
+
+    /* font */
+    @font-face { 
+        font-family:"MalgunGothic"; 
+        src:url('/Common/Font/malgun.eot');        
+        src:local('※'), 
+            url('/Common/Font/malgun.eot?#iefix') format('embedded-opentype'),
+            url('/Common/Font/malgun.woff') format('woff');	     
+        font-style:normal;		 
+        font-weight:normal;
+    }
+
+    @font-face { 
+        font-family:"MaeilGothic"; 
+        src:url('/Common/Font/MaeilGothic.eot');        
+        src:local('※'), 
+            url('/Common/Font/MaeilGothic.eot?#iefix') format('embedded-opentype'),
+            url('/Common/Font/MaeilGothic.woff') format('woff');	     
+        font-style:normal;		 
+        font-weight:normal;
+    }
+
+    @font-face { 
+        font-family:"MaeilGothic-Bold"; 
+        src:url('/Common/Font/MaeilGothic-Bold.eot');        
+        src:local('※'), 
+            url('/Common/Font/MaeilGothic-Bold.eot?#iefix') format('embedded-opentype'),
+            url('/Common/Font/MaeilGothic-Bold.woff') format('woff');	     
+        font-style:normal;		 
+        font-weight:normal;
+    }
+
+    @font-face { 
+        font-family:"MaeilRounded"; 
+        src:url('/Common/Font/MaeilRounded.eot');        
+        src:local('※'), 
+            url('/Common/Font/MaeilRounded.eot?#iefix') format('embedded-opentype'),
+            url('/Common/Font/MaeilRounded.woff') format('woff');	     
+        font-style:normal;		 
+        font-weight:normal;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #Header_Wrap {
+        position:absolute; 
+        left:0; 
+        top:0; 
+        z-index:2000; 
+        width:100%; 
+        min-width:960px; 
+        height:138px; 
+        background-color:#4c2d01
+    }
+    #Header_Wrap.on {
+        height:138px;
+    }
+    #Header_Wrap .bg_submenu {
+        display:none; 
+        position:absolute; 
+        left:0px; 
+        top:98px; 
+        width:100%; 
+        min-width:960px; 
+        height:40px; 
+        background-color:#4c2d01;
+    }
+    #Header {
+        position:relative; 
+        width:960px; 
+        height:100%; 
+        margin:0 auto;  
+    }
+    #Header:after {
+        content:""; 
+        display:block; 
+        clear:both;
+    }
+
+    #Header .logo {
+        float:left; 
+        margin:25px 85px 0 0;
+    }
+
+    #Header .logo a {
+        display:block;
+    }
+    #Header .lnb_wrap {
+        float:right; 
+        margin-top:48px;
+    }
+    #Header .lnb_wrap .lnb li.node1 {
+        position:relative; 
+        float:left; 
+        padding:0 20px;
+    }
+    #Header .lnb_wrap .lnb li.node1.last {
+        padding-right:0px;
+    }
+    #Header .lnb_wrap .lnb li.node1 a.depth1 {
+        display:block; 
+        padding-bottom:9px; 
+        color:#fff; 
+        font-size:16px; 
+        /*font-weight:bold;*/ 
+        font-family:'MaeilGothic-Bold'; 
+    }
+
+    #Header .lnb_wrap .lnb li.node1.on a.depth1, #Header .lnb_wrap .lnb li.node1 a.depth1:hover {
+        border-bottom:1px solid #e2851b; 
+        color:#e2851b
+    }
+
+    #Header .lnb_wrap .lnb li.node1 .submenu {
+        display:none; 
+        overflow:hidden; 
+        position:absolute; 
+        top:29px; 
+        width:400px; 
+        height:60px;
+    }
+
+    #Header .lnb_wrap .lnb li.node1 .submenu.sm1 {
+        left:20px;
+        width:350px;
+    }
+
+    #Header .lnb_wrap .lnb li.node1 .submenu.sm2 {
+        left:20px; 
+        width:220px
+    }
+    #Header .lnb_wrap .lnb li.node1 .submenu.sm3 {
+        left:20px; 
+        width:260px
+    }
+    #Header .lnb_wrap .lnb li.node1 .submenu.sm4 {
+        left:20px; 
+        width:270px
+    }
+    #Header .lnb_wrap .lnb li.node1 .submenu.sm5 {
+        right:0; 
+        width:350px
+    }
+    #Header .lnb_wrap .lnb li.node1.on .submenu {
+        display:block;
+    }
+    #Header .lnb_wrap .lnb li.node2 {
+        float:left; 
+        height:60px; 
+        margin-right:17px; 
+    }
+    #Header .lnb_wrap .lnb li.node2.last {
+        margin-right:0px;
+    }
+    #Header .lnb_wrap .lnb li.node2 a {
+        display:block; 
+        padding:22px 0; 
+        color:#fff; 
+        font-size:13px; 
+        font-family:'MaeilGothic';
+    }
+    #Header .lnb_wrap .lnb li.node2.on a {
+        color:#e2851b
+    }
+    #Header .lnb_wrap .lnb li.node2 a:hover {
+        color:#e2851b
+    }
+    #Header .gnb {
+        position:absolute; 
+        right:0; 
+        top:7px; 
+        font-size:11px; 
+        color:#e6e1c3;
+    }
+    #Header .gnb ul {
+        overflow:hidden;
+    }
+    #Header .gnb ul li {
+        float:left; 
+        padding:0 8px; 
+        background:url('/Images/Common/bg_gnbList1.gif') right 5px no-repeat; 
+    }
+    #Header .gnb ul li.last {
+        padding-right:0px; 
+        background:none;
+    }
+    #Header .gnb ul li a {
+        display:block; 
+        width:100%; 
+        color:#fff;
+    }
+    #Header .btn_allMenu {
+        display:none; 
+        position:absolute; 
+        right:24px; 
+        top:10px; 
+        width:32px; 
+        height:28px; 
+        z-index:9999;
+    }
+    #Header .btn_allMenu img {
+        width:100%;
+    }
+
+    @media all and (max-width:1024px) {
+
+    }
+
+    @media all and (max-width:768px) {
+        #Header_Wrap {height:98px; min-width:320px; position:absolute; left:0; top:0;}
+        #Header_Wrap.on {height:98px;}
+        #Header_Wrap .bg_submenu {display:none !important}
+        #Header {width:auto; height:auto; padding:0 24px;}
+        #Header .logo {display:block; float:none; }
+        #Header .logo a {width:118px; height:auto}
+        #Header .logo a img {width:100%;}
+        #Header .lnb_wrap {display:none;}
+        #Header .gnb {display:none;}
+        #Header .btn_allMenu {display:block;}
+    }
+
+    @media all and (max-width:640px) {
+        #Header_Wrap, #Header_Wrap.on {height:78px !important;}
+        #Header .logo {margin-top:18px;}
+        #Header .btn_allMenu {top:7px}
+    }
+
+    .main #Header_Wrap {
+        height:98px;
+    }
+    .main #Content {
+        max-width:1920px;
+        margin:0 auto; 
+        padding-top:0px;
+    }
+    .main h3 {
+        margin-bottom:20px; 
+        font-size:30px; 
+        color:#222;
+    }
+
+
+</style>
+<body>
+    <div id="wrap" class="main">
+        <div id="Header_Wrap">
+            <div class="bg_submenu" style="display: none; height: 40px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+            </div>
+            <header id="Header">
+                <div class="logo">
+                    <a href="sangha.html">
+                        <img src="img/img_header_logo.png" alt="상하목장">
+                    </a>
+                </div>
+                <div class="gnb">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="fnt_login();">로그인</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                회원가입
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_new">
+                                가정배달 주문하기
+                            </a>
+                        </li>
+                        <li class="last">
+                            <a href="#">
+                                ...
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="lnb_wrap">
+                    <ul class="lnb">
+                        <li class="node1">
+                            <a href="#" class="depth1">
+                                Brand Story
+                            </a>
+                            <ul class="submenu sm1" style="opacity: 0;">
+                                <li>
+                                    <a href="#" class="depth2">
+                                        상하목장의 철학
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="depth2">
+                                        상하목장의 원칙
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="depth2">
+                                        상하목장의 히스토리
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li class="node1">
+                            <a href="#" class="depth1">Organic Circle</a>
+                            <ul class="submenu sm1" style="opacity: 0;">
+                                <li class="node2">
+                                    <a href="#" class="depth2">
+                                        오가닉 서클 캠페인
+                                    </a>
+                                </li>
+                                <li class="node2 last">
+                                    <a href="#" class="depth2">
+                                        진행중인 캠페인
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="node1">
+                            <a href="#" class="depth1">
+                                Product
+                            </a>
+                            <ul class="submenu sm2" style="opacity: 0;">
+                                <li class="node2">
+                                    <a href="#" class="depth2">
+                                        제품소개
+                                    </a>
+                                </li>
+                                <li class="node2">
+                                    <a href="#" class="depth2">
+                                        ORGANIC
+                                    </a>
+                                </li>
+                                <li class="node2 last">
+                                    <a href="#" class="depth2">
+                                        SLOW
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="node1 noEmotion">
+                            <a href="#" class="depth1">Shop</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    /* Common Function */
+
+
+//Check Mobile Devices
+function checkMobile(){
+    var isTouch = ('ontouchstart' in document.documentElement);
+
+    if ( isTouch ) {
+        //$('html').addClass('touch');
+		return true;
+    } else {
+        //$('html').addClass('no-touch');
+		return false;
+    }
+}
+
+function ajaxCall(frmName, sendUrl, target, callback) {
+	var dataString = $("#"+frmName).serialize();
+  
+	$.ajax({
+		type:"POST",
+		url:sendUrl,
+		cache:false,
+		async:false,
+		dataType:"html",
+		data:dataString,
+		timeout:6000,
+		success:function(data){    
+		// 통신이 성공적으로 이루어졌을때 이 함수를 타게 된다.
+		$("#"+target).html(data);
+
+			if (callback !==""){
+				callback;
+			}
+		},
+		/*complete:function(data){
+		//통신이 실패했어도 완료가 되었을때 이함수를 타게된다.
+		// success 와 complete 둘 중 하나만 이용, 그렇지 않으면 두번실행
+		},*/
+		error:function(xhr, status, error){
+		}
+	}); 
+}
+
+function ajaxLoad(selector, frmName, callUrl, callback){
+	var dataString = $("#"+frmName).serialize();
+	
+	$(selector).load(callUrl, dataString, callback);
+}
+	
+
+	
+
+function lp_open(url, callback) {	
+	var position = $("body").scrollTop();	
+
+	if($(window).width() < 940 ){
+		lpWidth = '95%';	
+	} else {
+		lpWidth = 940;
+	}
+
+	$.colorbox({
+		width:lpWidth,
+		href:url,
+		scrolling:false,
+		onComplete:function() {	
+
+			if (callback) {			
+				callback();
+			}
+			
+			if (checkMobile()) {
+				$("html, body").css("overflow","hidden");
+			}
+		},
+		onClosed:function(){									
+			if (checkMobile()) {
+				$("html, body").css("overflow","inherit");
+				$("html, body").scrollTop(position);
+			}
+		}
+	});
+}
+
+var position = 0;
+function openLayer(obj) {
+	var maxWid = $("#"+obj).css("max-width").replace("px","");
+
+	if (obj !== "BrandResult") {
+		position = $("body").scrollTop();
+	}
+
+
+	if($(window).width() > maxWid ){
+		lpWidth = maxWid;
+	} else {
+		lpWidth = '95%';	
+	}
+
+	$.colorbox({
+		width:lpWidth,
+		inline:true, 
+		href:"#"+obj,
+		onComplete:function() {	
+		
+			if (checkMobile()) {
+				$("html, body").css("overflow","hidden");
+			}
+		},
+		onClosed:function(){									
+			if (checkMobile()) {
+				$("html, body").css("overflow","inherit");
+				$("html, body").scrollTop(position);
+			}
+			
+		}
+	});
+}
+
+
+function lp_close(){
+	$.colorbox.close();
+};
+
+
+// Window Popup
+function winPop(url, name ,sWidth, sHight, sLeft, sTop, isScroll, isResize, isTool, isMenu) {
+	window.open(url,name,'width='+sWidth+',height='+sHight+',left='+sLeft+',top='+sTop+',scrollbars='+isScroll+',resizable='+isResize+',toolbar='+isTool+',menubar='+isMenu+',location=no');
+} 
+
+// Box Height Resize
+function resizeBoxJS(obj,ratio){
+	var boxW = $(obj).width();
+	var resizeBoxH = boxW * ratio;
+	
+	$(obj).height(resizeBoxH);
+}
+
+//setLnb
+
+var nowMenuNum;
+function setLnb(d1,d2) {
+	if (d1 !== '') {
+		$("#Header_Wrap").addClass("on");
+		
+		var node1 = $(".lnb li.node1").eq(d1);
+		var node2 = $("li.node2", node1).eq(d2);
+
+		node1.addClass("on");
+		node2.addClass("on");
+	}
+	else if (d1 == null) {
+		$("#Header_Wrap").removeClass("on");
+	}
+}
+
+// JQuery 공통함수
+
+// 메뉴/본문 바로가기 메뉴 열기
+jQuery(document).ready(function(e) {	
+
+	//Skip Menu
+	$("#SkipMenu").focus();	
+	$("#SkipMenu a").bind({
+		'focus': function(e) {
+			$("#SkipMenu").css("height","35px");
+		},
+		'click keypress': function(e) {
+			$("#SkipMenu").css("height","0px");			
+			
+			if ($(document).width() < 768) {
+				$("#Content").attr("tabindex","0");
+				$("#Content a:first, #Content input:first").focus();
+			} else {				
+				if ($(this).hasClass("read-more")){
+					$("#Header a:first").focus();
+				} else {
+					$("#Content").attr("tabindex","0");
+					$("#Content a:first, #Content input:first").focus();
+				}
+			}
+		},
+		'blur': function(e) {
+			$("#SkipMenu").css("height","0px");				
+			if ($(this).hasClass("read-more")){
+				
+			}
+		}
+	});	
+	
+	//lnb
+	$(".lnb").on({
+		'focusin mouseenter':function(e){
+			e.preventDefault();
+		},
+		'mouseleave':function(e){			
+			if ($("#Header_Wrap").hasClass("on")==false){	
+				$('.lnb>li.node1').removeClass("on");	
+				$(".lnb .submenu").css("opacity",0);		
+				$(".bg_submenu").stop().slideUp('fast');	
+			}
+		}
+	});	
+
+
+	$('.lnb>li.node1').on({
+		'mouseenter':function(e){
+			nowMenuNum = $(".lnb>li.node1.on").index(".lnb>li.node1");
+			var menuNum = $(this).index(".lnb>li.node1");
+			$('.lnb>li.node1').removeClass("on");
+
+			if ($("#Header_Wrap").hasClass("on") == false) {
+				var menuIdx = parseInt($(this).index());
+				if(menuIdx === 3){
+					$(".lnb .submenu").css("opacity",0);		
+					$(".bg_submenu").stop().slideUp('fast');
+				}else{
+					console.log(menuIdx);
+					$(".bg_submenu").stop().slideDown('fast',function(e){	
+						$(".lnb>li.node1").eq(menuNum).addClass("on");			
+						$(".lnb>li.node1").eq(menuNum).find(".submenu").stop().animate({
+							'opacity':1
+						},200);					
+					});	
+				}
+			} else {
+				$(".lnb>li.node1").eq(menuNum).addClass("on");			
+				$(".lnb>li.node1").eq(menuNum).find(".submenu").stop().animate({
+					'opacity':1
+				},200);					
+			}
+		},
+		'mouseleave':function(e){	
+			var oldMenuNum = nowMenuNum;
+			$('.lnb>li.node1').removeClass("on");
+			if (oldMenuNum !== "") {	
+				$(".lnb>li.node1").eq(oldMenuNum).addClass("on");			
+				$(".lnb>li.node1").eq(oldMenuNum).find(".submenu").stop().animate({
+					'opacity':1
+				},200);		
+			}
+		}
+	});
+	
+	if ($(".lnb>li.node1.on").length > 0){
+		$("#Header_Wrap").addClass("on");
+	}
+	
+	// 전체메뉴보기(태블릿/모바일)
+	$(".btn_allMenu").click(function(e){											
+		if ($("#AllMenu_Wrap").hasClass("show")) {									
+			$("#AllMenu_Wrap").removeClass("show");
+		} else {
+			$("#AllMenu_Wrap").addClass("show");			
+		
+		}
+	});	
+
+	$("#AllMenu li.node1").click(function(e){
+		if ($(this).hasClass("on")){
+			$(this).find(".submenu").slideUp('5000');
+			$(this).removeClass("on");
+		} else {			
+			$(this).find(".submenu").slideDown('5000', function(e){
+				$(this).parent("li.node1").addClass("on");
+			});
+		}
+	});
+	
+	// 전체 메뉴 펼침
+	$(".allMenu_open").click(function(e){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+			$("#AllMenu .submenu").slideUp('5000',function(e){
+				$(".allMenuTxt").text('전체 메뉴 펼침');
+			});
+			$("#AllMenu ul li.node1").removeClass("on");			
+		} else {			
+			$(this).addClass("on");
+			$("#AllMenu .submenu").slideDown('5000',function(e){
+				$(".allMenuTxt").text('전체 메뉴 닫기');
+			});
+			$("#AllMenu ul li.node1").addClass("on");
+		}
+	});
+
+
+
+	/* Select Tag CSS Ver */
+	$(document).on("click","input[type=radio]",function(e){
+		var radioName = $(this).attr("name");
+		
+		$("input[name="+ radioName +"]").closest(".ui-radio").removeClass("checked");
+				
+		if($(this).prop("checked")){
+			$(this).closest(".ui-radio").addClass("checked");
+		} else {
+			$(this).closest(".ui-radio").removeClass("checked");
+		}
+	});	
+	
+	$(document).on("click","input[type=checkbox]",function(e){
+		var radioName = $(this).attr("name");
+		
+		$("input[name="+ radioName +"]").closest(".ui-check").removeClass("checked");
+				
+		if($(this).prop("checked")){
+			$(this).closest(".ui-check").addClass("checked");
+		} else {
+			$(this).closest(".ui-check").removeClass("checked");
+		}
+	});	
+	
+	// Back to Top Button
+	$(window).bind("scroll load", function(e) {
+		if ($(this).scrollTop() > 0) {
+			$('.back-to-top').addClass('show');
+		} else {
+			$('.back-to-top').removeClass('show');
+		}
+	});	
+	$('.back-to-top').bind('click', function(e) {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 400);
+	});
+	
+	$(window).on('resize',function(){
+						
+		if ($("#cboxOverlay").is(":visible")) {
+			var olpWidth = $("#colorbox").find(".lp_wrap").attr("data-width");
+			var lpWidth;
+	
+			if ($(window).width() < olpWidth) {			
+				lpWidth = '95%'
+			} else {
+				lpWidth = olpWidth;
+			}					
+		
+			$.colorbox.resize({
+			  width: lpWidth
+			});	
+		}		
+	
+	});		
+
+	//organic
+	if($(".prodIntroWrap").length > 0) {
+
+		$(window).on('load scroll',function(){
+			
+			var pos = $(".intro2").offset().top - 300;
+			
+			if ($(window).scrollTop() > pos) {
+				if($(".photoWrap .photo").css('opacity') == 0){
+					$(".photoWrap .photo2").animate({
+						'transform':'rotate(-6deg)',
+						'top':'37%',
+						'opacity':1
+					},300);
+					$(".photoWrap .photo1").animate({
+						'transform':'rotate(2deg)',
+						'top':'3%',
+						'left':'16%',
+						'opacity':1
+					},500);
+				}
+			}
+		});
+		
+		//영역 높이 자동조절
+		$(window).on('load resize',function(e){
+			resizeBoxJS(".photoWrap", 0.96564);
+		});
+	}
+	
+	
+	//brand-철학
+	if($(".brandWrap").length > 0) {
+	
+		var total = $(".bottleWrap li.on").length;
+		var milkLiter;
+		$(".bottleWrap li").on("click", function(e){
+			if($(this).hasClass("on")){
+				$(this).removeClass("on");				
+			} else {
+				$(this).addClass("on");			
+			}
+			total = $(".bottleWrap li.on").length;
+			$(".choiceResult .num").text(total);
+			
+			milkLiter = total * 28;
+			$(".brand_result .num").text(milkLiter);
+		})
+		$(".choiceResult .num").text(total);
+		$(".brand_result .num").text(milkLiter);
+		
+
+		$(document).on('click','.calGo2',function(e){
+			
+			$(".bottleWrap li").removeClass("on");
+			var total = 0;
+			var milkLiter = 0;
+			$(".choiceResult .num").text(total);
+			$(".brand_result .num").text(milkLiter);
+		});
+		
+		
+		$(window).on('load',function(e){
+			if($(window).width() > 750){
+				$(".brand3 .accordionList>li").eq(0).addClass("on");
+			}
+			$(".brand2 .accordionList>li .titTab>a").unbind("click").click(function(event){
+				event.preventDefault();
+				if($(this).parent().parent().hasClass("on")){
+					$(".brand2 .accordionList>li .boxWrap").slideUp('500', function(e){
+						$(this).parent().removeClass("on");
+					});
+				} else{
+					$(".brand2 .accordionList>li .boxWrap").slideUp('500', function(e){
+						$(this).parent().removeClass("on");
+					});
+					$(this).parent().next(".boxWrap").slideDown('500', function(e){
+						$(this).parent().addClass("on");
+					});	
+				}			
+			});
+			
+			$(".boxWrap", ".brand3").unbind("click").click(function(event){
+				event.preventDefault();
+				$(".brand3 .accordionList>li").removeClass("on");
+				$(this).parents("li").addClass("on");
+			});
+
+			$(".brand3 .accordionList>li .titTab>a").unbind("click").click(function(event){
+				event.preventDefault();
+				if($(this).parent().parent().hasClass("on")){
+					$(".brand3 .accordionList>li .boxWrap").slideUp('500', function(e){
+						$(this).parent().removeClass("on");
+					});
+				} else{
+					$(".brand3 .accordionList>li .boxWrap").slideUp('500', function(e){
+						$(this).parent().removeClass("on");
+					});
+					$(this).parent().next(".boxWrap").slideDown('500', function(e){
+						$(this).parent().addClass("on");
+					});	
+				}			
+			});
+		});
+
+		$(window).on('resize', function(e){
+			
+			if($(window).width() > 750){
+				if($(".brand3 .accordionList>li.on").length == 0){
+					$(".brand3 .accordionList>li").eq(0).addClass("on");
+				}
+			} 
+		});
+	}
+		
+});
+
+
+</script>

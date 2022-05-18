@@ -1,0 +1,1134 @@
+function dEI(elementID){
+	return document.getElementById(elementID);
+}
+
+function initToggle(id){
+		var containerEI=dEI("gnbmenu").getElementsByTagName("div");
+		var k = 0;
+		for (i=0;i<containerEI.length;i++) {
+			var bxa = dEI("gnbmenu").getElementsByTagName("div").item(i);
+			//document.getElementById("answ_"+i).style.display="none";
+		}
+		for (i=0;k<containerEI.length;i++) {
+			k = k+4;
+			var bxa = dEI("gnbmenu").getElementsByTagName("div").item(i);
+			if (i==id) {
+			document.getElementById("answ_"+i).style.display="block";
+			$("#tpnav_"+i).addClass("over");
+		}else{
+			document.getElementById("answ_"+i).style.display="none";
+			$("#tpnav_"+i).removeClass("over");
+		}
+	}
+}
+
+//페이지 이동
+function goPage(val){
+	document.location.href=val;
+}
+// Left Trim
+function ltrim( str ) {
+	for ( i=0 ; i<str.length ; i++ ) {
+		if ( str.charAt(i) == ' ' ) str = str.substring(1);
+		else break;
+	}
+	return str;
+}
+
+// Right Trim
+function rtrim( str ) {
+	for ( i=str.length-1 ; i>=0 ; i-- ) {
+		if ( str.charAt(i) == ' ' ) str = str.substring(0,i);
+		else break;
+	}
+	return str;
+}
+
+// Trim
+function trim( str )
+{
+	str = ltrim(str);
+	str = rtrim(str);
+
+	return str;
+}
+
+// 데이타 유효성 체크
+function isValidate(obj,msg,chk) {
+	if(chk == true) {
+		if(trim(obj.value).length < 1) {
+			alert(msg);
+			obj.value = "";
+			obj.focus();
+			return false;
+		}
+		else {
+			obj.value = trim(obj.value);
+			return true;
+		}
+	}
+	else {
+		return true;
+	}
+}
+
+// 라디오버튼 체크
+function isRadioCheck(v){
+	var l = v.length;
+	
+	if(l == undefined){
+		if(v.checked == true){
+			return true;
+		}
+	} else {
+		for(var i=0; i<l; i++){
+			if(v[i].checked == true){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+// 한글 체크
+function isKorean(str)
+{
+	var retValue = true;
+
+	if (str == null ) 	return false;
+	else {
+		for( var i = 0; i < str.length; i++ ) {
+			var chr = escape(str.charAt(i));					//입력된 값의 하나하나를 아스키(ASCII) 값으로 변환시킨 후...
+
+			if ( chr.length == 1 ) return false;					//영문의 경우 아스키값이 1자리니까...
+			else if ( chr.indexOf("%u")	 != -1 )  continue;
+			else if ( chr.indexOf("%") != -1 ) return false;		//"~"와 같은 특수문자의 경우 아스키값이 3자리니까...
+		}
+	}
+	return true;
+}
+
+//숫자영문체크
+function fn_checkAlphaNum(str) {
+	if (str == null) return false;
+	var temp1;
+	len1 = str.length;
+	for(l=0; l<len1; l++) {
+	     temp1 = str.charAt(l);
+	     if (escape(temp1).length >= 4) return false;
+	     if ( (temp1<'a' || temp1 > 'z') && (temp1 <'A' || temp1 >'Z') && (temp1 <'0' || temp1 >'9')) return false;
+	}
+	return true;
+}
+
+
+//영문체크
+function fn_checkAlpha(str) {
+/*	
+	if (str == null) return false;
+	var temp1;
+	len1 = str.length;
+	for(l=0;l<len1;l++){
+	     temp1 = str.charAt(l);
+	     if (escape(temp1).length >= 4) return false;
+             if ( (temp1<'a' || temp1 > 'z') && (temp1 <'A' || temp1 >'Z') ) return false;
+       }
+     return true;
+*/
+	var pattern = /[^a-zA-Z]/;	// 알파벳
+	return !pattern.test(str);
+}
+
+
+//숫자체크
+function fn_checkNum(str) {
+/*
+	if (str == null) return false;
+	var temp1;
+	len1 = str.length;
+	for(l=0;l<len1;l++){
+	     temp1 = str.charAt(l);
+	     if (escape(temp1).length >= 4) return false;
+	     if (temp1 <'0' || temp1 >'9') return false;
+    }
+    //if(len1==0) return false;
+    return true;
+*/    
+    var pattern = /[^0-9]/;				// 숫자
+	return !pattern.test(str);    
+}
+
+function isNumberHyphen(str) {
+/*	
+	var temp1;
+	len1 = str.length;
+	for(l=0;l<len1;l++){
+	     temp1 = str.charAt(l);
+	     if (escape(temp1).length >= 4) return false;
+             if ( temp1!='-' && (temp1 <'0' || temp1 >'9')) return false;
+       }
+     return true;
+*/     
+ 	var pattern = /[^0-9\-]/;				// 숫자, -
+	return !pattern.test(str);     
+}
+
+// Byte 수 리턴
+function getByte(str) {
+	var byteSize = 0;
+	var retValue = "";
+
+	if ( str == null ) {
+		return 0;
+	} else {
+		for( var i = 0; i < str.length; i++ ) {
+			var chr = escape(str.charAt(i));		//입력된 값의 하나 하나를 아스키(ASCII) 값으로 변환시킨 후...
+
+			if ( chr.length == 1 ) {					//영문의 경우 아스키값이 1자리니까...
+				byteSize ++;
+				retValue += str.charAt(i);
+			} else if ( chr.indexOf("%u") != -1 ) {		//한글의 경우"%"u로 시작하니까...
+				byteSize += 2;
+			} else if ( chr.indexOf("%") != -1 ) {		//"~"와 같은 특수문자의 경우 아스키값이 3자리니까...
+				byteSize += chr.length/3;
+				retValue += str.charAt(i);
+			}
+		}
+	}
+
+	return byteSize;
+}
+
+function isEmpty(value)
+{
+	if(value==null || trim(value) == "")  	return true;
+	
+	return false;
+}
+
+// contents String에 특정 자리수에 str 넣기
+function addStr(contents, jari, str)
+{
+
+   	contents = contents.substring(0,jari)+str+contents.substring(jari);
+   	return contents;
+}
+
+
+// 문자열 교체
+function replaceStr(contents, repsrc, repdes)
+{
+	var tmp_str1  = contents;
+   	contents = "";
+
+	while ( tmp_str1.indexOf(repsrc) >= 0 ) {
+		contents +=  tmp_str1.substring(0,tmp_str1.indexOf(repsrc))+repdes;
+		tmp_str1 = tmp_str1.substring(tmp_str1.indexOf(repsrc)+repsrc.length);
+	}
+	contents = contents + tmp_str1;
+	return contents;
+}
+
+
+// chr 수자 새기
+function findChar(contents, chr)
+{
+	var tmp_str1  = contents;
+	var cnt=0;
+
+
+	while ( tmp_str1.indexOf(chr) >= 0 ) {
+		tmp_str1 =  tmp_str1.substring(tmp_str1.indexOf(chr)+1);
+		cnt++;
+	}
+
+	return cnt;
+}
+
+//글자수 세기
+function StrLength(String) {
+
+	/*
+   var Length = 0;
+
+   var Nav = navigator.appName;
+   var Ver = navigator.appVersion;
+
+   var IsExplorer = false;
+
+   var ch;
+
+   if ( (Nav == 'Microsoft Internet Explorer') && (Ver.charAt(0) >= 4) ) {
+      IsExplorer = true;
+   }
+
+   if(IsExplorer) {
+
+      for(var i = 0 ; i < String.length; i++){
+
+         ch = String.charAt(i);
+
+         if ((ch == "\n") || ((ch >= "ㅏ") && (ch <= "히")) ||
+             ((ch >="ㄱ") && (ch <="ㅎ"))) {
+	    Length += 2;
+         } else {
+	    Length += 1;
+         }
+
+      }
+   }else {
+      Length = String.length ;
+   }
+
+   return Length;
+   */
+}
+
+/*----------------------------------------------------------------------------*/
+function CheckValid(String, SpaceCheck) {
+
+   var retvalue = false;
+
+   for (var i=0; i<String.length; i++) {
+
+      if (SpaceCheck == true) {
+         if (String.charAt(i) == ' ') {
+            retvalue = true;
+            break;
+         }
+      } else {
+         if (String.charAt(i) != ' ') {
+            retvalue = true;
+            break;
+         }
+      }
+   }
+
+   return retvalue;
+}
+
+
+//
+//
+/*----------------------------------------------------------------------------*/
+function IsEmpty(String) {
+
+   return !CheckValid(String, false);
+}
+
+//
+// 적합한 메일주소 여부 체크
+/*----------------------------------------------------------------------------*/
+
+function EmailCheck(String)
+{
+   var checkflag = true;
+   var retvalue;
+
+   if (window.RegExp) {
+      var tempstring = "a";
+      var exam = new RegExp(tempstring);
+      if (tempstring.match(exam)) {
+         var ret1 = new RegExp("(@.*@)|(\\.\\.)|(@\\.)|(^\\.)");
+         var ret2 = new RegExp("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$");
+         retvalue = (!ret1.test(String) && ret2.test(String));
+      } else {
+         checkflag = false;
+      }
+   } else {
+      checkflag = false;
+   }
+
+   if (!checkflag) {
+      retvalue = ( (String != "") && (String.indexOf("@")) > 0 && (String.index.Of(".") > 0) );
+   }
+
+   return retvalue;
+}
+// 정규식 체크
+function fn_checkEmail(val) {
+	var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	return regEmail.test(val);
+}
+// 전화번호 입력시 합당한 문자여부 체크
+/*----------------------------------------------------------------------------*/
+function ValidTelString(String) {
+
+   var RetValue = true;
+   var Count;
+   var PermitChar =
+         "0123456789-";
+
+   for (var i = 0; i < String.length; i++) {
+      Count = 0;
+      for (var j = 0; j < PermitChar.length; j++) {
+         if(String.charAt(i) == PermitChar.charAt(j)) {
+            Count++;
+            break;
+         }
+      }
+
+      if (Count == 0) {
+         RetValue = false;
+         break;
+      }
+   }
+   return RetValue;
+}
+// 모바일폰 체크
+function fn_checkMobile(val) {
+	var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+	return regExp.test(val);
+}
+// 일반전화 체크
+function fn_checkTel(val) {
+	var regExp = /^(0(2|3[1-3]|4[1-4]|5[1-5]|6[1-4]))-(\d{3,4})-(\d{4})$/;
+	return regExp.test(val);
+}
+/************************************************************************
+/************************************************************************
+* Function Name : ResNo_Check
+'* Description :   입력한 주민등록번호가 올바른지 검사.
+'* Parameters :	ResNo 입력된 주민등록번호
+'*************************************************************************/
+
+function ResNo_Check(ResNo){
+
+	var str_serial1=ResNo.substring(0,6);
+	var str_serial2=ResNo.substring(6,13);
+
+	if (str_serial1.length != 6){
+		alert("올바른 주민등록번호를 입력해주세요.");
+		return false;
+	}else if (str_serial2.length != 7){
+		alert("올바른 주민등록번호를 입력해주세요.");
+		return false;
+	}else if(isNaN(str_serial1) || isNaN(str_serial2)){
+		alert("올바른 주민등록번호를 입력해주세요.");
+		return false;
+	}else{
+		var a1=str_serial1.substring(0,1);
+		var a2=str_serial1.substring(1,2);
+		var a3=str_serial1.substring(2,3);
+		var a4=str_serial1.substring(3,4);
+		var a5=str_serial1.substring(4,5);
+		var a6=str_serial1.substring(5,6);
+
+		var check_digit=a1*2+a2*3+a3*4+a4*5+a5*6+a6*7;
+
+		var b1=str_serial2.substring(0,1);
+		var b2=str_serial2.substring(1,2);
+		var b3=str_serial2.substring(2,3);
+		var b4=str_serial2.substring(3,4);
+		var b5=str_serial2.substring(4,5);
+		var b6=str_serial2.substring(5,6);
+		var b7=str_serial2.substring(6,7);
+
+		var check_digit=check_digit+b1*8+b2*9+b3*2+b4*3+b5*4+b6*5;
+
+		check_digit = check_digit%11;
+		check_digit = 11 - check_digit;
+		check_digit = check_digit%10;
+
+		if (str_serial1.substring(2,3) > 1){
+			alert('잘못된 주민등록번호입니다.\n\n다시 확인하시고 입력해 주세요.');
+			return false;
+		}else	if (str_serial1.substring(4,5) > 3){
+			alert('잘못된 주민등록번호입니다.\n\n다시 확인하시고 입력해 주세요.');
+			return false;
+		}else	if (str_serial2.substring(0,1) > 4 || str_serial2.substring(0,1) == 0){
+			alert('잘못된 주민등록번호입니다.\n\n다시 확인하시고 입력해 주세요.');
+			return false;
+		}else	if (check_digit != b7){
+			alert('잘못된 주민등록번호입니다.\n\n다시 확인하시고 입력해 주세요.');
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+
+/**************************************************************************
+* Function Name : FieldChk()
+'* Description :  영문글자 체크
+'* Parameters :	uid, start, end
+**************************************************************************/
+function FieldChk(uid, start, end)
+{
+	if(uid.length < start || uid.length > end)
+	{
+		return false;
+	}
+
+	for(var i = 0; i < uid.length; i++)
+	{
+		var chr = uid.substr(i,1);
+		if((chr < '0' || chr > '9') && (chr < 'a' || chr > 'z') && (chr < 'A' || chr > 'Z'))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+
+/**************************************************************************
+* Function Name : IsNum()
+'* Description :  숫자체크
+'* Parameters :	temp
+**************************************************************************/
+function IsNum(temp)
+{
+	for(var i = 0; i < temp.length; i++)
+	{
+		var chr = temp.substr(i,1);
+		if(chr < '0' || chr > '9')
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+/**************************************************************************
+* Function Name : setComma()
+'* Description :  숫자에 콤마넣기
+'* Parameters :	retValue
+**************************************************************************/
+function setComma(str)
+{
+        str = ""+str+"";
+        var retValue = "";
+        for(i=0; i<str.length; i++)
+        {
+                if(i > 0 && (i%3)==0) {
+                        retValue = str.charAt(str.length - i -1) + "," + retValue;
+                 } else {
+                        retValue = str.charAt(str.length - i -1) + retValue;
+                }
+        }
+        return retValue;
+}
+
+/**
+ * 윈도 오픈
+ */
+function OpenWinMini(URL,WinName,w,h) {
+	OpenWin(URL, WinName, w, h, 0, 0, 0);
+}
+function OpenWinScroll(URL,WinName,w,h) {
+	OpenWin(URL, WinName, w, h, 0, 0, 2);
+}
+function OpenWin(URL,WinName,w,h,Menu,cSize,scroll) {
+
+	var features;
+
+	var nTop = (screen.height - h) / 2 - 30;
+	var nLeft = (screen.width - w) / 2;
+
+	if (Menu == 0 )
+		features = "toolbar=no,width=" + w + ",height=" + h + ",top=" + nTop + ",left=" + nLeft + ",status=no,menubar=no";
+	else
+		features = "toolbar=no,width=" + (w + 18) + ",height=" + h + ",top=" + nTop + ",left=" + nLeft + ",status=no,menubar=yes";
+
+	if (cSize == 0)
+		features = features + ",resizable=no";
+	else
+		features = features + ",resizable=yes";
+
+	if (scroll == 0 )
+		features = features + ",scrollbars=no";
+	else if(scroll == 2)
+		features = features + ",scrollbars=yes";
+	else
+		features = features + ",scrollbars=no";
+
+	//alert(features);
+
+	TheWindow = window.open(URL, WinName, features);
+	//TheWindow.focus();
+}
+
+function OpenWinPop(URL,WinName,w,h,nTop,nLeft,Menu,cSize,scroll) {
+
+	var features;
+
+	if (Menu == 0 )
+		features = "toolbar=no,width=" + w + ",height=" + h + ",top=" + nTop + ",left=" + nLeft + ",status=no,menubar=no";
+	else
+		features = "toolbar=no,width=" + (w + 18) + ",height=" + h + ",top=" + nTop + ",left=" + nLeft + ",status=no,menubar=yes";
+
+	if (cSize == 0)
+		features = features + ",resizable=no";
+	else
+		features = features + ",resizable=yes";
+
+	if (scroll == 0 )
+		features = features + ",scrollbars=no";
+	else if(scroll == 2)
+		features = features + ",scrollbars=yes";
+	else
+		features = features + ",scrollbars=no";
+
+	//alert(features);
+
+	TheWindow = window.open(URL, WinName, features);
+	//TheWindow.focus();
+}
+
+function OpenWinModal(URL, w, h, top, left, cSize, scroll) {
+	
+	var features;
+
+	var nTop = (top == 0)?(screen.height - h) / 2 - 30:top;
+	var nLeft = (left == 0)?(screen.width - w) / 2:left;
+
+	//alert(nTop + "::" + nLeft);
+	//if (w == 0 && h == 0) 
+		features = "dialogWidth:" + w + "px;dialogHeight:" + h + "px;dialogTop:" + nTop + ";dialogLeft:" + nLeft + ";status:no;help:no";
+	//else
+	//	features = "dialogWidth:" + w + "px;dialogHeight:" + h + "px;center:yes;status:no;help:no";
+
+	if (cSize == 0)
+		features = features + ";resizable:no";
+	else
+		features = features + ";resizable:yes";
+
+	if (scroll == 0 )
+		features = features + ";scroll:no";
+	else
+		features = features + ";scroll:no";
+
+	//alert(features);
+
+	window.showModalDialog(URL, window, features);
+}
+
+/**************************************************************************
+'* Description : textarea 작성시 입력글자수 체크
+'* Parameters : 입력숫자
+**************************************************************************/
+function fn_CheckStrLen(maxlen,field){
+	var temp;
+ 	var f = field.value.length;
+ 	var msglen = maxlen; //최대 길이
+ 	var tmpstr = "";
+ 	var enter = 0;
+ 	var strlen;
+
+ 	// 초기 최대길이를 텍스트 박스에 뿌려준다.
+ 	if(f == 0){
+  	document.getElementById("len").innerHTML = 0;
+	}
+	else {
+  	for(k=0;k<f;k++){
+   		temp = field.value.charAt(k);
+   		if(temp == '\n') {// 입력 라인 제한을 위해 엔터키 횟수 증가
+    		enter++;
+   		}
+   		if(escape(temp).length > 4)
+	    	msglen -= 2;
+   		else
+	    	msglen--;
+
+   		if(msglen < 0){
+    		alert("총 영문 "+maxlen+"자 한글 "+maxlen/2+"자 까지 쓰실 수 있습니다.");
+    		field.value = tmpstr;
+    		break;
+   		}
+   		else if(enter > 3){
+    		alert("라인수 4라인을 넘을수 없습니다.");
+    		enter = 0;
+    		strlen = tmpstr.length - 1;
+    //alert(strlen);
+    		field.value = tmpstr.substring(0,strlen);
+    		break;
+   		}
+   		else {
+    		document.getElementById("len").innerHTML = (maxlen-msglen);
+    		tmpstr += temp;
+   		}
+  	}
+ 	}
+}
+
+var isDOM = ( document.getElementById ? true : false );
+var isIE4 = ( ( document.all && !isDOM ) ? true : false );
+var isNS4 = ( document.layers ? true : false );
+var isNS = navigator.appName == "Netscape";
+
+
+ function resizeFrame(iframeObj){
+ 	//var iframe = document.getElementById('ifrm');
+	//iframe.setAttribute( 'height', height ); 
+ 	
+ 	//document.getElementById("ifrm").height = document.getElementById("ifrm").document.body.scrollHeight;
+ 	
+ 	document.getElementById("ifrm").height = ifrm.document.body.scrollHeight;
+
+ 	//document.getElementById("ifrm").width = document.getElementById("ifrm").document.body.scrollWidth;
+ 	//document.all.ifrm.height = ifrm.document.body.scrollHeight;
+ 	//getRef("ifrm").height = ifrm.document.body.scrollHeight;
+	//getRef("ifrm").width = ifrm.document.body.scrollWidth;
+
+	/*
+  var innerBody = iframeObj.contentWindow.document.body;
+  oldEvent = innerBody.onclick;
+  innerBody.onclick = function(){ resizeFrame(iframeObj, 1);oldEvent; };
+  var innerHeight = innerBody.scrollHeight + (innerBody.offsetHeight - innerBody.clientHeight);
+  iframeObj.style.height = innerHeight;
+  var innerWidth = innerBody.scrollWidth + (innerBody.offsetWidth - innerBody.clientWidth);
+  iframeObj.style.width = innerWidth;
+  if( !arguments[1] )        // 특정 이벤트로 인한 호출시 스크롤을 그냥 둔다.
+    this.scrollTo(1,1);
+	*/
+ }
+ 
+ function resizeFrame2(height){
+ 	var iframe = document.getElementById('ifrm');
+	iframe.setAttribute( 'height', height ); 
+ 	
+ }
+
+
+	function getRef( id ) {
+		if( typeof(id) == "object" ) return id;
+		if ( isDOM ) return document.getElementById( id );
+		if ( isIE4 ) return document.all[id];
+		if ( isNS4 ) return document.layers[id];
+	}
+
+
+
+
+
+ var img1 ;
+ function imgSize( img ){
+  img1= new Image();
+  img1.src=(img.src);
+  imgControll(img);
+ }
+
+ function imgControll(img){
+  if((img1.width!=0)&&(img1.height!=0)){
+   viewImage(img);
+  }else{
+   controller="imgControll('"+img+"')";
+   intervalID=setTimeout(controller,20);
+  }
+ }
+
+ function viewImage(img){
+  var width = img1.width;
+  var height = img1.height;
+
+  var temp = 0;
+  var max_width= 600;   // 이미지의 최대 크기    
+  var max_height= 600;   // 이미지의 최대 크기    
+  
+  if ( width > max_width ) {  // 이미지가 600보다 크다면 너비를 600으로 맞우고 비율에 맞춰 세로값을 변경한다.     
+     height = height/(width / max_width);
+     width = max_width;    
+  }
+  if ( height > max_height ) {  // 이미지가 400보다 크다면 너비를 400으로 맞우고 비율에 맞춰 세로값을 변경한다.     
+     width = width/(height / max_height);
+     height = max_height;
+  }
+  img.width = width;
+  img.height = height;
+ }
+
+ 
+	function lpad(iter, len, org){
+    	var org_l = org.length;
+        
+        for(var i=0; i<len-org_l; i++){
+            org = iter + org;
+        }
+        
+        return org;
+    }
+    
+
+	
+	// textarea 글자체크 및 span id=remrk_len 에 길이 표시
+	function fn_checkByteDisp(obj, maxlength){
+		var len = getByte(obj.value);
+		//var maxlen = msglen = 500;
+		var maxlen = msglen = maxlength;
+		var tmpstr = "";
+		
+		if(len == 0) document.getElementById("remrk_len").innerHTML = 0;
+		
+		for(var k=0; k<len; k++){
+			temp = obj.value.charAt(k);
+			
+			if(escape(temp).length > 4)
+		    	msglen -= 2;
+	   		else
+		    	msglen--;
+
+	   		if(msglen < 0){
+	    		//alert(maxlen + "Byte 까지 쓸수 있습니다.");
+	    		obj.value = tmpstr;
+	    		break;
+	   		}else {
+	    		document.getElementById("remrk_len").innerHTML = (maxlen-msglen);
+	    		tmpstr += temp;
+	   		}
+		}
+		
+	}	
+	
+	// 키프레스 이벤트에 걸어서 숫자아니면 입력안되게
+	function fn_OnlyNumber(obj) {
+		//alert(event.keyCode);
+		if(event.keyCode < 48 || event.keyCode > 57) {
+			//event.keyCode = null;
+			event.returnValue = false;
+		}
+	}
+	
+	// 키프레스 이벤트에 걸어서 숫자 영문 아니면 입력안되게
+	function fn_OnlyNumberAlpha(obj) {
+		//alert(event.keyCode);
+		if((event.keyCode >= 48 && event.keyCode <= 57) ||
+		   (event.keyCode >= 65 && event.keyCode <= 90) ||
+		   (event.keyCode >= 97 && event.keyCode <= 122)) {
+			// ok
+		} else {
+			//event.keyCode = null;
+			event.returnValue = false;
+		}
+	}
+	
+	// 숫자로 변환, 빈값은 0
+	function convertInt(val) {
+  		var u = trim(val);
+  		if(u == "") return 0;
+  		else return parseInt(u);
+	}	
+	
+	// 팝업검색 초기화
+	function fn_initPopVal(obj1, obj2) {
+		obj1.value = "";
+		obj2.value = "";
+	}
+	
+	// 키프레스 이벤트에 걸어서 숫자 및 - 아니면 입력안되게 : 20120903 추가
+	function fn_OnlyNumberDash(arg) {
+		if(event.keyCode < 48 || event.keyCode > 57) {
+			alert(event.keyCode);
+			if (event.keyCode != 45) {
+				//event.keyCode = null;
+				event.returnValue = false;
+			}	
+		}
+	}	
+	
+	// 키프레스 이벤트에 걸어서 숫자 및 - 및 스페이스 아니면 입력안되게 : 20120903 추가
+	function fn_OnlyNumberDashSpace(arg) {
+		if(event.keyCode < 48 || event.keyCode > 57) {
+			//alert(event.keyCode);
+			if (event.keyCode != 45 && event.keyCode != 32) {
+				event.keyCode = null;
+			}	
+		}
+	}	
+	
+//-----------------------------------------------------------------------------------------------
+//
+//	날짜 관련
+//	
+//-----------------------------------------------------------------------------------------------	
+var dt_token = "/";		// 날짜 구분자
+//var dt_token = ".";		// 날짜 구분자
+	
+// 날짜 체크
+function checkDate(YYYYMMDD)
+{
+
+	if(YYYYMMDD.length!=8) return false;
+	if(!fn_checkNum(YYYYMMDD)) return false;
+ 	return checkDateYMD(YYYYMMDD.substring(0,4) ,YYYYMMDD.substring(4,6), YYYYMMDD.substring(6,8));
+}
+
+// 날짜 체크
+function checkDateYMD(v_year,v_month,v_day ){
+
+	var err=0;
+	if ( v_year.length != 4) err=1;
+	if ( v_month.length != 1 &&  v_month.length !=  2 ) err=1;
+	if ( v_day.length != 1  &&  v_day.length !=  2) err=1;
+
+
+	r_year = eval(v_year) ;
+	r_month = eval(v_month);
+	r_day = eval(v_day)  ;
+
+	if (r_month<1 || r_month>12) err = 1;
+	if (r_day<1 || r_day>31) err = 1;
+	if (r_year<0 ) err = 1;
+
+
+	if (r_month==4 || r_month==6 || r_month==9 || r_month==11){
+		if (r_day==31) err=1;
+	}
+
+	// 2,윤년체크
+	if (r_month==2){
+		var g=parseInt(r_year/4);
+
+		if (isNaN(g)) {
+			err=1;
+		}
+		if (r_day>29) err=1;
+		if (r_day==29 && ((r_year/4)!=parseInt(r_year/4))) err=1;
+	}
+
+	if (err==1)	return false;
+	else   return true;
+}
+
+function toTockenDayStr(token)
+{
+	var toDt  = new Date();
+	var yearStr  = toDt.getYear();
+	var monthStr = toDt.getMonth()+1;
+	var dateStr  = toDt.getDate();
+	if (monthStr<10)  monthStr = "0"+monthStr;
+	if (dateStr<10)  dateStr= "0"+dateStr;
+	//return 	yearStr + token + monthStr + token + dateStr;		// kor
+	return 	dateStr + token + monthStr + token + yearStr;	// bogota
+}
+	
+// 오늘부터 날짜계산 : 과거는 -, 미래는 +
+function fn_date(term){
+	var new_date = new Date();
+    new_date.setDate(new_date.getDate() + term);
+    
+	return fn_getDateFormat(new_date);    
+}
+
+// 오늘부터 날짜계산(월단위) : 과거는 -, 미래는 +
+function fn_dateMonth(term){
+	var new_date = new Date();
+	new_date.setMonth(new_date.getMonth() + term);
+    
+    return fn_getDateFormat(new_date);
+}
+  
+// 기본날짜 검색 : 한달
+function fn_calResetDefault(frm){
+	
+	//frm.dt_1.value = fn_date(-31);
+	frm.dt_1.value = fn_dateMonth(-1);
+	frm.dt_2.value = fn_date(0);
+}    
+
+// 기본날짜 검색 : 공백
+function fn_calResetNull(frm){
+	
+	//frm.dt_1.value = fn_date(-31);
+	frm.dt_1.value = "";
+	frm.dt_2.value = "";
+}		
+
+// 20120913 추가
+// 특정일로부터 날짜계산(월단위) : 과거는 -, 미래는 +
+function fn_dateMonthFrom(arg, term){
+	var sd = arg.split(dt_token);
+    var new_date = new Date(sd[0],sd[1]-1,sd[2]);		// kor       
+	//var new_date = new Date(sd[2],sd[1]-1,sd[0]);		// bogota
+    new_date.setMonth(new_date.getMonth() + term);
+
+	return fn_getDateFormat(new_date);    
+}	
+
+// date 받아서 포맷에 맞게 리턴
+function fn_getDateFormat(new_date) {
+    var y = new_date.getFullYear();
+    var m = new_date.getMonth()+1;
+    var d = new_date.getDate();
+
+    if(m < 10) m = "0" + m;
+    if(d < 10) d = "0" + d;
+       
+    var ymd = y + dt_token + m + dt_token + d;	// kor
+    //var ymd = d + dt_token + m + dt_token + y;		// bogota
+       
+    return ymd;	
+}
+   
+// 0927 add
+// 보고타 형식 날짜를 yyyymmdd로 변경
+function fn_convertDt(dt, delim) {
+	if (dt == "" || delim == "") return dt;
+   	
+   	var dt_arr = dt.split(delim);
+   	if (dt_arr.length != 3) return dt;
+   	
+   	// kor : yyyy mm dd
+   	var dt_str = dt_arr[0] + "" + dt_arr[1] + "" + dt_arr[2];
+   	
+   	// bogota : dd mm yyyy
+   	//var dt_str = dt_arr[2] + "" + dt_arr[1] + "" + dt_arr[0];
+   	
+   	return dt_str;
+}
+   
+// 일자검색 범위 두개를 받아서 전후관계 체크, 옳으면 true
+function fn_checkDtBefAft(dt_1, dt_2) {
+		
+	var dt_1_str = fn_convertDt(dt_1, dt_token);
+	var dt_2_str = fn_convertDt(dt_2, dt_token);		
+	
+	if (dt_1_str > dt_2_str) return false;
+	else					 return true;
+}
+
+// 일자검색 간격
+function fn_getDateInterval(dt1, dt2, ymd) {
+    sd = dt1.split(dt_token);
+    ed = dt2.split(dt_token);
+    var st = new Date(sd[0],sd[1]-1,sd[2]).getTime();
+    var et = new Date(ed[0],ed[1]-1,ed[2]).getTime();
+    
+    //var fromto = (et-st)/(1000*60*60*24) + 1;
+    var fromto = (et-st)/(1000*60*60*24);
+    if (ymd == "Y")			fromto = fromto/365;
+    else if (ymd == "M")	fromto = fromto/30;
+    
+    return fromto;
+}
+
+// 특수문자 체크
+function fn_existSpecial(val) {
+	var trim_val = trim(val);
+	//trim_val = trim_val.toLowerCase();
+	
+	var rtn = false;
+	
+	var special_pattern = /[`~!@#$%^&*=|\\:;\'\",<>?\/]/g;
+	if (special_pattern.test(trim_val) == true) rtn = true;
+		
+	return rtn;	
+}
+
+// 비밀번호 체크 -숫자, 알파벳  모두 포함
+function fn_existAlpha(val) {
+	var pattern = /[a-z]/i;				// 알파벳
+	return pattern.test(val);
+}
+function fn_existNum(val) {
+	var pattern = /[0-9]/;				// 숫자
+	return pattern.test(val);
+}
+function fn_existSpecialPwd(val) {
+	var pattern = /[\!\@\#\$\%\&\^\*]/;	// 특수문자
+	return pattern.test(val);
+}
+function fn_existSpace(val) {
+	var pattern = /[\s]/;				// 공백체크
+	return pattern.test(val);
+}
+function fn_checkPwd(val) {	
+	if (fn_existAlpah(val) && fn_existNum(val) && fn_existSpecialPwd(val) && !fn_existSpace(val)) ret = true;
+	//alert("ret="+ret);	
+	return ret;		
+}
+
+
+///////////////
+//쿠키 관련 //
+///////////////
+
+//쿠키값 가져오기
+function getCookie (name) {
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while (i < clen) {
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg)
+			return getCookieVal (j);
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0) break;
+	}
+	return null;
+}
+
+//쿠키값 파싱
+function getCookieVal(offset) {
+	var endstr = document.cookie.indexOf (";", offset);
+	if (endstr == -1)
+		endstr = document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
+}
+/*
+//쿠키값 셋팅
+function setCookie(name, value) {
+	var argv = setCookie.arguments;
+	var argc = setCookie.arguments.length;
+	var expires = (2 < argc) ? argv[2] : null;
+	var path = (3 < argc) ? argv[3] : null;
+	var domain = (4 < argc) ? argv[4] : null;
+	var secure = (5 < argc) ? argv[5] : false;
+	document.cookie = name + "=" + escape (value) +
+	((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+	((path == null) ? "" : ("; path=" + path)) +
+	((domain == null) ? "" : ("; domain=" + domain)) +
+	((secure == true) ? "; secure" : "");
+}
+*/
+//24시간 기준 쿠키 설정하기  
+//expiredays 후의 클릭한 시간까지 쿠키 설정  
+function setCookie( name, value, expiredays ) {   
+	var todayDate = new Date();   
+	todayDate.setDate( todayDate.getDate() + expiredays );   
+	document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+}  
+
+// 00:00까지 유지되는 쿠키 설정
+//expiredays 의 새벽  00:00:00 까지 쿠키 설정
+function setCookie00(name, value, expiredays) {   
+    var todayDate = new Date();   
+    todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);  
+    if (todayDate > new Date()) {  
+    	expiredays = expiredays - 1;  
+    }  
+    todayDate.setDate( todayDate.getDate() + expiredays );   
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+    alert(document.cookie);
+}
+
+//------------------------------------------------------------------
+// 매일유업 전용
+//------------------------------------------------------------------
+// 로그아웃
+function fn_logout(returnUrl) {
+	if (confirm("로그아웃하시겠습니까?")) {
+		//document.location.href = "/Member/Logout.jsp?returnUrl=" + returnUrl;
+		//alert("fn:" + returnUrl);
+		returnUrl = "/";
+		location.href = "/Member/Logout.jsp?returnUrl=" + returnUrl;
+	}
+}
+// 매일아이 회원가입 팝업 : 입력값 true false
+function fn_popupJoin(isMobile){
+	//alert("isMobile==" + isMobile);
+	if (isMobile) {		// 모바일
+		//OpenWinScroll("http://m.maeili.com/member.do?command=signup_family&step=01&join_sec=35", "Join", 850, 750);
+		OpenWinScroll("http://m.maeili.com/member.do?command=signup_family&step=01&join_sec=22_02", "Join", 850, 750);
+	} else {			// 웹
+		OpenWinScroll("http://www.maeili.com/member.do?command=signup_family&step=01&join_sec=20", "Join", 850, 750);
+	}
+}
+// 로그인 확인 팝업
+function fn_alertLogin(returnUrl) {
+	//if (confirm("로그인이 필요한 서비스입니다.\n\n로그인 화면으로 이동하시겠습니까?")) {
+	//	location.href = "/Member/Login.jsp?returnUrl=" + returnUrl;
+	//}
+	OpenWinMini("/Member/Login.jsp?returnUrl=" + returnUrl, "Login", 450, 514);
+}
