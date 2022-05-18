@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Katuri';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    #container {
+        position: relative;
+        width: 1000px;
+        height: 969px;
+    }
+
+    .main {
+        position: absolute;
+        width: 700px;
+        height: 376px;
+        top: 11%;
+        left: 14%;
+        background-color: bisque;
+        border-radius: 10%;
+        border: 8px solid lightsalmon;
+    }
+
+    .hol {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: 5%;
+    }
+
+    .hol_btn button {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: lightblue;
+        font-size: 120px;
+        border-radius: 50%;
+        font-family: 'Katuri';
+    }
+
+    .jak {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        right: 5%;
+    }
+
+    .jak_btn button {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: lightpink;
+        font-size: 120px;
+        border-radius: 50%;
+        font-family: 'Katuri';
+    }
+
+
+    .chogi button{
+        position: absolute;
+        width: 109px;
+        height: 60px;
+        top: 4%;
+        left: 2%;
+    }
+
+    .jasan {
+        position: absolute;
+        width: 300px;
+        height: 69px;
+        bottom: 11%;
+        right: 67%;
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .pandon {
+        position: absolute;
+        width: 278px;
+        height: 26px;
+        bottom: 19%;
+        left: 28%;
+    }
+
+    .pandon input {
+        text-align: end;
+    }
+
+    .gg {
+        position: absolute;
+        width: 200px;
+        top: 0%;
+        right: 3%;
+        text-align: center;
+    }
+
+    .gg b {
+        font-size: 30px;
+    }
+
+    #betting {
+        position: absolute;
+        width: 800px;
+        height: 401px;
+        right: 12%;
+        top: 55%;
+        text-align: center;
+    }
+
+    .bet_main {
+        position: absolute;
+        width: 750px;
+        height: 338px;
+        top: 7%;
+        left: 4%;
+        background-color: bisque;
+        border-radius: 10%;
+        border: 8px solid lightsalmon;
+    }
+
+    .btn_1 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        left: 11%;
+        font-size: 16px;
+    }
+
+    .btn_2 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        left: 41%;
+        font-size: 16px;
+    }
+
+    .btn_3 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 29%;
+        right: 9%;
+        font-size: 16px;
+    }
+
+    .btn_4 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        left: 11%;
+        font-size: 16px;
+    }
+
+    .btn_5 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        left: 41%;
+        font-size: 16px;
+    }
+
+    .btn_6 button {
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        top: 49%;
+        right: 9%;
+        font-size: 16px;
+    }
+
+    .chogiwha button {
+        position: absolute;
+        width: 157px;
+        height: 50px;
+        bottom: 16%;
+        right: 12%;
+        font-size: 16px;
+    }
+
+    .gobet {
+        position: absolute;
+        top: 0%;
+        left: 36%;
+    }
+
+    .hj_main {
+        position: absolute;
+        width: 1000px;
+        height: 969px;
+        /* top: 10%;
+        left: 15%; */
+        background-color: lightblue;
+    }
+    
+    .hj_top {
+    top: -3%;
+    position: absolute;
+    font-family: 'ROKAFSansBold';
+    left: 25%;
+    font-size: 30px;
+    }
+
+    .fade-in-box {
+  display: inline-block;
+  /* padding: 10px; */
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+    }
+    @keyframes fadein {
+        from {
+            opacity: 0;
+            transform: scale(0.1);
+            transition: 1s;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes fadein { /* Firefox */
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadein { /* Safari and Chrome */
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @-o-keyframes fadein { /* Opera */
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    body {
+        margin: 0;
+        position: relative;
+        width: 1000px;
+    }
+
+    .result {
+        position: absolute;
+        width: 700px;
+        height: 50px;
+        top: 48%;
+        left: 14%;
+    }
+
+    .result p {
+        font-size: 37px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    #resultList {
+        position: absolute;
+        width: 700px;
+        height: 969px;
+        top: 0%;
+        right: -70%;
+        background-color: aliceblue;
+
+    }
+
+    @media ( max-width: 480px ) {
+        #resultList {
+            top: 100%;
+            width: 100%;
+            left: 0%;
+            right: 0%;
+        }
+      }
+
+</style>
+<body>
+    <div id="container" >
+
+        <div class="hj_main" >
+            <div class="result">
+                <p id="displayResult"></p>
+                </div>
+            <div class="hj_top">
+                <h1>두근 두근 홀짝 게임</h1>
+            </div>
+            <div class="main">
+
+                <div class="hol">
+                    <div class="hol_btn">
+                        <button onclick="play(1)">홀</button>
+                    </div>
+
+                </div>
+                <div class="jak">
+                    <div class="jak_btn">
+                        <button onclick="play(2)" >짝</button>
+                    </div>
+                </div>
+            </div>
+            <div id="betting">
+                <div class="bet_main">
+                    <div class="gobet">
+                        <h1>홀짝 베팅 진행</h1>
+                    </div>
+                    <div class="btn_1">
+                        <button onclick="bet_btn(100)">100원<br>(백원)</button>
+                    </div>
+                    <div class="btn_2">
+                        <button onclick="bet_btn(1000)">1000원<br>(천원)</button>
+                    </div>
+                    <div class="btn_3">
+                        <button onclick="bet_btn(10000)">10,000원<br>(만원)</button>
+                    </div>
+                    <div class="btn_4">
+                        <button onclick="bet_btn(100000)">100,000원<br>(십만원)</button>
+                    </div>
+                    <div class="btn_5">
+                        <button onclick="bet_btn(1000000)">1,000,000원<br>(백만원)</button>
+                    </div>
+                    <div class="btn_6">
+                        <button onclick="bet_btn(10000000)">10,000,000원<br>(천만원)</button>
+                    </div>   
+                    <div class="chogiwha">
+                        <button onclick="bet_cho()">베팅 초기화</button>
+                    </div>
+                    <div class="jasan">
+                        소유자산 - <br><span id="asset">0</span>원
+                    </div>
+                    <div class="pandon">
+                        판돈 : <input type="number" id="pandon" value="0" readonly>원
+                    </div>
+                    <div class="chogi">
+                        <button onclick="setAsset();">초기 비용 셋팅</button>
+                    </div>
+                    <div class="gg">
+                        <p class="rijo">이번 회차 결과 : <b id="result"></b> </p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div id="resultList">
+
+    </div>
+
+
+</body>
+</html>
+<script>
+
+var asset = 0;
+var pandon;
+
+function bet_btn(betting) {
+    var inputvalue = parseInt(document.querySelector('#pandon').value);
+    document.querySelector('#pandon').value = inputvalue + betting;
+}
+
+function bet_cho() {
+    document.querySelector('#pandon').value = 0;
+}
+
+
+//초기 비용 셋팅 함수
+
+function setAsset(){
+
+//소유 자산이 0 이거나 오백만(5000000)원 이상이 아니면 자산 초기화
+
+//시키지 못한다.
+
+if(asset!=0||asset>=5000000){//0원~500만원 까지
+
+document.querySelector("#displayResult").innerText = "판돈이 충분하여 셋팅 할 수 없습니다"; 
+return;
+
+}//if
+
+asset=1000000;//100만원으로 추가
+
+//소유 자산에 100만원을 표시
+
+document.getElementById("asset").innerHTML=asset;
+
+}//setAsset()
+
+
+function play(select) {       
+    // 홀 , 짝 랜덤 // 0 ~ 0.99..  * 2 // 0 ~ 1.999999 // 1 ~ 2 
+    var random = Math.floor(Math.random() * 2) + 1;        
+    // 랜덤한 숫자를 2로 나눠서 몫이 0 짝 1 홀
+    if (random % 2 == 0) {
+        document.querySelector('#result').innerText='짝';
+    } else {
+        document.querySelector('#result').innerText='홀';
+    }
+    // 사용자 선택한 버튼 랜덤한 숫자를 비교해서 
+
+        pandon = parseInt(document.getElementById('pandon').value);
+        console.log(pandon);
+        console.log(typeof(pandon));
+
+        if(asset<=0||asset>=500000000){
+        document.querySelector("#displayResult").innerText = "판돈이 부족합니다. 리필 받으세요"; 
+
+        return;
+
+        }
+
+        if(pandon>asset){
+        document.querySelector("#displayResult").innerText = "소유 자산보다 베팅한 금액이 더 많습니다."; 
+        return;
+        }
+
+        if(pandon<=0){
+        document.querySelector("#displayResult").innerText = "판돈은 0 이하로 걸 수 없습니다."; 
+        return;
+        }
+
+
+    
+    if (select == random) {
+        document.querySelector("#displayResult").innerText = "승리하였습니다."; 
+        asset = asset + pandon;
+        document.querySelector('#asset').innerText = asset;  
+        document.querySelector('#pandon').value = 0; 
+     
+    } else {
+        document.querySelector("#displayResult").innerText = "패배하였습니다."; 
+        asset = asset - pandon;
+        document.querySelector('#asset').innerText = asset;
+        document.querySelector('#pandon').value = 0;
+  
+    }
+}
+
+
+</script>

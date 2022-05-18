@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    <title>회원가입</title>
+</head>
+<style>
+    button {
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    
+</style>
+<body style="background-color: #f5f6f7;">
+    <div style="padding: 30px; text-align: center;">
+        <h1>회원가입</h1>
+    </div>    
+
+    <div class="">
+        <div class="row">
+            <div class="col">
+                <div id="liveAlertPlaceholder"></div>
+<button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+            </div>
+            <!-- 내용을 넣을 DIV -->
+            <div class="col">
+                <!-- form 태그가 실행되면 getdata()
+                index.html 액션을하는데,
+                방법이 get -->
+             
+
+
+                <form name="form" action="../back/signup.php" onsubmit="" method="post"> 
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">아이디</h3>                                        
+                    <input maxlength="10" id="uid" name="uid"
+                    class="form-control" type="text"                     
+                    onkeyup="chkID()"                    
+                    >                                            
+                    <span id="uids" style="color: red; display: none;">5~20자의 영문 소문자, 
+                        숫자와 특수기호(_),(-)만 사용 가능합니다.</span>
+                    <span id="uidg" style="color: green; display: none;">
+                        멋진 아이디네요!
+                    </span>
+
+                        
+                </div>
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">비밀번호</h3>                                        
+                    <input maxlength="16" id="pw" name="pw" class="form-control" 
+                    type="password" 
+                    onkeyup="chkpw()"                    
+                    >                                            
+                    <span id="pws" style="color: red; display: none;">
+                        8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.
+                    </span>                    
+                </div>
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">비밀번호확인</h3>                                        
+                    <input maxlength="10" id="cpw" class="form-control" type="password"  onkeyup="chkcpw()">                                            
+                    <span id="pwschk" style="color: red; display: none;">
+                        비밀번호가 일치하지 않습니다.
+                    </span>
+                    <span id="pwsblank" style="color: red; display: none;">
+                        필수 정보 입니다.
+                    </span>
+                </div>
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">이름</h3>                                        
+                    <input id="name" name="name" class="form-control" type="text"  onkeyup="chkname()">                                            
+                    <span id="names" style="color: red; display: none;">
+                        필수 정보 입니다.
+                    </span>                    
+                </div>
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">주소</h3>                                        
+                    <input name="location" class="form-control" type="text" 
+                     id = "addr" readonly
+                     onclick="postcode()">   
+                    <span id="addrs" style="color: red; display: none;">
+                    필수 정보 입니다.
+                    </span>                    
+                </div>
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">생년월일</h3>                                        
+                    <input id="birth" name="birth" class="form-control" type="text" 
+                    maxlength="6" placeholder="생년월일6자" 
+                    onkeyup="chkbirth()">                                            
+                    <span id="births" style="color: red; display: none;">
+                        필수 정보 입니다.
+                    </span>                    
+                </div>
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">성별</h3>                                        
+                    <select id="sex" name="sex" class="form-select" >
+                        <option value="man">남자</option>
+                        <option value="women" >여자</option>
+                        <option value="noselect" selected>선택안함</option>
+                    </select>                         
+                </div>                
+                <div style="padding: 8px;">
+                    <h3 style="text-align: left;">이메일</h3>                                        
+                    <input id="email" name="email" class="form-control" type="text" onkeyup="chkemail()">   
+                    <span id="emails" style="color: red; display: none;" >
+                        필수 정보 입니다.
+                    </span>                                                             
+                </div>                
+                <div>
+                    <button onclick="" class="btn btn-lg btn-primary" style="width: 100%;">
+                        가입하기</button>
+                </div>
+                </form>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../image/main.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+
+                  <span style="border-radius: 100%;
+                   background-color: 
+                   aquamarine; font-size: 100px;">10</span>
+            </div>
+    
+        </div> 
+    </div>
+
+    
+</body>
+</html>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
+    
+</script>
+<script>
+    var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+var alertTrigger = document.getElementById('liveAlertBtn')
+
+function alert(message, type) {
+  var wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+  alertPlaceholder.append(wrapper)
+}
+
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', function () {
+    alert('Nice, you triggered this alert message!', 'success')
+  })
+}
+    // input태그의 id 변수
+    let uid = document.querySelector("#uid");    
+    let pw = document.querySelector("#pw");
+    let cpw = document.querySelector("#cpw");
+    let name = document.querySelector("#name");
+    let addr = document.querySelector("#addr");
+    let birth = document.querySelector("#birth");
+    let sex = document.querySelector("#sex");
+    let email = document.querySelector("#email");
+
+    function postcode() {
+        new daum.Postcode({
+        oncomplete: function(data) {            
+            document.querySelector("#addr").value = 
+            data["address"];
+            document.querySelector("#addrs").style.display = "none";
+            
+        }
+        }).open();
+    }
+    
+    function getData() {          
+        // 유효성검사
+        // 정규식   
+        // return false 
+        // false 값을 반환한다.
+        // 이하 코드는 실행하지 않는다.                  
+        // if(!chkID()) {
+        //     uid.focus();
+        //     return false; 
+        // }
+        // if(!chkpw()) {
+        //     pw.focus();
+        //     return false; 
+        // }        
+        if(chkID()) {                        
+        } else {            
+            uid.focus();
+            return false;            
+        }
+        if(chkpw()) {                        
+        } else {            
+            pw.focus();
+            return false;            
+        }
+        if(chkcpw()) {                        
+        } else {            
+            cpw.focus();
+            return false;            
+        }
+        if(chkname()) {                        
+        } else {            
+            name.focus();
+            return false;            
+        }
+        if(chkaddr()) {                        
+        } else {            
+            addr.focus();
+            return false;            
+        }
+        if(chkbirth()) {                        
+        } else {            
+            birth.focus();
+            return false;            
+        }
+        if(chkemail()) {                        
+        } else {            
+            email.focus();
+            return false;            
+        }
+        
+        
+    }
+    function chkID() {
+        var idRE = /^[a-zA-z0-9]{5,10}$/;
+        if (idRE.test(uid.value)){        
+            document.querySelector("#uidg").style.display = "block";
+            document.querySelector("#uids").style.display = "none";            
+            return true;
+        } else {
+            document.querySelector("#uids").style.display = "block";
+            document.querySelector("#uidg").style.display = "none";
+            // 아이디가 정상적으로 입력이 안됬을때 안넘어가게
+            return false;
+            
+            
+        }
+    }
+
+    function chkpw() {
+        var pwRE = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+        if (pwRE.test(pw.value)){            
+            document.querySelector("#pws").style.display = "none";            
+            return true;
+        } else {            
+            document.querySelector("#pws").style.display = "block";            
+            return false;
+        }
+    }
+    
+    function chkcpw() {
+        if (pw.value == cpw.value) {  
+            // cpw 공백이면          
+            if ( cpw.value == "") {
+                console.log("같은데 공백");
+                document.querySelector("#pwsblank").style.display = "block";
+                cpw.focus();
+                return false; 
+            // cpw 공백이아니면                                 
+            } else {
+                console.log("같은데 공백아님");
+                document.querySelector("#pwsblank").style.display = "none";                 
+                document.querySelector("#pwschk").style.display = "none";            
+                return true;
+            }
+        // 비밀번호확인이 같지않을때
+        } else {   
+            // cpw 공백이아니면
+            if ( cpw.value != "") {
+                console.log("다른데 공백아님");
+                document.querySelector("#pwsblank").style.display = "none";                 
+                document.querySelector("#pwschk").style.display = "block";            
+                cpw.focus();
+                return false; 
+                
+            // cpw 공백이면 
+            } else {
+                console.log("다른데 공백");
+                document.querySelector("#pwsblank").style.display = "block";                                            
+                document.querySelector("#pwschk").style.display = "none";                    
+                cpw.focus();
+                return false; 
+            }
+            // pw, cpw 가 같지않거나 , cpw가 비어있으면 경고문을 block
+        } 
+    }
+
+    function chkname() {
+        if (name.value) {
+            // name에 값이 존재하면 경고문 non
+            document.querySelector("#names").style.display = "none";            
+            return true;
+        } else {            
+            document.querySelector("#names").style.display = "block";            
+            name.focus();
+            return false; 
+        }
+    }
+
+    function chkaddr() {
+        if (addr.value) {            
+            document.querySelector("#addrs").style.display = "none";            
+            return true;
+        } else {            
+            document.querySelector("#addrs").style.display = "block";            
+            addr.focus();
+            return false; 
+        }  
+    }
+
+    function chkbirth() {
+        var birthRE = /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/;
+        if(birthRE.test(birth.value)) {            
+            document.querySelector("#births").style.display = "none";            
+            return true;
+        } else {            
+            document.querySelector("#births").style.display = "block";            
+            birth.focus();
+            return false; 
+        }
+    }
+    
+    function chkemail() {
+        var emailRE = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
+        if(emailRE.test(email.value)) {            
+            document.querySelector("#emails").style.display = "none";            
+            return true;
+        } else {            
+            document.querySelector("#emails").style.display = "block";            
+            email.focus();
+            return false; 
+        }   
+    }
+</script>

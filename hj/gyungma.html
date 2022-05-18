@@ -1,0 +1,152 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<TITLE>달팽이경마장</TITLE>
+
+<script>
+    var set_money=2000; //초기 자본
+    var set_maxmoney=80; //최대걸수있는돈 (%)
+    var set_maxcnt=3; //최대 걸수있는 마리수
+    var set_meter=300; //경기장길이
+    var set_number=6; //마리수
+    var set_speed=4; //최고속도
+    //컨디션
+    var set_con = new Array("아 나 컨디션 최고야~","날믿으라구~","아 힘빠져..","고고","실력으로 보여주겠어..","감기걸린거 같애","평소처럼만 하면된다구..","콜록콜록..","아~ 배아퍼~","배고파..","내가 일등이닷!!","에효...","할말없어","부비부비","달리자~");
+    
+    var cnt=1;
+    var checkcnt=0;
+    var play=0;
+    function set_game(){
+        if(set_maxmoney>100)set_maxmoney=100;
+        document.all['mymoney'].value=set_money;
+         lqrest();
+    }
+
+    //시작~
+    function lqstart(){
+        if(play==0){
+                
+                cnt=0;
+                money=0;
+                checkcnt=0;
+                allmoney=document.all['mymoney'].value*1;
+                
+
+                //총얼마나 걸었나..
+                for(i=1;i<=set_number;i++)money+=document.all['race['+i+']'].value*1
+                //총몇마리에게 걸었나..
+                for(i=1;i<=set_number;i++){
+                    if((document.all['race['+i+']'].value*1)>0)checkcnt++;
+                }
+                //체크할건 체크하고..
+                if(checkcnt>set_maxcnt){
+                    alert(set_maxcnt+"마리이상 걸수없습니다.");
+                    return false;
+                }else if(money == 0){
+                    alert("돈을 걸어주세요");
+                    return false;
+                }else if(money > allmoney*set_maxmoney/100 && allmoney>100){
+                    alert("자신이 가진돈의 "+set_maxmoney+"% 이상은 걸수없습니다.\n\n현재가능금액 : "+allmoney*set_maxmoney/100);
+                    return false;
+                }else if(allmoney<money){
+                    alert("돈이모자랍니다.");
+                    return false;
+                }
+                for(i=1;i<=set_number;i++){
+                    //자 수정못하게 하고..
+                    document.all['race['+i+']'].readOnly=true;
+                    //컨디션 지우고..
+                    document.all['c['+i+']'].style.display="none";
+                }
+            document.all['mymoney'].value=document.all['mymoney'].value*1-money;
+            //경기 시~작
+            racing();
+            
+        }
+    }
+
+    //리셋
+    function lqrest(){            
+        if(document.all['mymoney'].value*1<=0){alert('돈이 모자랍니다.');return false;}
+        cnt=0;
+        money=0;
+        checkcnt=0;
+        play=0;
+        //컨디션..
+        for(i=1;i<=set_number;i++){
+            c=Math.floor(Math.random()*1024%set_con.length);
+            document.all['c['+i+']'].style.display="";
+            document.all['c['+i+']'].innerHTML="<"+set_con[c]+")";
+            document.all['race['+i+']'].readOnly=false;
+            document.all['race['+i+']'].value=0;
+            document.all['r['+i+']'].value=0;
+            document.all['m['+i+']'].value=0;
+            document.all['bar['+i+']'].width=0;
+        }
+
+    }
+
+    //레이싱
+    function racing(){
+        play=1;
+        for(i=1;i<=set_number;i++){
+            //자 다왔으면 등수를 매기자~
+            if(document.all['m['+i+']'].value>=set_meter && document.all['r['+i+']'].value == 0){document.all['r['+i+']'].value=cnt; cnt++;}
+            //다안왔으면
+            if(document.all['m['+i+']'].value<set_meter){
+                //랜덤값만큼
+                rand=Math.floor(Math.random()*100%set_speed);
+                //움직이자구~
+                document.all['m['+i+']'].value=(document.all['m['+i+']'].value*1+rand);
+                document.all['bar['+i+']'].width=document.all['m['+i+']'].value;
+            }
+        }
+        
+        if(cnt==set_number+1) raceend();
+        else LQtime=setTimeout("racing()",10);
+        
+    }
+    
+    //게임종료시..
+    function raceend(){
+        result_m=0;
+        for(i=1;i<=set_number;i++){
+            if(document.all['r['+i+']'].value=='1')result_m+=document.all['race['+i+']'].value*3;
+            if(document.all['r['+i+']'].value=='2')result_m+=document.all['race['+i+']'].value*2;
+            if(document.all['r['+i+']'].value*1==set_number)result_m-=document.all['race['+i+']'].value*2;
+        }
+        document.all['mymoney'].value=document.all['mymoney'].value*1+result_m;
+        alert('게임종료 \n\n'+result_m+'를 벌었다.');
+    }
+    function set_ground(){
+
+    }
+</script>
+
+
+</head>
+<body onload="set_game()">
+보유금액 : <INPUT TYPE="text" NAME="mymoney" value=1000 readonly>
+<TABLE border=1><form name=lqrace method=post>
+<TR>
+    <script>document.write("<TD width="+(set_meter+30)+">경기장</TD>");</script>
+    
+    <TD width=30>M</TD>
+    <TD width=50>돈걸기</TD>
+    <TD>결과</TD>
+</TR>
+<script>
+        for(i=1;i<=set_number;i++){
+            r=Math.floor(Math.random()*1024%16)*16;
+            g=Math.floor(Math.random()*1024%16)*16;
+            b=Math.floor(Math.random()*1024%16)*16;
+            document.write("<TR><TD style='color: rgb("+r+","+g+","+b+")'><img src=block.gif width=1 id=bar["+i+"] height=1><font size=2><B><font color=333333>_</font>@<font color=333333>y</font></B> <span id=c["+i+"]></span></font></TD><TD><INPUT TYPE=text NAME=m["+i+"] size=3 value=0 readonly></TD><TD><INPUT TYPE=text NAME=race["+i+"] size=5 value=0></TD><TD><INPUT TYPE=text NAME=r["+i+"] size=3 value=0 readonly>등</TD></TR>");
+        }
+</script>
+</TABLE>
+<input type="button" onclick="lqstart()" value="시작" name=star><input type="button" onclick="lqrest()" value="다시" name=rest></form>
+1등 -> 3배 , 2등 -> 2배 , 꼴등 -> -2배
+</body>
+</html>

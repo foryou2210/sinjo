@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .member_wrap{width:593px; margin:20px auto 40px auto; font-family: 'Montserrat','Noto Sans KR',sans-serif;}
+.member_pwd_wrap{margin:20px auto 40px auto;}
+.member_tit h2{font-size:28px; margin:0 0 20px 0; font-family: 'Montserrat','Noto Sans KR',sans-serif;}
+.member_cont{padding:70px 60px; border:1px solid #dbdbdb; font-family: 'Montserrat','Noto Sans KR',sans-serif;}
+.member_cont h3{font-weight:normal; font-size:18px; color:#222222;}
+.member_cont h3 + p{padding:5px 0 8px 0; color:#bebebc;}
+.login_input, .certify_confirm_input{border-top:1px solid #dbdbdb;}
+.wake_base_box .login_input{border-top:none 0;}
+
+/*.join_base_wrap .btn_center_box,
+.login_input + .btn_center_box,*/
+.member_cont .btn_center_box,
+.member_warning + .btn_center_box{margin:35px 0 0 0;}
+.join_ok_box .btn_center_box{padding:30px 0 0 0; border-top:1px solid #dbdbdb;}
+
+/* 로그인 */
+.member_cont .member_login_box h3{font-weight:normal; font-size:18px; color:#222222;}
+.member_cont .member_login_box .member_login{margin:0 0 20px 0;}
+.member_cont .member_login_box .login_input_sec{overflow:hidden;}
+.member_cont .member_login_box .login_input_sec > div{float:left;}
+.member_cont .member_login_box .login_input_sec input{display:block; width:292px; height:36px; margin:15px 0 10px 0; padding:0 0 0 8px; border:1px solid #d0d0d0; color:#979d9d;}
+.member_cont .member_login_box .login_input_sec button{float:right; width:158px; height:91px; margin:15px 0 0 0; border:1px solid #ab3e55; background:#ab3e55; color:#ffffff; font-size: 15px; font-weight:bold; cursor:pointer;}
+.member_cont .member_login_box .login_input_sec button:hover{background:#9b344a; border:1px solid #9b344a;}
+.member_cont .member_login_box .id_chk{padding:0 0 26px 0;}
+.member_cont .member_login_box .id_chk p{padding:6px 0 0 0;}
+.member_cont .member_login_box .id_chk span{display:inline-block;}
+.member_cont .member_login_box .id_chk input{display:none;}
+.member_cont .btn_login_box{overflow:hidden; margin:20px 0 0 0; padding:20px 0 0 0; border-top:1px solid #dcdcdc;}
+.member_cont .btn_login_box li{float:left; margin:0 0 0 10px;}
+.member_cont .btn_login_box li:first-child{margin:0;}
+.member_cont .nonmember_order_box p{padding:0 0 0 18px; background:url('../../img/member/icon_caution.png') no-repeat 0 3px; color:#6d6d6d;}
+.btn_member_join{width:120px; height:45px; margin:0; color:#ffffff; font-size:14px; border:1px solid #666666; background:#666666; cursor:pointer; font-weight:bold;}
+.btn_member_join:hover{border:1px solid #626262; color: #fff; background:#626262;}
+li { list-style-type: none;}
+a { text-decoration: none; color: white;}
+body,th,td,input,select,textarea,button {font-size:12px;line-height:1.5;font-family:'Montserrat','Noto Sans KR',Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+</style>
+<body>
+    <form id="formLogin" method="post" action="login.php">
+    <div class="member_wrap">
+        <p id="time"></p>
+        <p id="date"></p>
+		<div class="member_tit">
+			<h2>로그인</h2>
+		</div>
+		<!-- //member_tit -->
+		<div class="member_cont">
+
+				<input type="hidden" id="mode" name="id" value="login"/>
+				<input type="hidden" id="returnUrl" name="pw"/>
+				<div class="member_login_box">
+					<h3>회원 로그인</h3>
+					<div class="login_input_sec">
+						<div>
+							<input name="id" type="text" id="loginId"  value="" placeholder="아이디" required="true">
+							<input name="pw" type="password" id="loginPwd"  value="" placeholder="비밀번호" required="true">
+						</div>
+						<button type="submit" >로그인</button>
+					</div>
+                    <div class="btn_login_box">
+                        <ul>
+                            <li><button id="btnJoinMember" class="btn_member_join">
+                               <a href="join.html">회원가입</a></button></li>
+                            <li><button id="btnFindId" class="btn_member_join">아이디 찾기</button></li>
+                            <li><button id="btnFindPwd" class="btn_member_join">비밀번호 찾기</button></li>
+                        </ul>
+                    </div>
+				</div>
+
+        </div>
+    </div>   
+</form>       
+</body>
+</html>
+<script>
+    // //화면이 로드되고 나서 실행할 수 있디
+    // window.onload = function() {
+    //     // 1초마다 반복하겠다.
+    //     setInterval(setclock , 1000 )
+
+    // }
+
+    // // alert("환영합니다")
+    // console.log('오호~ 퍼가시려고? ㅋ');
+    // // 원래 로그인은 디비에 저장된
+    // // id pw를 비교해서 맞으면
+    // // 웹 서버에 세션을 부여해서 로그인을 유지하게 함
+    // // 지금은 로그인 버튼을 눌렀을때
+    // // id pw를 js에 출력.
+    // // function login() {
+    // //     // querySelector는  html과 소통하는 길
+    // //     var id = document.querySelector("input[name='id']").value;
+    // //     var pw = document.querySelector("input[name='pw']").value;
+    // //     document.getElementById("loginId")
+    // //     console.log(id);
+    // //     console.log(pw);
+    // //     alert("환영합니다!")
+    // // }
+
+    // function setclock() {
+    //     var date = new Date();
+    //     console.log(date.getHours());
+    //     console.log(date.getMinutes());
+    //     console.log(date.getSeconds());
+    //     var time = date.getHours() + "시" 
+    //     + date.getMinutes() + "분"
+    //     + date.getSeconds() + "초"
+    //     document.getElementById("date").innerHTML = date;
+    //     document.getElementById("time").innerHTML = time;
+    // }
+
+</script>

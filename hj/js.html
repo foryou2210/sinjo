@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#Calculator {
+    position: relative;
+    width: 1000px;
+    height: 912px;
+    background-color: lavender;
+}
+
+.main {
+    position: absolute;
+    width: 444px;
+    height: 613px;
+    top: 10%;
+    left: 10%;
+    background-color: rgb(210, 217, 225);
+    box-shadow: 1px 8px 7px 1px rgb(0 0 0 / 20%);
+}
+
+.display_main {
+    position: absolute;
+    width: 444px;
+    height: 100px;
+    top: 10%;
+    left: 0%;
+    text-align: end;
+}
+
+.display_main p {
+    position: absolute;
+    right: 0;
+    top: -25%;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.input_main {
+    position: absolute;
+    width: 444px;
+    height: 384px;
+    top: 37%;
+    left: 0%;
+}
+
+.plus {
+    position: absolute;
+    width: 109px;
+    height: 63px;
+    top: 66%;
+    right: 1%;
+    background-color: rgb(226, 230, 235);
+}
+
+.minus  {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: 49%;
+    right: 1%;
+}
+
+.multiply  {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: 32%;
+    right: 1%;
+}
+
+.division  {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: 15%;
+    right: 1%;
+}
+
+.result {
+    position: absolute;
+    width: 109px;
+    height: 63px;
+    top: 83%;
+    right: 1%;
+    background-color: rgb(226, 230, 235);
+}
+
+.lut2x {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: 15%;
+    right: 26%;
+}
+.x1 {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: 15%;
+    right: 51%;
+}
+
+.x2 {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: 15%;
+    right: 76%;
+}
+
+.x3 {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: -2%;
+    right: 1%;
+}
+
+.x4 {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: -2%;
+    right: 26%;
+}
+
+.x5 {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: -2%;
+    right: 51%;
+}
+
+.x6 {
+    position: absolute;
+    background-color: rgb(226, 230, 235);
+    width: 109px;
+    height: 63px;
+    top: -2%;
+    right: 76%;
+}
+.num1 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 66%;
+    right: 76%;
+}
+.num2 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 66%;
+    right: 51%;
+}
+.num3 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 66%;
+    right: 26%;
+}
+.num4 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 49%;;
+    right: 76%;
+}
+.num5 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 49%;
+    right: 51%;
+}
+.num6 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 49%;
+    right: 26%;
+}
+.num7 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 32%;
+    right: 76%;
+}
+.num8 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 32%;
+    right: 51%;
+}
+.num9 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 32%;
+    right: 26%;
+}
+.num0 {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 83%;
+    right: 51%;
+}
+.numcm {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 83%;
+    right: 26%;
+}
+.numpm {
+    position: absolute;
+    background-color: rgb(246, 247, 249);
+    width: 109px;
+    height: 63px;
+    top: 83%;
+    right: 76%;
+}
+
+
+button {
+    border: 0px;
+}
+
+.number {
+    border: 0;
+    background-color: rgb(210, 217, 225);
+    text-align: end;
+    padding: 0;
+    width: 444px;
+    height: 100px;
+    font-size: 40px;
+}
+
+
+</style>
+<body>
+    <!-- 계산기 메인 -->
+    <div id="Calculator">
+        <div class="main">
+            <div class="display_main">
+                <input class="number" type="number" value="0">
+            </div>
+            <div class="input_main">
+                <button class="plus" onclick="plus()">+</button>
+                <button class="minus" onclick="minus()">-</button>
+                <button class="multiply" onclick="multiply()">x</button>
+                <button class="division" onclick="division()">/</button>
+                <button class="result" onclick="result()">=</button>
+                <button class="lut2x">=</button>
+                <button class="x1">=</button>
+                <button class="x2">=</button>
+                <button class="x3">=</button>
+                <button class="x4" onclick="chogi()">C</button>
+                <button class="x5">CE</button>
+                <button class="x6">%</button>
+                <button class="num1" onclick="cal_num(1)">1</button>
+                <button class="num2" onclick="cal_num(2)">2</button>
+                <button class="num3" onclick="cal_num(3)">3</button>
+                <button class="num4" onclick="cal_num(4)">4</button>
+                <button class="num5" onclick="cal_num(5)">5</button>
+                <button class="num6" onclick="cal_num(6)">6</button>
+                <button class="num7" onclick="cal_num(7)">7</button>
+                <button class="num8" onclick="cal_num(8)">8</button>
+                <button class="num9" onclick="cal_num(9)">9</button>
+                <button class="num0" onclick="cal_num(0)">0</button>
+                <button class="numcm" onclick="cal_num(0)">.</button>
+                <button class="numpm" onclick="cal_num(0)">+-</button>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script>
+
+    // 입력한 값
+    var inputNumber = document.querySelector('.number');
+    // 결과 값
+    var resultNumber = parseInt(inputNumber.value);
+
+    function plus() {
+        resultNumber = resultNumber + parseInt(inputNumber.value)
+        console.log(resultNumber)
+
+    }
+    function minus() {
+        resultNumber = resultNumber - parseInt(inputNumber.value)
+        console.log(resultNumber)
+    }
+    function multiply() {
+        resultNumber = resultNumber * parseInt(inputNumber.value)
+        console.log(resultNumber)
+    }
+    function division() {
+        resultNumber = resultNumber / parseInt(inputNumber.value)
+        console.log(resultNumber)
+    }
+    function result() {
+        document.querySelector('.number').value = resultNumber;
+        console.log(resultNumber)
+    }
+
+    function cal_num(gsnum) {
+        var gnum = parseInt(document.querySelector('.number').value);
+        document.querySelector('.number').value =  gsnum;
+        console.log(typeof(gsnum))
+    }
+
+    function chogi() {
+        var don = document.querySelector('.number').value
+        don = 0;
+        resultNumber = 0;
+    }
+</script>
+

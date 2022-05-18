@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Bingo</title>
+<style>
+.table {
+font-family: arial, sans-serif;
+/* border-collapse: collapse; */
+width: 500px;
+height: 500px;
+}
+.td {
+border: 1px solid #000000;
+text-align: center;
+padding: 8px;
+}
+
+</style>
+</head>
+<body>
+<h1>Bingo Game</h1>
+<h3 id="count"></h3>
+</body>
+<script>
+var size = 5 //빙고판 사이즈
+var x = []; //빙고판에 1~25 랜덤값을 넣기 위한 변수
+var cnt = 0; //빙고 카운트
+var tArr = []; //빙고 확인 도와주는 배열
+var xcnt = 0; //가로 빙고 확인을 도와주는 변수
+var ycnt = 0; //세로 빙고 확인을 도와주는 변수
+var c1cnt = 0; //(\)대각선 빙고 확인을 도와주는 변수
+var c2cnt = 0; //(/)대각선 빙고 확인을 도와주는 변수
+
+//5x5배열 만들기
+for(i=0;i<size;i++){
+tArr[i] = new Array(5);}
+
+var count = document.getElementById("count");
+count.innerHTML = "<h3>Bingo : "+ cnt + "</h3>"; //현재 빙고 수
+
+//1~25까지 x 배열에 입력
+for(i=0;i<size*size;i++){
+x[i]=i+1;
+}
+//x배열 랜덤 정렬
+for(i=0;i<25;i++){
+var t = Math.floor(Math.random()*24);
+var tmp = x[i];
+x[i] = x[t];
+x[t] = tmp;
+}
+
+//빙고판 만들기
+document.write("<table class='table' border='1'>");
+for (a=0; a<size; a++) {
+document.write("<tr>");
+for(b=0; b<size; b++) {
+document.write("<td class='td' id="+a+b+" onclick='change(id)'>" + x[(a*5)+b] + "</td>");
+}
+document.write("</tr>");
+}
+document.write("</table>");
+//클릭 됐을때 반응 해줄 함수
+function change(id){
+var bb = document.getElementById(id);
+bb.style.background="lightblue";
+for(i=0;i<size;i++){
+for(j=0;j<size;j++){
+if(id==''+i+j){
+tArr[i][j]=0;
+}
+}
+}
+cnt = 0;
+c1cnt = 0;
+c2cnt = 0;
+for(i=0;i<size;i++){
+xcnt = 0;
+ycnt = 0;
+for(j=0;j<size;j++){
+if(tArr[i][j]==0){
+xcnt++;
+}
+if(tArr[j][i]==0){
+ycnt++;
+}
+if(i==j&&tArr[i][j]==0){
+c1cnt++;
+}
+if(i+j==4&&tArr[i][j]==0){
+c2cnt++;
+}
+}
+if(xcnt==5){
+cnt++;
+}
+if(ycnt==5){
+cnt++;
+}
+}
+if(c1cnt==5){
+cnt++;
+}
+if(c2cnt==5){
+cnt++;
+}
+
+count.innerHTML = "<h3>Bingo : "+ cnt + "</h3>"; //빙고 갯수 화면에 출력
+};
+
+</script>
+</html>

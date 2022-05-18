@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /* ----- 바디 ----- */
+
+    body {
+        margin: 0;
+        background-image: url(img/대장간.jpg);
+        background-size: cover;
+        background-repeat : no-repeat;
+    }
+
+    /* ------ 컨테이너 ------ */
+
+    #container {
+        position: relative;
+        width: 1000px;
+        height: 912px;
+
+
+    }
+
+        /* ------ 상점 화면 ------ */
+
+        #shop_main {
+            position: absolute;
+            width: 550px;
+            height: 700px;
+            top: 10%;
+            left: 35%;
+            background-color: beige;
+            display: none;
+        }
+
+        #shop_main .shop_window {
+            position: absolute;
+            width: 480px;
+            height: 600px;
+            top: 7%;
+            left: 7%;
+            display: none;
+        }
+
+        /* ----- 상점 화면 끝 ----- */
+
+
+        /* ------ 사이드 바 ------ */
+
+        #side_bar {
+            position: absolute;
+            width: 210px;
+            height: 850px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            /* background-color: beige; */
+        }
+
+        #side_bar .shop_btn {
+            position: absolute;
+            width: 190px;
+            height: 80px;
+            top: 21%;
+            left: 4%;
+        }
+
+        #side_bar .shop_btn:nth-child(2) {
+            position: absolute;
+            top: 33%;
+            left: 4%;
+        }
+
+        #side_bar .shop_btn:nth-child(3) {
+            position: absolute;
+            top: 45%;
+            left: 4%;
+        }
+
+        #side_bar .shop_btn:nth-child(4) {
+            position: absolute;
+            top: 57%;
+            left: 4%;
+        }
+
+        /* ----- 사이드 바 끝 -----  */
+
+
+        /* ----- 메인 ----- */
+
+        #main {
+            position: absolute;
+            width: 758px;
+            height: 876px;
+            top: 2%;
+            right: 1%;
+            /* background-color: beige; */
+        }
+
+            /* --- 상단 메인 --- */
+
+            #top_main {
+                position:absolute;
+                width: 698px;
+                height: 300px;
+                top: 1%;
+                left: 4%;
+                /* background-color: blueviolet */
+                
+            }
+
+            #top_main .display_item {
+                width: 678px;
+                height: 280px;
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+            #top_main .display_item .flux {
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                line-height: 9vw;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            /* --- 상단 메인 끝 --- */
+
+
+            /* --- 중앙 바 --- */
+
+            #center_bar {
+                position: absolute;
+                width: 698px;
+                height: 100px;
+                top: 37%;
+                left: 4%;     
+                /* background-color: blueviolet            */
+            }
+
+            #center_bar .asset {
+                float: left;
+                width: 334px;
+                height: 80px;
+                margin-top: 10px;
+                margin-left: 10px;
+                background-color: beige;
+            }
+
+            #center_bar .sale_price {
+                float: right;
+                width: 334px;
+                height: 80px;
+                margin-top: 10px;
+                margin-right: 10px;
+                background-color: beige;
+            }
+
+            /* --- 중앙 바 끝 --- */
+
+
+            /* --- 하단 메인 --- */
+
+            #footer_main {
+                position: absolute;
+                width: 698px;
+                height: 300px;
+                bottom: 15%;
+                left: 4%;
+                /* background-color: blueviolet; */
+            }
+
+            #footer_main .have_item {
+                float: right;
+                width: 334px;
+                height: 280px;
+                margin-top: 10px;
+                margin-right: 10px;
+                background-color: beige;
+            }
+
+            #footer_main .enchant_btn {
+                position: absolute;
+                width: 334px;
+                height: 135px;
+                bottom: 11px;
+                margin-left: 10px;
+                background-color: beige;
+            }
+
+            #footer_main .enchant_btn button {
+                position: absolute;
+                width: 334px;
+                height: 135px;
+                border: 0;
+                /* margin-left: 10px; */
+                background-color: beige;
+            }
+
+            #footer_main .asset_reset {
+                position: absolute;
+                width: 162px;
+                height: 135px;
+                margin-top: 10px;
+                margin-left: 10px;
+                background-color: beige;
+            }
+
+            #footer_main .item_sale {
+                position: absolute;
+                width: 162px;
+                height: 135px;
+                left: 182px;
+                margin-top: 10px;
+                margin-right: 10px;
+                background-color: beige;
+            }
+
+            /* --- 하단 메인 끝 --- */
+
+
+            /* --- 하단 바 --- */
+
+            #footer_bar {
+                position: absolute;
+                width: 698px;
+                height: 100px;
+                bottom: 13px;
+                left: 4%;     
+                /* background-color: blueviolet    */
+            }
+
+            #footer_bar .result {
+                width: 678px;
+                height: 80px;
+                margin-top: 10px;
+                margin-left: 10px;
+                background-image: url(img/실패1.png);
+            }
+
+            /* --- 하단 바 끝 --- */
+
+
+            /* --- 애니메이션 시작 --- */
+
+            .flux {
+                animation: flux 2s linear infinite;
+                -moz-animation: flux 2s linear infinite;
+                -webkit-animation: flux 2s linear infinite;
+                -o-animation: flux 2s linear infinite;
+            }
+
+            @keyframes flux {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .1vw .1vw .1vw #147280;
+                    color: #28D7FE;
+                }
+                50% {
+                        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .1vw .1vw .1vw #0A3940;
+                        color: #146C80;
+                }
+            }
+
+            /* --- 애니메이션 끝 --- */
+
+</style>
+<body>
+    <!-- -------------------- 컨테이너 -------------------- -->
+    <div id="container">
+
+        <!-- -------------------- 상점 화면(display:none) -------------------- -->
+        <div id="shop_main">
+            <!-- ----- 강화 아이템 (display:none) ----- -->
+            <div class="shop_window">
+
+            </div>
+            <!-- ----- 돈 뽑기 (display:none) ----- -->
+            <div class="shop_window">
+
+            </div>
+            <!-- ----- 강화 아이템 뽑기 (display:none) ----- -->
+            <div class="shop_window">
+
+            </div>
+            <!-- ----- 무기 구매 (display:none) ----- -->
+            <div class="shop_window">
+
+            </div>
+        </div>
+
+        <!-- -------------------- 사이드 바 (상점 버튼) -------------------- -->
+        <div id="side_bar">
+            <button class="shop_btn">
+                무기 SHOP
+            </button>
+            <!-- ----- 강화 아이템 div 활성화 버튼 ----- -->
+            <button class="shop_btn">
+                강화 SHOP
+            </button>
+            <!-- ----- 돈 뽑기 div 활성화 버튼 ----- -->
+            <button class="shop_btn">
+                머니 랜덤 SHOP
+            </button>
+            <!-- ----- 강화 아이템 뽑기 div 활성화 버튼 ----- -->
+            <button class="shop_btn">
+                강화 랜덤 SHOP
+            </button>
+        </div>
+
+        <!-- -------------------- 전체 메인 -------------------- -->
+
+        <div id="main">
+            <!-- -------------------- 상단 메인 -------------------- -->
+            <div id="top_main">
+                <!-- ----- 강화 아이템 + (현재 강화 상태) ----- -->
+                <div class="display_item">
+                    <div class="flux">
+                        훈련용 목검 +<span>0</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- -------------------- 중앙 바 -------------------- -->
+            <div id="center_bar">
+                <!-- ----- 현재 소유 금액 ----- -->
+                <div class="asset">
+                    소유 자산 - <span id="asset">0</span>원
+                </div>
+                <!-- ----- 무기 판매 금액 ----- -->
+                <div class="sale_price">
+                    판매 가격 - <span id="sell_price">0</span>원
+                </div>
+                
+            </div>
+
+            <!-- -------------------- 하단 메인 -------------------- -->
+            <div id="footer_main">
+                <!-- ----- 강화 버튼 ----- -->
+                <div class="enchant_btn">
+                    <button onclick="start()">강화</button>
+                </div>
+                <!-- ----- 금액 초기화 버튼 ----- -->
+                <div class="asset_reset">
+
+                </div>
+                <!-- ----- 현재 소유중인 아이템 ----- -->
+                <div class="have_item">
+                    <ul>
+                        강화 코인 :<li></li>개
+                        보호권 :<li></li>개
+                        고급 보호권 :<li></li>
+                        보호권 조각 :<li></li>
+                    </ul>
+                </div>
+                <!-- ----- 무기 판매 ----- -->
+                <div class="item_sale">
+                    <button onclick="sell()">무기 판매</button>
+                </div>
+            </div>
+
+            <!-- -------------------- 하단 바 -------------------- -->
+            <div id="footer_bar">
+                <!-- ----- 공지 and 결과 값 ----- -->
+                <div class="result">
+                    <p id="displayResult"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+var item;
+var weapon;
+var asset = 1000000;
+var enchant = 0;
+var cost = 50000;
+var coin = 10;
+var piece = 0;
+
+
+    function start() {
+
+        // 강화시 강화 코인 1개 사용 (없으면 강화 못하게 만들기)
+
+
+        // 각 아이템 강화 레벨마다 다른 강화 비용을 제공하게 만들기
+        // 강화별 소모 금액 
+        // 소유 자산이 아이템 강화 비용보다 작으면 안되는 조건문 만들기
+        switch (enchant) {
+            case 0: 
+                if (cost * 1 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 1)
+                    document.querySelector('#asset').innerText = asset;      
+                }                
+                break;
+            case 1: 
+                if (cost * 1 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 1)
+                    document.querySelector('#asset').innerText = asset;     
+                }       
+                break;
+            case 2:
+                 if (cost * 1 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 1)
+                    document.querySelector('#asset').innerText = asset; 
+                }      
+                break;
+            case 3:
+                if (cost * 1 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 1)
+                    document.querySelector('#asset').innerText = asset;     
+                }       
+                break;
+            case 4:
+                if (cost * 2 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 2)
+                    document.querySelector('#asset').innerText = asset;      
+                }       
+                break;
+            case 5:
+                if (cost * 2.2 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    // float , int 둘다 number
+                    asset = asset - (parseInt (cost * 2.2))
+                    document.querySelector('#asset').innerText = asset;        
+                }      
+                break;
+            case 6: 
+                if (cost * 2.4 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (parseInt (cost * 2.4))
+                    document.querySelector('#asset').innerText = asset;        
+                }      
+                break;
+            case 7: 
+                if (cost * 2.6 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (parseInt (cost * 2.6))
+                    document.querySelector('#asset').innerText = asset;        
+                }         
+                break;
+            case 8:
+                if (cost * 2.8 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (parseInt (cost * 2.8))
+                    document.querySelector('#asset').innerText = asset;        
+                }      
+                break;
+            case 9:
+                if (cost * 3 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 3)
+                    document.querySelector('#asset').innerText = asset;        
+                }    
+                break;
+            case 10:
+                if (cost * 4 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 4)
+                    document.querySelector('#asset').innerText = asset;        
+                }     
+                break;
+            case 11:
+                if (cost * 5 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 5)
+                    document.querySelector('#asset').innerText = asset;        
+                }      
+                break;
+            case 12:
+                if (cost * 8 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 8)
+                    document.querySelector('#asset').innerText = asset;        
+                }      
+                break;
+            case 13:
+                if (cost * 12 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 12)
+                    document.querySelector('#asset').innerText = asset;        
+                }    
+                break;
+            case 14:
+                if (cost * 17 > asset ) {
+                    alert('비용이 부족합니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 17)
+                    document.querySelector('#asset').innerText = asset;        
+                }     
+                break;
+            case 15:
+                if (enchant = 15) {
+                    alert('더 이상 강화할 수 없습니다.');
+                    return;
+                }
+                break;
+
+        }
+
+        // 강화 퍼센트를 만들기 위한 100까지의 랜덤 숫자 생성
+        var rand = Math.floor(Math.random() * 99) + 1;
+
+
+        if (coin < 1) {
+            alert('강화 코인이 부족합니다');
+            return;
+        }
+
+        
+        if (1 <= rand && rand <= 50) {
+            // 리졸트에 강화 성공 이너 텍스트
+            document.querySelector('#displayResult').backgroundImage = 'url(img/성공.png)';
+            enchant = enchant + 1;
+            // 강화 코인 -1
+            coin = coin - 1;
+            console.log(coin);
+            // 강화 상태 표시
+            document.querySelector('#enchant').innerText = enchant;
+            // 강화 단계별 아이템 색 변환
+            // 강화 성공시 판매 금액 표시
+            switch (enchant) {
+            case 0: 
+                document.querySelector('#sell_price').innerText = "20,000";
+                document.querySelector('.display_item').style.color = "";
+                break;
+            case 1: 
+                document.querySelector('#sell_price').innerText = "80,000";
+                document.querySelector('.display_item').style.color = "";
+                break;
+            case 2:
+                document.querySelector('#sell_price').innerText = "200,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 3:
+                document.querySelector('#sell_price').innerText = "300,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 4:
+                document.querySelector('#sell_price').innerText = "600,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 5:
+                document.querySelector('#sell_price').innerText = "1,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 6: 
+                document.querySelector('#sell_price').innerText = "1,500,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 7: 
+                document.querySelector('#sell_price').innerText = "2,500,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 8:
+                document.querySelector('#sell_price').innerText = "4,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 9:
+                document.querySelector('#sell_price').innerText = "7,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 10:
+                document.querySelector('#sell_price').innerText = "10,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 11:
+                document.querySelector('#sell_price').innerText = "15,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 12:
+                document.querySelector('#sell_price').innerText = "30,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 13:
+                document.querySelector('#sell_price').innerText = "50,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 14:
+                document.querySelector('#sell_price').innerText = "100,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+            case 15:
+                document.querySelector('#sell_price').innerText = "200,000,000";
+                document.querySelector('.display_item').style.color = "";   
+                break;
+
+        }
+        } else {
+            // 리졸트에 강화 실패 이너 텍스트
+            document.querySelector('#displayResult').innerText = "강화 실패.. 단계가 초기화됩니다.";
+            // 코인 조각 1개 지급
+            coin = coin - 1;
+            piece = piece + 1;
+            // 강화 0강 만들기
+            enchant = 0;
+            // 강화 상태 표시
+            document.querySelector('#enchant').innerText = enchant;
+        }
+
+    }
+
+    function sell() {
+
+
+    }
+    
+</script>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    <title>Document</title>
+</head>
+<style>
+    .numbers {        
+        display: flex;
+        justify-items: center;
+        align-items: center;    
+        padding: 20px;            
+    }    
+    
+    .lotto {
+        flex-grow: 5;        
+        background-color: dimgray;
+        border-radius: 30px;
+        padding: 10px;
+    }
+
+    .lottotext {
+        flex-grow: 8;                
+        border-radius: 30px;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    .plus {
+        flex-grow: 1;   
+        font-size: 70px;     
+    }
+    .bonus {
+        flex-grow: 2;
+        background-color: dimgray;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    .bonustext {
+        flex-grow: 1;        
+        border-radius: 30px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .number {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border-radius: 100%;
+        text-align: center;
+        background-color: red;        
+        font-size: 70px;
+        
+    }
+    
+
+    .header {
+        background-color: lightblue;
+        /* background-image: url(); */
+        text-align: center;
+        font-size: 80px;
+    }
+    
+    .content {
+        height: 500px;        
+        text-align: center;
+    }
+
+    .title {        
+        padding-top: 30px;
+    }
+
+    .customNumber {
+        width: 30px;
+    }
+</style>
+<body>
+    <div class="header">
+        로또 1등 기원        
+    </div>
+
+    <!-- container => bootstrap의 클래스 -->
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div class="title">
+                    <h2><strong style="color: orange;">
+                        1012</strong> 회 1등번호</h2>
+                </div>
+                <div class="">
+                <p>2022년 04월 23일 추첨</p>
+                </div>
+                <p>
+                    <div class="numbers">
+                        <div class="lotto">
+                            <span class="number">1</span>
+                            <span class="number">2</span>
+                            <span class="number">3</span>
+                            <span class="number">4</span>
+                            <span class="number">5</span>
+                            <span class="number">6</span>
+                        </div>
+                        <div class="plus">
+                            <span class="">+</span>
+                        </div>
+                        <div class="bonus">
+                            <span class="number">7</span>
+                        </div>
+                    </div>
+                    <div class="numbers">
+                        <div class="lottotext">
+                            당첨번호
+                        </div>
+                        <div class="plus">
+                            <span class=""></span>
+                        </div>
+                        <div class="bonustext">
+                            보너스
+                        </div>
+                    </div>
+                </p>
+                <button onclick="makeNumber()" class="btn btn-primary btn-lg">번호생성(무료)</button>
+                <button onclick="makeNumber2()"class="btn btn-primary btn-lg">번호생성(유료)</button>
+                <p style="margin-top: 50px;">
+                    <b>수동입력</b>
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                    <input class="customNumber" type="text" maxlength="2">
+                </p>                
+                <p id="displayAutoNumber" style="margin-top: 50px; display: none;" >
+                    <b>자동입력</b>
+                    <label>자동생성번호</label>
+                    <ul id="autoNumber"></ul>
+                </p>
+                <button onclick="autoMakeNumber()"class="btn btn-primary btn-lg">5등이 될때까지 구매</button>
+                <button onclick="checkResult()"class="btn btn-primary btn-lg">결과확인</button>
+                <p id="displayResult"></p>
+                
+                <div style="height: 100vh;">
+                            
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    // 전역변수 : 코드 전체에 같이하는 변수
+    // 지역변수 : 함수내부에만 존재하는 변수
+    var numberlist = [];
+    var bonus;
+    // makeNumber 번호생성(무료) 만들어지는 추첨번호
+    var lottonumber = [];
+
+    // 자동구매시 함수실행
+    function autoMakeNumber() {
+        // 랜덤 6개 리스트 생성
+        buycnt = 0;
+
+        while (true) {
+            numberlist = [];
+            buycnt++;
+            for(i=1; i<46; i++) {
+            numberlist.push(i);
+            }
+            numberlist.sort(() => Math.random() - 0.5)
+            
+            var autolottonumber = numberlist.slice(0,6); 
+            // 오름차순정렬        
+            autolottonumber.sort((a,b) => a-b)        
+            // 버튼 눌렀을때 생성된 자동번호
+            // lottonumber 랑 numberlist 비교
+            // 비교대상 번호생성(무료) <-> 자동생성
+            var sameCnt = 0;
+            console.log("================"); 
+            console.log("자동 추첨 " + autolottonumber); 
+            console.log("로또 번호 " + lottonumber); 
+            console.log("================"); 
+            for(var j=0; j<6; j++) {
+                autolottonumber.find(function (value) {
+                    if (lottonumber[j] == value) {
+                        sameCnt++;
+                    }
+                })
+            }
+            // sameCnt == 3 break
+            if (sameCnt == 6) {
+                break;
+            }
+        }
+        console.log(1000 * buycnt);
+       
+
+        // while 참 : => 무한반복
+        // cnt1 구매수량, cnt2 맞춘개수
+        // while true { if (cnt == 3)  break }
+        // while cnt < 3 {6개짜리 리스트 생성, 추첨번호와비교}
+        // 화면 출력되는 내용은 1000*cnt
+        // 생성된 번호를 html에 출력
+        // autodisplaynumber => diplay on
+        // 2중주석
+        // document.querySelector("#displayAutoNumber")
+        // .style.display="block";
+        // // 생성된 번호가 포함된 li 를 생성 해준다.
+        // var autoItem = document.createElement("li");        
+        // autoItem.innerText = lottonumber;  
+        // autoItem.style.listStyle = "none";
+        // // ul 태그안에 appendchild
+        // document.querySelector("#autoNumber").appendChild(autoItem);
+    }
+
+    function checkResult() {
+        var customNumberlist = [];
+        var customNumber = document.querySelectorAll('.customNumber');        
+        for(var i=0; i<6; i++) {
+            customNumberlist.push(customNumber[i].value);
+        }
+        // 사용자가 입력한 숫자랑 당첨 숫자랑 비교 등수를 출력        
+        // customNumberlist.sort() => 저번시간썻던, 정렬
+        // customNumberlist.find() => 요소한개를 찾는 함수
+        // customNumberlist.filter() => 여러개를 찾는 함수
+        // 몇개가 같은지를 확인
+        var sameCnt = 0;
+        for(var j=0; j<6; j++) {
+            customNumberlist.find(function (value) {
+                if (numberlist[j] == value) {
+                    sameCnt++;
+                }
+            })
+        }
+        var bonusChk = false;
+        customNumberlist.find(function (value) {
+                if (bonus == value) {
+                    bonusChk = true;
+                }
+            })        
+        if (sameCnt == 3) {            
+            document.querySelector("#displayResult").innerText 
+            = "축하합니다. 5등에 당첨되었습니다.";
+        } else if (sameCnt == 4) {            
+            document.querySelector("#displayResult").innerText 
+            = "축하합니다. 4등에 당첨되었습니다.";
+        } else if (sameCnt == 5) {
+            if (bonusChk) {                
+                document.querySelector("#displayResult").innerText 
+            = "축하합니다. 2등에 당첨되었습니다.";
+            } else {                
+                document.querySelector("#displayResult").innerText 
+            = "축하합니다. 3등에 당첨되었습니다.";
+            }            
+        }
+        else if (sameCnt == 6) {            
+            document.querySelector("#displayResult").innerText 
+            = "축하합니다. 1등에 당첨되었습니다.";
+        } else {            
+            document.querySelector("#displayResult").innerText 
+            = "안타깝지만, 다음기회에!^^!";
+        }
+        
+
+    }
+
+    // 로또번호 7개를 생성해서 number 수정
+    // 변수 7개를 만들거나, 리스트에 7개의 요소를 넣거나
+    // 요소 : 랜덤한 7개의 숫자가 중복되지 않게.
+    // 각 변수에 1~45사이의 랜덤숫자를 부여하고
+    // 중복된 숫자는 다른숫자를 부여
+    // 현재는 리스트를 쓸건데,
+    // [1,2,3, ... , 45] => 숫자를 shuffle 해서 0~6요소
+    // 랜덤한 숫자를 생성해서 리스트에 넣어준다
+    // 단, 리스트에 이미 같은 숫자가 있으면 다시 숫자생성
+    // 번호를 담을 리스트 변수를 선언
+    function makeNumber2() {
+        numberlist2 = [];
+        // Math.random() 0~1 으로 1~45 사이의 숫자를 만드려면
+        // random에서 45 곱해주고 , 버림해주고 , + 1        
+        for(var i=0; i<7; i++) {
+            // 랜덤숫자 생성Math.random() => 0~1 *44 => 1~45 + 1
+            var number2 = Math.floor(Math.random() * 44) + 1;
+            // 리스트에 number2가 존재하면 number2를 다시생성
+            for(var j in numberlist2) {
+                // 생성된 숫자가 리스트에 이미 있으면
+                while (true) {
+                    if (numberlist2[j] == number2) {
+                    // 숫자를 다시생성
+                        number2 = Math.floor(Math.random() * 44) + 1;                                        
+                    } else {
+                        break;
+                    }
+                }
+                
+            }
+            // 리스트에 생성된 숫자를 푸시.
+            numberlist2.push(number2);
+        }
+        var bonus = numberlist2.pop()        
+        numberlist2.sort((a,b) => a-b);
+        console.log("6개 리스트" , numberlist2);
+        console.log("보너스" , bonus);
+        // 여기까지가 번호 6 + 보너스 1개 생성완료
+
+        var number = document.querySelectorAll(".number");
+        
+        for (var i=0; i<7; i++) {
+            if(i==6) {
+                // number 배열의 6번째는 보너스번호의 자리
+                number[i].innerText = bonus
+            } else {
+                number[i].innerText = numberlist2[i]
+            }            
+            if (number[i].innerText < 10) {
+                number[i].style.backgroundColor = "yello";
+            }
+            else if (number[i].innerText < 20) {
+                number[i].style.backgroundColor = "skyblue";
+            }
+            else if (number[i].innerText < 30) {
+                number[i].style.backgroundColor = "tomato";
+            }
+            else if (number[i].innerText < 40) {
+                number[i].style.backgroundColor = "grey";
+            }
+            else {
+                number[i].style.backgroundColor = "green";
+            }
+
+        }
+
+
+
+
+        
+
+
+    }
+    
+    function makeNumber() {
+        // 리스트 초기화
+        numberlist = [];
+        
+        for(i=1; i<46; i++) {
+            numberlist.push(i);
+        }
+
+        numberlist.sort(() => Math.random() - 0.5)
+        
+        lottonumber = numberlist.slice(0,7);    
+        
+        console.log("로또넘버7개" , lottonumber );
+        // pop() => 배열에 마지막요소를 제거하고
+        // 그 요소를 반환
+        bonus = lottonumber.pop();
+        
+        console.log("로또넘버6개" , lottonumber );
+        console.log("보너스번호" , bonus );
+
+        lottonumber.sort((a,b) => a-b)
+        
+        console.log("정렬된6개" , lottonumber);
+        
+        var number = document.querySelectorAll('.number')
+        console.log(number);
+        for(var i =0; i<7; i++) {            
+            if(i == 6) {
+                number[i].innerText = bonus;                
+            } else {
+                number[i].innerText = lottonumber[i];               
+            }
+
+            if (number[i].innerText < 10) {
+                    number[i].style.backgroundColor = "yellow";
+                }
+                else if (number[i].innerText < 20) {
+                    number[i].style.backgroundColor = "skyblue";
+                }
+                else if (number[i].innerText < 30) {
+                    number[i].style.backgroundColor = "tomato";
+                }
+                else if (number[i].innerText < 40) {
+                    number[i].style.backgroundColor = "grey";
+                } else {
+                    number[i].style.backgroundColor = "green";
+                }
+        }
+        
+        // 1~9 노란색
+        // 10~19 하늘색
+        // 20~29 연빨
+        // 30~39 회색
+        // 40~45 초록색
+    }
+      
+    
+    
+    
+</script>
