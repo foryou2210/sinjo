@@ -2768,9 +2768,8 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
                 
                 if (1 <= rand && rand <= 50) {
-                    asset = asset + 50000;
                     document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
-                    alert('낙첨되었습니다. \n현재 소유 자산은 ' + asset + '원 입니다.')
+                    alert('당첨에 실패하였습니다. ' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')
                 }
                 else if (51 <= rand && rand <= 78) {
                     asset = asset + 150000;
