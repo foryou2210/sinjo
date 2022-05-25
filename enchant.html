@@ -1,0 +1,2867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/1d6021b3e2.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700|Pinyon+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /* ----- 폰트 ----- */
+
+    @font-face {
+    font-family: 'GimpoGothicBold00';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/GimpoGothicBold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'ACCchildrenheartOTF-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'ROKAFSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    /* ----- 폰트 끝 ----- */
+
+
+    /* ----- 바디 ----- */
+
+    html, body { cursor: url('./img/cursor.cur'), auto;} 
+
+    body {
+        margin: 0;
+        background-image: url(img/대장간.jpg);
+        background-size: cover;
+        background-repeat : no-repeat;
+    }
+
+    /* ------ 컨테이너 ------ */
+
+    #container {
+        position: relative;
+        width: 1000px;
+        height: 912px;
+
+
+    }
+
+        /* ------ 티어 이미지 표시 ------ */
+
+        #tier_main {
+            position: absolute;
+            width: 255px;
+            height: 260px;            
+            top: -6%;
+            left: -1%;
+            text-align: center;
+            z-index: 10;
+        }
+
+        #tier_main .tier_img1 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+        #tier_main .tier_text1 {
+            position: absolute;
+            top: 80%;
+            left: 30%;
+            font-family: neon;
+            color: #426DFB;
+            font-size: 30px;
+            text-shadow: 0 0 3vw #2356FF;
+            font-weight: bolder;
+        }
+        #tier_main .tier_img2 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+        #tier_main .tier_text2 {
+            position: absolute;
+            top: 80%;
+            left: 33%;
+            font-family: neon;
+            color: #426DFB;
+            font-size: 30px;
+            text-shadow: 0 0 3vw #2356FF;
+            font-weight: bolder;
+        }
+        #tier_main .tier_img3 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+        #tier_main .tier_text3 {
+            position: absolute;
+            top: 80%;
+            left: 25%;
+            font-family: neon;
+            color: #426DFB;
+            font-size: 30px;
+            text-shadow: 0 0 3vw #2356FF;
+            font-weight: bolder;
+        }
+        #tier_main .tier_img4 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+        #tier_main .tier_text4 {
+            position: absolute;
+            top: 80%;
+            left: 9%;
+            font-family: neon;
+            color: #426DFB;
+            font-size: 30px;
+            text-shadow: 0 0 3vw #2356FF;
+            font-weight: bolder;
+        }
+
+        /* ------ 상점 화면 ------ */
+
+        #shop_main {
+            position: absolute;
+            width: 680px;
+            height: 742px;
+            top: 9%;
+            left: 27%;
+            z-index: 100;
+            display: none;
+        }
+
+        #shop_main .shop_window1 {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            top: 7%;
+            left: 8%;
+            /* background-color: white; */
+            display: none;
+        }
+
+        #shop_main .shop_window1::after {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            background-color: white;
+            content: "";
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        #shop_main .shop_window1 .sh_list {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            top: 0%;
+            left: 0%;
+        }
+
+        #shop_main .shop_window1 .sh_list h3 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'ACCchildrenheartOTF-Regular';
+            margin-top: 10px;
+        }
+
+        #shop_main .shop_window1 .sh_list p {
+            font-size: 23px;
+            font-weight: bolder;
+            font-family: 'GimpoGothicBold00';
+            margin-left: 20px;
+            text-shadow: 2px 0 #fff, 0 2px #fff, -2px 0 #fff, 0 -1px #fff;
+        }
+
+        #shop_main .shop_window1 .sh_list span {
+            text-align: end;
+        }
+
+        #shop_main .shop_window1 .sh_list .cost {
+            position: absolute;
+            left: 39%;
+        }
+
+        #shop_main .shop_window1 .sh_list .buy {
+            position: absolute;
+            left: 75%;
+        }
+
+        #shop_main .shop_window1 .sh_list .buy:hover .me {
+            display: block;
+            top: 0px;
+            right: -20px;
+        }
+
+        #shop_main .shop_window1 .sh_list .buy:active {
+            color: white;
+        }
+
+        #shop_main .shop_window1 .sh_list .me {
+            position: absolute;
+            left: 90%;
+            display: none;
+        }
+
+        #shop_main .shop_info {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            top: 7%;
+            right: -40%;
+            background-color: white;
+            display: none;
+        }
+
+        
+
+        #shop_main .shop_window2 {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            top: 7%;
+            left: 8%;
+            /* background-color: white; */
+            display: none;
+        }
+
+        #shop_main .shop_window2::after {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            background-color: white;
+            content: "";
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        #shop_main .shop_window2 .sh_list {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            top: 0%;
+            left: 0%;
+        }
+
+        #shop_main .shop_window2 .sh_list h3 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'ACCchildrenheartOTF-Regular';
+            margin-top: 10px;
+        }
+
+        #shop_main .shop_window2 .sh_list p {
+            font-size: 23px;
+            font-weight: bolder;
+            font-family: 'GimpoGothicBold00';
+            margin-left: 20px;
+            text-shadow: 2px 0 #fff, 0 2px #fff, -2px 0 #fff, 0 -1px #fff;
+        }
+
+        #shop_main .shop_window2 .sh_list span {
+            text-align: end;
+        }
+
+        #shop_main .shop_window2 .sh_list .cost {
+            position: absolute;
+            left: 39%;
+        }
+
+        #shop_main .shop_window2 .sh_list .buy {
+            position: absolute;
+            left: 75%;
+        }
+
+        #shop_main .shop_window2 .sh_list .buy:hover .me {
+            display: block;
+            top: 0px;
+            right: -20px;
+        }
+
+        #shop_main .shop_window2 .sh_list .buy:active {
+            color: white;
+        }
+
+        #shop_main .shop_window2 .sh_list .me {
+            position: absolute;
+            left: 90%;
+            display: none;
+        }
+
+        #shop_main .shop_window3 {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            top: 7%;
+            left: 8%;
+            /* background-color: white; */
+            display: none;
+        }
+
+        #shop_main .shop_window3::after {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            background-color: white;
+            content: "";
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        #shop_main .shop_window3 .sh_list {
+            position: absolute;
+            width: 580px;
+            height: 642px;
+            top: 0%;
+            left: 0%;
+        }
+
+        #shop_main .shop_window3 .sh_list h3 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'ACCchildrenheartOTF-Regular';
+            margin-top: 10px;
+        }
+
+        #shop_main .shop_window3 .sh_list p {
+            font-size: 23px;
+            font-weight: bolder;
+            font-family: 'GimpoGothicBold00';
+            margin-left: 20px;
+            text-shadow: 2px 0 #fff, 0 2px #fff, -2px 0 #fff, 0 -1px #fff;
+        }
+
+        #shop_main .shop_window3 .sh_list span {
+            text-align: end;
+        }
+
+        #shop_main .shop_window3 .sh_list .cost {
+            position: absolute;
+            left: 39%;
+        }
+
+        #shop_main .shop_window3 .sh_list .buy {
+            position: absolute;
+            left: 75%;
+        }
+
+        #shop_main .shop_window3 .sh_list .buy:hover .me {
+            display: block;
+            top: 0px;
+            right: -20px;
+        }
+
+        #shop_main .shop_window3 .sh_list .buy:active {
+            color: white;
+        }
+
+        #shop_main .shop_window3 .sh_list .me {
+            position: absolute;
+            left: 90%;
+            display: none;
+        }
+
+        .btn-close {
+            background-color: white;
+        }
+
+        /* ----- 상점 화면 끝 ----- */
+
+
+        /* ------ 사이드 바 ------ */
+
+        #side_bar {
+            position: absolute;
+            width: 210px;
+            height: 850px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            /* background-color: beige; */
+        }
+
+        #side_bar .shop_btn {
+            position: absolute;
+            width: 190px;
+            height: 80px;
+            top: 31%;
+            left: 4%;
+            background: transparent;
+            border: 0px;
+        }
+
+        #side_bar .shop_title {
+            position: absolute;
+            top: 33%;
+            left: -22%;
+        }
+
+        #side_bar .shop_btn:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        /* #side_bar .shop_btn:nth-child(1) {
+            position: absolute;
+            top: 43%;
+            left: 4%;
+        } */
+
+        #side_bar .shop_btn:nth-child(2) {
+            position: absolute;
+            top: 43%;
+            left: -7%;
+        }
+
+        #side_bar .shop_btn:nth-child(3) {
+            position: absolute;
+            top: 52%;
+            left: -8%;
+        }
+
+        #side_bar .shop_btn:nth-child(4) {
+            position: absolute;
+            top: 61%;
+            left: -13%;
+        }
+
+        /* ----- 사이드 바 끝 -----  */
+
+
+        /* ----- 메인 ----- */
+
+        #main {
+            position: absolute;
+            width: 758px;
+            height: 876px;
+            top: 2%;
+            right: 1%;
+            /* background-color: beige; */
+        }
+
+            /* --- 상단 메인 --- */
+
+            #top_main {
+                position:absolute;
+                width: 698px;
+                height: 300px;
+                top: 1%;
+                left: 4%;
+                /* background-color: blueviolet */
+                
+            }
+
+            #top_main .display_item {
+                width: 678px;
+                height: 280px;
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+
+            #flux {
+                width: 560px;
+                left: 16%;
+                text-align: center;
+            }
+
+            #top_main .display_item .flux {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux0 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux1 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux2 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux3 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux4 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux5 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux6 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux7 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux8 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux9 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux10 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux11 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux12 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux13 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux14 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            #top_main .display_item .flux15 {
+                position: absolute;
+                top: 25%;
+                left: 16%;
+                font-family: neon;
+                color: #426DFB;
+                font-size: 50px;
+                text-shadow: 0 0 3vw #2356FF;
+            }
+
+            /* --- 상단 메인 끝 --- */
+
+
+            /* --- 중앙 바 --- */
+
+            #center_bar {
+                position: absolute;
+                width: 698px;
+                height: 100px;
+                top: 37%;
+                left: 4%;     
+                /* background-color: blueviolet            */
+            }
+
+            #center_bar .asset {
+                font-family: 'ROKAFSansBold';
+                float: left;
+                width: 334px;
+                height: 80px;
+                font-size: 29px;
+                margin-top: 10px;
+                margin-left: 10px;
+                font-weight: bolder;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                text-shadow: 2px 0 #fff, 0 3px #fff, -3px 0 #fff, 0 -3px #fff;
+            }
+
+            #center_bar .sale_price {
+                font-family: 'ROKAFSansBold';
+                float: right;
+                width: 334px;
+                height: 80px;
+                margin-top: 10px;
+                margin-right: 10px;
+                font-size: 29px;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                text-shadow: 2px 0 #fff, 0 3px #fff, -3px 0 #fff, 0 -3px #fff;
+            }
+
+            /* --- 중앙 바 끝 --- */
+
+
+            /* --- 하단 메인 --- */
+
+            #footer_main {
+                position: absolute;
+                width: 698px;
+                height: 300px;
+                bottom: 15%;
+                left: 4%;
+                /* background-color: blueviolet; */
+            }
+
+            #footer_main .game_info {
+                float: right;
+                width: 334px;
+                height: 280px;
+                margin-top: 10px;
+                margin-right: 10px;
+                /* background-color: white; */
+                font-family: 'ACCchildrenheartOTF-Regular';
+                overflow: scroll;
+                overflow-x: hidden;
+                font-weight: bolder;
+                font-size: 19px;
+                color: #000000;
+            }
+
+            #footer_main .game_info::after {
+                z-index: -1;
+                position: absolute;
+                content: "";
+                opacity: 0.6;
+                width: 334px;
+                height: 280px;
+                top: 9px;
+                background-color: white;
+            }
+
+            #footer_main .game_info h3 {
+                font-family: 'ROKAFSansBold';
+                text-align: center;
+                font-weight: bolder;
+                font-size: 30px;
+                margin-top: 16px;
+            }
+
+
+            #footer_main .have_item {
+            float: right;
+            width: 334px;
+            height: 280px;
+            margin-top: 10px;
+            margin-right: 10px;
+            background-color: transparent;
+            border: 8px solid;
+            border-radius: 10%;
+            display: none;
+            }
+
+            #footer_main .have_item .item_list {
+                font-family: 'GimpoGothicBold00';
+                position: absolute;
+                top: 21%;
+                right: 8%;
+                font-size: 32px;
+                font-weight: bolder;
+                color: mintcream;
+            }
+
+            #footer_main .enchant_btn {
+                position: absolute;
+                width: 334px;
+                height: 135px;
+                bottom: 11px;
+                margin-left: 10px;
+                z-index: 1;
+            }
+
+            #footer_main .enchant_btn button {
+                background: transparent;
+                border: 0px;
+            }
+
+            #footer_main .enchant_btn .enchant_btnbtn  {
+                position: absolute;
+                top: -2%;
+                left: -7%;
+                width: 157px;
+                height: 135px;
+            }
+
+            #footer_main .enchant_btn .enchant_inp {
+                position: absolute;
+                top: 2%;
+                right: 1%;
+                width: 181px;
+                height: 135px;
+            }
+
+            #footer_main .view_item {
+                position: absolute;
+                width: 162px;
+                height: 135px;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            #footer_main .view_item button {
+                background: transparent;
+                border: 0px;
+            }
+
+            #footer_main .view_item img {
+                position: absolute;
+                top: 29%;
+                left: -2%;
+
+            }
+
+            #footer_main .view_item:hover img {
+                /* opacity: 0.6; */
+                transform: scale(1.1);
+                transition: 0.9s;
+            }
+
+            #footer_main .item_sale {
+                position: absolute;
+                width: 162px;
+                height: 135px;
+                left: 174px;
+            }
+
+            #footer_main .item_sale button {
+                background: transparent;
+                border: 0px;
+            }
+
+            #footer_main .item_sale img {
+                position: absolute;
+                top: 37%;
+
+            }
+
+            #footer_main .item_sale::after img {
+                opacity: 0.6;
+            }
+
+            #footer_main .item_sale:hover img {
+                transform: scale(1.1);
+                transition: 0.9s;
+            }
+
+
+
+            /* --- 하단 메인 끝 --- */
+
+
+            /* --- 결과 바 --- */
+
+            .result_bar {
+                position: absolute;
+                width: 698px;
+                height: 130px;
+                bottom: 0%;
+                left: 4%;  
+            }
+
+            .result_bar .success {
+                position: absolute;
+                width: 698px;
+                height: 130px;
+                display: none;
+            }
+            
+
+            .result_bar .fail {
+                position: absolute;
+                width: 698px;
+                height: 130px;
+                display: none;
+            }
+
+
+            
+
+            /* --- 결과 바 끝 --- */
+
+
+            /* --- 애니메이션 시작 --- */
+
+            .flux {
+                animation: flux 2s linear infinite;
+                -moz-animation: flux 2s linear infinite;
+                -webkit-animation: flux 2s linear infinite;
+                -o-animation: flux 2s linear infinite;
+            }
+
+            @keyframes flux {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .1vw .1vw .1vw #147280;
+                    color: #28D7FE;
+                }
+                50% {
+                        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .1vw .1vw .1vw #0A3940;
+                        color: #146C80;
+                }
+            }
+
+            .flux0 {
+                animation: flux0 10s linear infinite;
+                -moz-animation: flux0 10s linear infinite;
+                -webkit-animation: flux0 10s linear infinite;
+                -o-animation: flux0 10s linear infinite;
+            }
+
+            @keyframes flux0 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #a9a9a9, 0 0 3vw #ffffff, 0 0 10vw #c7c7c7, 0 0 10vw #afafaf, 0 0 0.4vw #cbcbcb, 0.1vw 0.1vw 0.1vw #c9c9c9;
+                    color: #000000;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #c5c5c5, 0 0 1.5vw #ababab, 0 0 5vw #b5b5b5, 0 0 5vw #3e3e3e, 0 0 0.2vw #1e1e1e, 0.1vw 0.1vw 0.1vw #4c4c4c;
+                    color: #202020;
+                }
+            }
+
+            .flux1 {
+                animation: flux1 3s linear infinite;
+                -moz-animation: flux1 3s linear infinite;
+                -webkit-animation: flux1 3s linear infinite;
+                -o-animation: flux1 3s linear infinite;
+            }
+
+            @keyframes flux1 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #a9a9a9, 0 0 3vw #ffffff, 0 0 10vw #c7c7c7, 0 0 10vw #afafaf, 0 0 0.4vw #cbcbcb, 0.1vw 0.1vw 0.1vw #c9c9c9;
+                    color: #000000;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #c5c5c5, 0 0 1.5vw #ababab, 0 0 5vw #b5b5b5, 0 0 5vw #3e3e3e, 0 0 0.2vw #1e1e1e, 0.1vw 0.1vw 0.1vw #4c4c4c;
+                    color: #202020;
+                }
+            }
+
+            .flux2 {
+                animation: flux2 1.5s linear infinite;
+                -moz-animation: flux2 1.5s linear infinite;
+                -webkit-animation: flux2 1.5s linear infinite;
+                -o-animation: flux2 1.5s linear infinite;
+            }
+
+            @keyframes flux2 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #a9a9a9, 0 0 3vw #ffffff, 0 0 10vw #c7c7c7, 0 0 10vw #afafaf, 0 0 0.4vw #cbcbcb, 0.1vw 0.1vw 0.1vw #c9c9c9;
+                    color: #000000;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #c5c5c5, 0 0 1.5vw #ababab, 0 0 5vw #b5b5b5, 0 0 5vw #3e3e3e, 0 0 0.2vw #1e1e1e, 0.1vw 0.1vw 0.1vw #4c4c4c;
+                    color: #202020;
+                }
+            }
+
+            .flux3 {
+                animation: flux3 0.9s linear infinite;
+                -moz-animation: flux3 0.9s linear infinite;
+                -webkit-animation: flux3 0.9s linear infinite;
+                -o-animation: flux3 0.9s linear infinite;
+            }
+
+            @keyframes flux3 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #a9a9a9, 0 0 3vw #ffffff, 0 0 10vw #c7c7c7, 0 0 10vw #afafaf, 0 0 0.4vw #cbcbcb, 0.1vw 0.1vw 0.1vw #c9c9c9;
+                    color: #000000;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #c5c5c5, 0 0 1.5vw #ababab, 0 0 5vw #b5b5b5, 0 0 5vw #3e3e3e, 0 0 0.2vw #1e1e1e, 0.1vw 0.1vw 0.1vw #4c4c4c;
+                    color: #202020;
+                }
+            }
+
+            .flux4 {
+                animation: flux4 0.5s linear infinite;
+                -moz-animation: flux4 0.5s linear infinite;
+                -webkit-animation: flux4 0.5s linear infinite;
+                -o-animation: flux4 0.5s linear infinite;
+            }
+
+            @keyframes flux4 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #a9a9a9, 0 0 3vw #ffffff, 0 0 10vw #c7c7c7, 0 0 10vw #afafaf, 0 0 0.4vw #cbcbcb, 0.1vw 0.1vw 0.1vw #c9c9c9;
+                    color: #000000;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #c5c5c5, 0 0 1.5vw #ababab, 0 0 5vw #b5b5b5, 0 0 5vw #3e3e3e, 0 0 0.2vw #1e1e1e, 0.1vw 0.1vw 0.1vw #4c4c4c;
+                    color: #202020;
+                }
+            }
+
+            .flux5 {
+                animation: flux5 0.1s linear infinite;
+                -moz-animation: flux5 0.1s linear infinite;
+                -webkit-animation: flux5 0.1s linear infinite;
+                -o-animation: flux5 0.1s linear infinite;
+            }
+
+            @keyframes flux5 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #a9a9a9, 0 0 3vw #ffffff, 0 0 10vw #c7c7c7, 0 0 10vw #afafaf, 0 0 0.4vw #cbcbcb, 0.1vw 0.1vw 0.1vw #c9c9c9;
+                    color: #000000;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #c5c5c5, 0 0 1.5vw #ababab, 0 0 5vw #b5b5b5, 0 0 5vw #3e3e3e, 0 0 0.2vw #1e1e1e, 0.1vw 0.1vw 0.1vw #4c4c4c;
+                    color: #202020;
+                }
+            }
+
+            .flux6 {
+                animation: flux6 2s linear infinite;
+                -moz-animation: flux6 2s linear infinite;
+                -webkit-animation: flux6 2s linear infinite;
+                -o-animation: flux6 2s linear infinite;
+            }
+
+            @keyframes flux6 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .1vw .1vw .1vw #147280;
+                    color: #28D7FE;
+                }
+                50% {
+                        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .1vw .1vw .1vw #0A3940;
+                        color: #146C80;
+                }
+            }
+
+            .flux7 {
+                animation: flux7 0.5s linear infinite;
+                -moz-animation: flux7 0.5s linear infinite;
+                -webkit-animation: flux7 0.5s linear infinite;
+                -o-animation: flux7 0.5s linear infinite;
+            }
+
+            @keyframes flux7 {
+                0%,
+                100% {
+                    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .1vw .1vw .1vw #147280;
+                    color: #28D7FE;
+                }
+                50% {
+                        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .1vw .1vw .1vw #0A3940;
+                        color: #146C80;
+                }
+            }
+
+            .flux8 {
+                animation: flux8 2s linear infinite;
+                -moz-animation: flux8 2s linear infinite;
+                -webkit-animation: flux8 2s linear infinite;
+                -o-animation: flux8 2s linear infinite;
+            }
+
+            @keyframes flux8 {
+                0%, 
+                100% {
+                text-shadow: 0 0 1vw #ff6feb, 0 0 3vw #ff10fd, 0 0 10vw #ff10e2, 0 0 10vw #ff10e8, 0 0 0.4vw #f08bfe, 0.1vw 0.1vw 0.1vw #7e1480;
+                color: #ffffff;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #ff33e1, 0 0 1.5vw #80086c, 0 0 5vw #800877, 0 0 5vw #ff76fc, 0 0 0.2vw #740880, 0.1vw 0.1vw 0.1vw #f670ff;
+                    color: #66b1ff;
+                }
+            }
+
+            .flux9 {
+                animation: flux9 0.7s linear infinite;
+                -moz-animation: flux9 0.7s linear infinite;
+                -webkit-animation: flux9 0.7s linear infinite;
+                -o-animation: flux9 0.7s linear infinite;
+            }
+
+            @keyframes flux9 {
+                0%, 
+                100% {
+                text-shadow: 0 0 1vw #ff6feb, 0 0 3vw #ff10fd, 0 0 10vw #ff10e2, 0 0 10vw #ff10e8, 0 0 0.4vw #f08bfe, 0.1vw 0.1vw 0.1vw #7e1480;
+                color: #ffffff;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #ff33e1, 0 0 1.5vw #80086c, 0 0 5vw #800877, 0 0 5vw #ff76fc, 0 0 0.2vw #740880, 0.1vw 0.1vw 0.1vw #f670ff;
+                    color: #66b1ff;
+                }
+            }
+
+            .flux10 {
+                animation: flux10 0.3s linear infinite;
+                -moz-animation: flux10 0.3s linear infinite;
+                -webkit-animation: flux10 0.3s linear infinite;
+                -o-animation: flux10 0.3s linear infinite;
+            }
+
+            @keyframes flux10 {
+                0%, 
+                100% {
+                text-shadow: 0 0 1vw #ff6feb, 0 0 3vw #ff10fd, 0 0 10vw #ff10e2, 0 0 10vw #ff10e8, 0 0 0.4vw #f08bfe, 0.1vw 0.1vw 0.1vw #7e1480;
+                color: #ffffff;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #ff33e1, 0 0 1.5vw #80086c, 0 0 5vw #800877, 0 0 5vw #ff76fc, 0 0 0.2vw #740880, 0.1vw 0.1vw 0.1vw #f670ff;
+                    color: #66b1ff;
+                }
+            }
+
+            .flux11 {
+                animation: flux11 0.2s linear infinite;
+                -moz-animation: flux11 0.2s linear infinite;
+                -webkit-animation: flux11 0.2s linear infinite;
+                -o-animation: flux11 0.2s linear infinite;
+            }
+
+            @keyframes flux11 {
+                0%, 
+                100% {
+                text-shadow: 0 0 1vw #ffa5f3, 0 0 3vw #ff5cfe, 0 0 10vw #ff25e5, 0 0 10vw #ff1fe9, 0 0 0.4vw #f39eff, 0.1vw 0.1vw 0.1vw #fd8dff;
+                color: #ffffff;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #ff33e1, 0 0 1.5vw #80086c, 0 0 5vw #800877, 0 0 5vw #ff76fc, 0 0 0.2vw #740880, 0.1vw 0.1vw 0.1vw #f670ff;
+                    color: #fbdbff;
+                }
+            }
+
+            .flux12 {
+                animation: flux12 2s linear infinite;
+                -moz-animation: flux12 2s linear infinite;
+                -webkit-animation: flux12 2s linear infinite;
+                -o-animation: flux12 2s linear infinite;
+            }
+
+            @keyframes flux12 {
+                0%, 
+                100% {
+                    text-shadow: 0 0 1vw #ffc410, 0 0 3vw #ffc410, 0 0 10vw #ffc410, 0 0 10vw #ffc410, 0 0 0.4vw #ffc410, 0.1vw 0.1vw 0.1vw #ffc410;
+                    color: #fdf0e0;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #b58801, 0 0 1.5vw #8d6a00, 0 0 5vw #876500, 0 0 5vw #977100, 0 0 0.2vw #876500, 0.1vw 0.1vw 0.1vw #684d00;
+                    color: #fdf0e0;
+                }
+            }
+
+            .flux13 {
+                animation: flux13 0.2s linear infinite;
+                -moz-animation: flux13 0.2s linear infinite;
+                -webkit-animation: flux13 0.2s linear infinite;
+                -o-animation: flux13 0.2s linear infinite;
+            }
+
+            @keyframes flux13 {
+                0%, 
+                100% {
+                    text-shadow: 0 0 1vw #ffc410, 0 0 3vw #ffc410, 0 0 10vw #ffc410, 0 0 10vw #ffc410, 0 0 0.4vw #ffc410, 0.1vw 0.1vw 0.1vw #ffc410;
+                    color: #fdf0e0;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #b58801, 0 0 1.5vw #8d6a00, 0 0 5vw #876500, 0 0 5vw #977100, 0 0 0.2vw #876500, 0.1vw 0.1vw 0.1vw #684d00;
+                    color: #fdf0e0;
+                }
+            }
+
+            .flux14 {
+                animation: flux14 1s linear infinite;
+                -moz-animation: flux14 1s linear infinite;
+                -webkit-animation: flux14 1s linear infinite;
+                -o-animation: flux14 1s linear infinite;
+            }
+
+            @keyframes flux14 {
+                0%, 
+                100% {
+                    text-shadow: 0 0 1vw #ff8c8c, 0 0 3vw #ff6565, 0 0 10vw #ff2c2c, 0 0 10vw #ff1818, 0 0 0.4vw #ff0000, 0.1vw 0.1vw 0.1vw #ff0000;
+                    color: #ffcccc;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #ff6666, 0 0 1.5vw #ff6666, 0 0 5vw #ff6666, 0 0 5vw #ff0000, 0 0 0.2vw #ff1818, 0.1vw 0.1vw 0.1vw #ff0000;
+                    color: #dd7b7b;
+                }
+            }
+
+            .flux15 {
+                animation: flux15 2s linear infinite;
+                -moz-animation: flux15 2s linear infinite;
+                -webkit-animation: flux15 2s linear infinite;
+                -o-animation: flux15 2s linear infinite;
+            }
+
+            @keyframes flux15 {
+                0%, 
+                100% {
+                    text-shadow: 0 0 1vw #ff0000, 0 0 3vw #ff0000, 0 0 10vw #ff0000, 0 0 10vw #ff0000, 0 0 0.4vw #ff0000, 0.1vw 0.1vw 0.1vw #ff0000;
+                    color: #ffffff;
+                }
+                50% {
+                    text-shadow: 0 0 0.5vw #ffffff, 0 0 1.5vw #ffffff, 0 0 5vw #ffffff, 0 0 5vw #ff0000, 0 0 0.2vw #ffffff, 0.1vw 0.1vw 0.1vw #ffffff;
+                    color: #ff0000;
+                }
+            }
+
+                /* --- 애니메이션 페이드 인, 아웃 박스 --- */
+                .fade-in-box {
+                    display: inline-block;
+                    padding: 10px;
+                    animation: fadein 0.7s;
+                    -moz-animation: fadein 0.7s; /* Firefox */
+                    -webkit-animation: fadein 0.7s; /* Safari and Chrome */
+                    -o-animation: fadein 0.7s; /* Opera */
+                }
+                    @keyframes fadein {
+                            from {
+                                opacity: 0;
+                                transform: scale(0.1);
+                                transition: 1s;
+                            }
+                            to {
+                                opacity: 1;
+                            }
+                        }
+                    @-moz-keyframes fadein { /* Firefox */
+                            from {
+                                opacity: 0;
+                            }
+                            to {
+                                opacity: 1;
+                            }
+                        }
+                    @-webkit-keyframes fadein { /* Safari and Chrome */
+                            from {
+                                opacity: 0;
+                            }
+                            to {
+                                opacity: 1;
+                            }
+                        }
+                    @-o-keyframes fadein { /* Opera */
+                            from {
+                                opacity: 0;
+                            }
+                            to {
+                                opacity: 1;
+                            }
+                        }
+
+
+                .fade-out-box {
+                    display: inline-block;
+                    padding: 10px;
+                    animation: fadeout 2;
+                    -moz-animation: fadeout 2s; /* Firefox */
+                    -webkit-animation: fadeout 2s; /* Safari and Chrome */
+                    -o-animation: fadeout 2s; /* Opera */
+                    animation-fill-mode: forwards;
+                    }
+                    @keyframes fadeout {
+                        from {
+                            opacity: 1;
+                        }
+                        to {
+                            opacity: 0;
+                            transform: scale(0.1);
+                            transition: 1s;
+                        }
+                    }
+                    @-moz-keyframes fadeout { /* Firefox */
+                        from {
+                            opacity: 1;
+                        }
+                        to {
+                            opacity: 0;
+                        }
+                    }
+                    @-webkit-keyframes fadeout { /* Safari and Chrome */
+                        from {
+                            opacity: 1;
+                        }
+                        to {
+                            opacity: 0;
+                        }
+                    }
+                    @-o-keyframes fadeout {from{opacity: 1;}
+                        to {opacity: 0;}
+                    }
+
+                    .tier_img1 {
+                        animation: tier_img1 10s linear infinite;
+                        -moz-animation: tier_img1 10s linear infinite;
+                        -webkit-animation: tier_img1 10s linear infinite;
+                        -o-animation: tier_img1 10s linear infinite;
+                    }
+
+                    @keyframes tier_img1 {
+                        0%, 
+                        100% {
+                            filter: drop-shadow(2px 4px 6px white);
+                        }
+                        50% {
+                            filter: drop-shadow(2px 4px 6px silver);
+                        }
+                    }
+
+                    .tier_text1 {
+                        animation: tier_text1 10s linear infinite;
+                        -moz-animation: tier_textx1 10s linear infinite;
+                        -webkit-animation: tier_text1 10s linear infinite;
+                        -o-animation: tier_text1 10s linear infinite;
+                    }
+
+                    @keyframes tier_text1 {
+                        0%, 
+                        100% {
+                            color: transparent;
+                            filter: drop-shadow(2px 4px 6px transparent);
+                        }
+                        50% {
+                            color: #999999;
+                            text-shadow: 0 0 1vw #8f8f8f, 0 0 3vw #898989, 0 0 10vw #7a7a7a, 0 0 10vw #7c7c7c, 0 0 0.4vw #707070, 0.1vw 0.1vw 0.1vw #767676;
+                            filter: drop-shadow(2px 4px 6px silver);
+                        }
+                    }
+
+                    .tier_img2 {
+                        animation: tier_img2 5s linear infinite;
+                        -moz-animation: tier_img2 5s linear infinite;
+                        -webkit-animation: tier_img2 5s linear infinite;
+                        -o-animation: tier_img2 5s linear infinite;
+                    }
+
+                    @keyframes tier_img2 {
+                        0%, 
+                        100% {
+                            filter: drop-shadow(2px 4px 6px white);
+                        }
+                        50% {
+                            filter: drop-shadow(2px 4px 6px gold);
+                        }
+                    }
+
+                    .tier_text2 {
+                        animation: tier_text2 5s linear infinite;
+                        -moz-animation: tier_textx2 5s linear infinite;
+                        -webkit-animation: tier_text2 5s linear infinite;
+                        -o-animation: tier_text2 5s linear infinite;
+                    }
+
+                    @keyframes tier_text2 {
+                        0%, 
+                        100% {
+                            color: transparent;
+                            filter: drop-shadow(2px 4px 6px transparent);
+                        }
+                        50% {
+                            color: #ffd700;
+                            text-shadow: 0 0 1vw #ffd700, 0 0 3vw #ffd700, 0 0 10vw #ffd700, 0 0 10vw #ffd700, 0 0 0.4vw #ffd700, 0.1vw 0.1vw 0.1vw #ffd700;
+                            filter: drop-shadow(2px 4px 6px gold);
+                        }
+                    }
+
+                    .tier_img3 {
+                        animation: tier_img3 3.5s linear infinite;
+                        -moz-animation: tier_img3 3.5s linear infinite;
+                        -webkit-animation: tier_img3 3.5s linear infinite;
+                        -o-animation: tier_img3 3.5s linear infinite;
+                    }
+
+                    @keyframes tier_img3 {
+                        0%, 
+                        100% {
+                            filter: drop-shadow(2px 4px 6px white);
+                        }
+                        50% {
+                            filter: drop-shadow(2px 4px 6px #ff3399);
+                        }
+                    }
+
+                    .tier_text3 {
+                        animation: tier_text3 3.5s linear infinite;
+                        -moz-animation: tier_textx3 3.5s linear infinite;
+                        -webkit-animation: tier_text3 3.5s linear infinite;
+                        -o-animation: tier_text3 3.5s linear infinite;
+                    }
+
+                    @keyframes tier_text3 {
+                        0%, 
+                        100% {
+                            color: transparent;
+                            filter: drop-shadow(2px 4px 6px transparent);
+                        }
+                        50% {
+                            color: #ff3399;
+                            text-shadow: 0 0 1vw #ff3399, 0 0 3vw #ff3399, 0 0 10vw #ff3399, 0 0 10vw #ff3399, 0 0 0.4vw #ff3399, 0.1vw 0.1vw 0.1vw #ff3399;
+                            filter: drop-shadow(2px 4px 6px #ff3399);
+                        }
+                    }
+
+                    .tier_img4 {
+                        animation: tier_img4 2.5s linear infinite;
+                        -moz-animation: tier_img4 2.5s linear infinite;
+                        -webkit-animation: tier_img4 2.5s linear infinite;
+                        -o-animation: tier_img4 2.5s linear infinite;
+                    }
+
+                    @keyframes tier_img4 {
+                        0%, 
+                        100% {
+                            filter: drop-shadow(2px 4px 6px white);
+                        }
+                        50% {
+                            filter: drop-shadow(2px 4px 6px red);
+                        }
+                    }
+
+                    .tier_text4 {
+                        animation: tier_text4 2.5s linear infinite;
+                        -moz-animation: tier_textx4 2.5s linear infinite;
+                        -webkit-animation: tier_text4 2.5s linear infinite;
+                        -o-animation: tier_text4 2.5s linear infinite;
+                    }
+
+                    @keyframes tier_text4 {
+                        0%, 
+                        100% {
+                            color: transparent;
+                            filter: drop-shadow(2px 4px 6px transparent);
+                        }
+                        50% {
+                            color: #ff0000;
+                            text-shadow: 0 0 1vw #ff0000, 0 0 3vw #ff0000, 0 0 10vw #ff0000, 0 0 10vw #ff0000, 0 0 0.4vw #ff0000, 0.1vw 0.1vw 0.1vw #ff0000;
+                            filter: drop-shadow(2px 4px 6px red);
+                        }
+                    }
+
+
+
+            /* --- 애니메이션 끝 --- */
+
+</style>
+<body>
+    <!-- -------------------- 컨테이너 -------------------- -->
+    <div id="container">
+
+        <!-- -------------------- 티어 이미지 표시 -------------------- -->
+
+        <div id="tier_main">
+            <div id="tieri" class="img_zone tier_img1">
+                <img id="tier_i" src="img/실버 rs.png">
+            </div>
+            <div id="tiert" class="text_zone tier_text1">
+                <span id="tier_t">Silver</span>
+            </div>
+        </div>
+
+        <!-- -------------------- 상점 화면(display:none) -------------------- -->
+        <div id="shop_main" class="fade-in-box">
+            <button type="button" class="btn-close" onclick="close1()" style="z-index: 1;">
+            </button>
+            <!-- ----- 강화 아이템 (display:none) ----- -->
+            <div class="shop_window1">
+                <div class="sh_list">
+                    <h3>Enchant Shop</h3>
+                    <br><br>
+                    <p>강화 코인 x10 : <span class="cost">100,000원</span> <span class="buy" onclick="coin_buy(1)">구매하기<span class="me">◁</span></span> </p>
+                    <p>강화 코인 x50 : <span class="cost">500,000원</span> <span class="buy" onclick="coin_buy(2)">구매하기<span class="me">◁</span></span></p>
+                    <p>강화 코인 x100 : <span class="cost">900,000원</span> <span class="buy" onclick="coin_buy(3)">구매하기<span class="me">◁</span></span></p>
+                    <br>
+                    <p>보호권 x1 : <span class="cost">500,000원</span> <span class="buy" onclick="ptt_buy(1)">구매하기<span class="me">◁</span></span></p>
+                    <p>보호권 x5 : <span class="cost">2,500,000원</span> <span class="buy" onclick="ptt_buy(2)">구매하기<span class="me">◁</span></span></p>
+                    <p>보호권 x10 : <span class="cost">4,500,000원</span> <span class="buy" onclick="ptt_buy(3)">구매하기<span class="me">◁</span></span></p>
+                    <br>
+                    <p>고급 보호권 x1 : <span class="cost">보호권 조각 20개</span> <span class="buy" onclick="mix(1)">조합하기<span class="me">◁</span></span></p>
+                    <p>고급 보호권 x5 : <span class="cost">보호권 조각 100개</span> <span class="buy" onclick="mix(2)">조합하기<span class="me">◁</span></span></p>
+                    <p>고급 보호권 x10 : <span class="cost">보호권 조각 200개</span> <span class="buy" onclick="mix(3)">조합하기<span class="me">◁</span></span></p>
+                </div>
+            </div>
+            <!-- 상점 아이템 설명 div -->
+            <div class="shop_info">
+
+
+            </div>
+                
+            <!-- ----- 돈 뽑기 (display:none) ----- -->
+            <div class="shop_window2">
+                <div class="sh_list">
+                    <h3>Money Gacha</h3>
+                    <br><br>
+                    <p>Silver : <span class="cost">100,000원 </span> <span class="buy" onclick="mgacha(1)">구매하기<span class="me">◁</span></span></p>
+                    <p>Gold : <span class="cost">500,000원 </span><span class="buy" onclick="mgacha(2)">구매하기<span class="me">◁</span></span></p>
+                    <p>Master  : <span class="cost">1,000,000원 </span><span class="buy" onclick="mgacha(3)">구매하기<span class="me">◁</span></span></p>
+                    <p>Grand Master : <span class="cost">5,000,000원 </span><span class="buy" onclick="mgacha(4)">구매하기<span class="me">◁</span></span></p>
+
+                </div>
+            </div>
+            <!-- 상점 아이템 설명 div -->
+            <div class="shop_info">
+                
+            </div>
+            <!-- ----- 강화 아이템 뽑기 (display:none) ----- -->
+            <div class="shop_window3">
+                <div class="sh_list">
+                    <h3>Item Gacha</h3>
+                    <br><br>
+                    <p>Silver : <span class="cost">100,000원 </span> <span class="buy" onclick="mgacha(1)">구매하기<span class="me">◁</span></span></p>
+                    <p>Gold : <span class="cost">500,000원 </span><span class="buy" onclick="mgacha(2)">구매하기<span class="me">◁</span></span></p>
+                    <p>Master  : <span class="cost">1,000,000원 </span><span class="buy" onclick="mgacha(3)">구매하기<span class="me">◁</span></span></p>
+                    <p>Grand Master : <span class="cost">5,000,000원 </span><span class="buy" onclick="mgacha(4)">구매하기<span class="me">◁</span></span></p>
+
+                </div>
+            </div>
+            <!-- 상점 아이템 설명 div -->
+            <div class="shop_info">
+                
+            </div>
+        </div>
+
+        <!-- -------------------- 사이드 바 (상점 버튼) -------------------- -->
+        <div id="side_bar">
+
+            <div class="shop_title">
+
+                <img src="img/상점1.png">
+
+            </div>
+            <!-- ----- 강화 아이템 div 활성화 버튼 ----- -->
+            <button class="shop_btn" onclick="enchant_shop()">
+                <img src="img/샵11.png">
+            </button>
+            <!-- ----- 돈 뽑기 div 활성화 버튼 ----- -->
+            <button class="shop_btn" onclick="mgacha_shop()">
+                <img src="img/샵22.png">
+            </button>
+            <!-- ----- 강화 아이템 뽑기 div 활성화 버튼 ----- -->
+            <button class="shop_btn" onclick="engacha_shop()">
+                <img src="img/샵33.png">
+            </button>
+        </div>
+
+        <!-- -------------------- 전체 메인 -------------------- -->
+
+        <div id="main">
+            <!-- -------------------- 상단 메인 -------------------- -->
+            <div id="top_main">
+                <!-- ----- 강화 아이템 + (현재 강화 상태) ----- -->
+                <div class="display_item">
+                    <div class="flux1" id="flux">
+                        <span id="item_name" style="font-family: 'GimpoGothicBold00';">훈련자용 죽도</span> +<span id="enchant" style="font-family: 'GimpoGothicBold00';">0</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- -------------------- 중앙 바 -------------------- -->
+            <div id="center_bar">
+                <!-- ----- 현재 소유 금액 ----- -->
+                <div class="asset">
+                    소유 자산 <br><span id="asset">0</span>원
+                </div>
+                <!-- ----- 무기 판매 금액 ----- -->
+                <div class="sale_price">
+                    판매 가격 <br><span id="sell_price">0</span>원
+                </div>
+                
+            </div>
+
+            <!-- -------------------- 하단 메인 -------------------- -->
+            <div id="footer_main">
+                <!-- ----- 강화 버튼 ----- -->
+                <div class="enchant_btn">
+                    <div class="enchant_btnbtn">
+                    <button onclick="start()"><img src="img/강화.png"></button>
+                    </div>
+                    <div class="enchant_inp">     
+                        <div class="ptt_btn">               
+                            <input type="checkbox" value="강화보호권" id="input_ptt" onclick="doOpenCheck(this);" name="ptt">
+                            <label for="input_ptt"><img src="img/강화보호권.png"></label>
+                        </div>
+                        <div class="sptt_btn">
+                        <input type="checkbox" value="고급보호권" id="input_sptt" onclick="doOpenCheck(this);" name="ptt">
+                        <label for="input_sptt"><img src="img/고급보호권.png"></label>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ----- 아이템 보기 버튼 ----- -->
+                <!-- onclick="view_open()" -->
+                <div class="view_item" onclick="refreshing()">
+                    <button ><img src="img/아이템 확인.png"></button>
+                </div>
+                <!-- ----- 현재 소유중인 아이템 ----- -->
+                <div class="have_item">
+                    <div class="item_list">
+                        강화 코인 : <span id="coin"></span>개
+                        <br>
+                        강화 보호권 : <span id="ptt"></span>개
+                        <br>
+                        고급 보호권 : <span id="sptt"></span>개
+                        <br>
+                        보호권 조각 : <span id="piece"></span>개
+                    </div>        
+                </div>
+                <!-- ----- 무기 판매 ----- -->
+                <div class="item_sale">
+                    <button onclick="sell()"><img src="img/무기 판매 1.png"></button>
+                </div>
+                <div class="game_info">
+                    
+                    <h3>Play Info</h3>
+                    <br>
+                    <p>1. 강화는 +1부터 +15까지 구현되어 있습니다.</p>
+                    <p>2. 강화 확률은 모두 50%로 동일한 확률입니다.</p>
+                    <p>3. 강화에 실패시 보호권 조각을 획득합니다.</p>
+                    <p>4. 보호권 조각을 조합시 확률적으로 보호권 혹은 <br>　고급 보호권을 획득할 수 있습니다.</p>
+                    <p>5. 보호권 : 강화 실패시 강화 -1 <br>　고급 보호권 : 강화 실패시 하락 없음 </p>
+                    <p>6. 좌측 상점을 통해 일정 확률로 금화 또는 <br>　아이템을 획득할 수 있습니다</p>
+                    <p>7. 강화 1회당 강화 코인 1개가 소모됩니다. <br>　강화 코인의 경우 상점 혹은 랜덤 상점에서 <br>　획득이 가능합니다</p>
+
+                </div>
+            </div>
+
+            <!-- -------------------- 결과 바 -------------------- -->
+            <div class="result_bar">
+                <!-- ----- 강화 성공 ----- -->
+                <div class="success fade-in-box" >
+                    <img src="img/성공 1.png">
+                </div>
+            </div>
+            <div class="result_bar">
+                <!-- ----- 강화 실패 ----- -->
+                <div class="fail fade-out-box">
+                    <img src="img/실패 1.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+var item;
+var weapon;
+var asset = 2000000;
+var enchant = 0;
+var cost = 15000;
+var coin = 50;
+var ptt = 5;
+var sptt = 1;
+var piece = 0;
+var tier = 1;
+var result = document.querySelector("#result");
+var enter = "\n";
+document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+document.querySelector('#coin').innerText = coin;
+document.querySelector('#ptt').innerText = ptt;
+document.querySelector('#sptt').innerText = sptt;
+document.querySelector('#piece').innerText = piece;
+
+
+
+    function start() {
+
+
+        // document.querySelector('#result img').style.display = 'none';
+        //     document.querySelector('#result img').setAttribute('src', 'img/성공2.png')
+        //     document.querySelector('#result img').style.display = 'block';
+        document.querySelector('.success').style.display = "none";
+        document.querySelector('.fail').style.display = "none";
+        document.querySelector('.success').classList.add('fade-in-box');
+        document.querySelector('.fail').classList.add('fade-out-box');
+
+        // 강화시 강화 코인 1개 사용 (없으면 강화 못하게 만들기)
+        if (coin < 1) {
+            alert('강화 코인이 부족합니다');
+            return;
+        }
+
+
+        // 각 아이템 강화 레벨마다 다른 강화 비용을 제공하게 만들기
+        // 강화별 소모 금액 
+        // 소유 자산이 아이템 강화 비용보다 작으면 안되는 조건문 만들기
+        switch (enchant) {
+            case 0: 
+                if (cost * 1 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 1 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 1)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');      
+                }                
+                break;
+            case 1: 
+                if (cost * 2 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 2 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 2)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');     
+                }       
+                break;
+            case 2:
+                 if (cost * 3 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 3 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 3)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR'); 
+                }      
+                break;
+            case 3:
+                if (cost * 4 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 4 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 4)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');     
+                }       
+                break;
+            case 4:
+                if (cost * 5 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 5 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 5)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');      
+                }       
+                break;
+            case 5:
+                if (cost * 6 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 6 + '원 입니다');
+                    return;
+                } else {
+                    // float , int 둘다 number
+                    asset = asset - (parseInt (cost * 6))
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }      
+                break;
+            case 6: 
+                if (cost * 7 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 7 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (parseInt (cost * 7))
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }      
+                break;
+            case 7: 
+                if (cost * 8 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 8 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (parseInt (cost * 8))
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }         
+                break;
+            case 8:
+                if (cost * 9 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 9 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (parseInt (cost * 9))
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }      
+                break;
+            case 9:
+                if (cost * 10 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 10 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 10)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }    
+                break;
+            case 10:
+                if (cost * 15 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 15 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 15)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }     
+                break;
+            case 11:
+                if (cost * 20 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 20 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 20)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }      
+                break;
+            case 12:
+                if (cost * 35 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 35 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 35)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }      
+                break;
+            case 13:
+                if (cost * 45 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 45 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 45)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }    
+                break;
+            case 14:
+                if (cost * 50 > asset ) {
+                    alert('비용이 부족합니다' + enter + '강화비용은 ' + cost * 50 + '원 입니다');
+                    return;
+                } else {
+                    asset = asset - (cost * 50)
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');        
+                }     
+                break;
+            case 15:
+                if (enchant = 15) {
+                    alert('더 이상 강화할 수 없습니다.');
+                    return;
+                }
+                break;
+                
+
+        }
+
+        var radioValue;
+        for(var i=0; i<2; i++) {
+            if(document.getElementsByName("ptt")[i].checked) {                
+                radioValue = document.getElementsByName("ptt")[i].value;
+            }
+        }
+        
+        // 강화 퍼센트를 만들기 위한 100까지의 랜덤 숫자 생성
+        var rand = Math.floor(Math.random() * 99) + 1;
+
+        // 강화 보호권 사용 후 실패하면 강화에서 -1강 & 0강인 경우 -1강이 아닌 그냥 0강으로 만들기
+        if(radioValue == '강화보호권') {
+
+            //강화보호권 소유중인지 확인하기
+            if(ptt < 1) {
+                alert('강화보호권이 없습니다');
+                return
+            }
+
+            if (1 <= rand && rand <= 50) {
+            // // 리졸트에 강화 성공 이너 텍스트
+            document.querySelector('.success').style.display = "block";
+            enchant = enchant + 1;
+            // 강화 코인 -1
+            coin = coin - 1;
+            document.querySelector('#coin').innerText = coin;
+            ptt = ptt - 1;
+            document.querySelector('#ptt').innerText = ptt;
+            // 강화 상태 표시
+            document.querySelector('#enchant').innerText = enchant;
+            // 강화 단계별 아이템 색 변환
+            // 강화 성공시 판매 금액 표시
+        } else {
+            if (enchant == 0) {
+                document.querySelector('.fail').style.display = "block";
+                document.querySelector('#sell_price').innerText = "0";
+                document.querySelector('#flux').className = 'flux0';
+                coin = coin - 1;
+                document.querySelector('#coin').innerText = coin;
+                piece = piece + 1;
+                document.querySelector('#piece').innerText = piece;
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;
+                ptt = ptt - 1;
+                document.querySelector('#ptt').innerText = ptt;
+
+            } else {
+
+                //리졸트에 강화 실패 이너 텍스트
+                document.querySelector('.fail').style.display = "block";
+
+                // 코인 1개 회수
+                coin = coin - 1;
+                document.querySelector('#coin').innerText = coin;
+                // 강화 실패시 보호권 조각 1개 지급
+                piece = piece + 1;
+                document.querySelector('#piece').innerText = piece;
+                // 강화 0강 만들기
+                enchant = enchant - 1;
+                // 강화 상태 표시
+                document.querySelector('#enchant').innerText = enchant;
+                ptt = ptt - 1;
+                document.querySelector('#ptt').innerText = ptt;
+
+            }
+        }
+        switch (enchant) {
+                case 0: 
+                document.querySelector('#sell_price').innerText = "0";
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 1: 
+                document.querySelector('#sell_price').innerText = "20,000";
+                document.querySelector('#flux').className = 'flux1';
+                document.querySelector('#item_name').innerText = "입문자용 목검"
+
+                break;
+            case 2: 
+                document.querySelector('#sell_price').innerText = "80,000";
+                document.querySelector('#flux').className = 'flux2';
+                document.querySelector('#item_name').innerText = "숙련자용 진검"
+                break;
+            case 3:
+                document.querySelector('#sell_price').innerText = "200,000";
+                document.querySelector('#flux').className = 'flux3'; 
+                document.querySelector('#item_name').innerText = "장검"
+                break;
+            case 4:
+                document.querySelector('#sell_price').innerText = "300,000";
+                document.querySelector('#flux').className = 'flux4';  
+                document.querySelector('#item_name').innerText = "예리한 장검"
+                break;
+            case 5:
+                document.querySelector('#sell_price').innerText = "600,000";
+                document.querySelector('#flux').className = 'flux5';   
+                document.querySelector('#item_name').innerText = "본 소드"
+                break;
+            case 6:
+                document.querySelector('#sell_price').innerText = "1,000,000";
+                document.querySelector('#flux').className = 'flux6';   
+                document.querySelector('#item_name').innerText = "다마스커스"
+                if(tier < 2) {
+                    tier = 2;
+                } else {
+                    tier = tier;
+                }
+                break;
+            case 7: 
+                document.querySelector('#sell_price').innerText = "1,500,000";
+                document.querySelector('#flux').className = 'flux7';   
+                document.querySelector('#item_name').innerText = "글라디우스"
+                break;
+            case 8: 
+                document.querySelector('#sell_price').innerText = "2,500,000";
+                document.querySelector('#flux').className = 'flux8';  
+                document.querySelector('#item_name').innerText = "플랑베르쥬"
+                break;
+            case 9:
+                document.querySelector('#sell_price').innerText = "4,000,000";
+                document.querySelector('#flux').className = 'flux9';  
+                document.querySelector('#item_name').innerText = "커틀러스"
+                break;
+            case 10:
+                document.querySelector('#sell_price').innerText = "7,000,000";
+                document.querySelector('#flux').className = 'flux10';  
+                document.querySelector('#item_name').innerText = "전장의 수호자"
+                break;
+            case 11:
+                document.querySelector('#sell_price').innerText = "10,000,000";
+                document.querySelector('#flux').className = 'flux11';  
+                document.querySelector('#item_name').innerText = "창성의 구원자"
+                break;
+            case 12:
+                document.querySelector('#sell_price').innerText = "15,000,000";
+                document.querySelector('#flux').className = 'flux12';  
+                document.querySelector('#item_name').innerText = "마검 그람"
+                if(tier < 3) {
+                    tier = 3;
+                } else {
+                    tier = tier;
+                }
+                break;
+            case 13:
+                document.querySelector('#sell_price').innerText = "30,000,000";
+                document.querySelector('#flux').className = 'flux13';   
+                document.querySelector('#item_name').innerText = "신검 클라우 솔라스"
+                break;
+            case 14:
+                document.querySelector('#sell_price').innerText = "50,000,000";
+                document.querySelector('#flux').className = 'flux14';   
+                document.querySelector('#item_name').innerText = "용살검 : 아스칼론"
+                break;
+            case 15:
+                document.querySelector('#sell_price').innerText = "100,000,000";
+                document.querySelector('#flux').className = 'flux15';   
+                document.querySelector('#item_name').innerText = "신살검 : 갓 이터"
+                if(tier < 4) {
+                    tier = 4;
+                } else {
+                    tier = tier;
+                }
+                break;
+        }
+
+        }
+        // 고급 보호권 사용 후 실패하면 강화 유지 % 0강인 경우 그냥 0강 그대로 만들기
+        else if(radioValue == '고급보호권') {
+            if(sptt < 1) {
+                alert('고급보호권이 없습니다');
+                return
+            }                
+            if (1 <= rand && rand <= 50) {
+                
+                // // 리졸트에 강화 성공 이너 텍스트
+                document.querySelector('.success').style.display = "block";
+                enchant = enchant + 1;
+                // 강화 코인 -1
+                coin = coin - 1;
+                document.querySelector('#coin').innerText = coin;
+                // 강화 상태 표시
+                document.querySelector('#enchant').innerText = enchant;
+                sptt = sptt - 1;
+                document.querySelector('#sptt').innerText = sptt;
+                // 강화 단계별 아이템 색 변환
+                // 강화 성공시 판매 금액 표시
+
+
+        } else {
+
+            if (enchant == 0) {
+                document.querySelector('.fail').style.display = "block";
+                document.querySelector('#sell_price').innerText = "0";
+                document.querySelector('#flux').className = 'flux0';
+                coin = coin - 1;
+                document.querySelector('#coin').innerText = coin;
+                piece = piece + 1;
+                document.querySelector('#piece').innerText = piece;
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;
+                sptt = sptt - 1;
+                document.querySelector('#sptt').innerText = sptt;
+
+            } else {
+
+                //리졸트에 강화 실패 이너 텍스트
+                document.querySelector('.fail').style.display = "block";
+                // 코인 1개 회수
+                coin = coin - 1;
+                document.querySelector('#coin').innerText = coin;
+                // 강화 실패시 보호권 조각 1개 지급
+                piece = piece + 1;
+                document.querySelector('#piece').innerText = piece;
+                // 강화 0강 만들기
+                enchant = enchant;
+                // 강화 상태 표시
+                document.querySelector('#enchant').innerText = enchant;
+                sptt = sptt - 1;
+                document.querySelector('#sptt').innerText = sptt;
+                
+            }
+        }
+        switch (enchant) {
+                case 0: 
+                document.querySelector('#sell_price').innerText = "0";
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 1: 
+                document.querySelector('#sell_price').innerText = "20,000";
+                document.querySelector('#flux').className = 'flux1';
+                document.querySelector('#item_name').innerText = "입문자용 목검"
+
+                break;
+            case 2: 
+                document.querySelector('#sell_price').innerText = "80,000";
+                document.querySelector('#flux').className = 'flux2';
+                document.querySelector('#item_name').innerText = "숙련자용 진검"
+                break;
+            case 3:
+                document.querySelector('#sell_price').innerText = "200,000";
+                document.querySelector('#flux').className = 'flux3'; 
+                document.querySelector('#item_name').innerText = "장검"
+                break;
+            case 4:
+                document.querySelector('#sell_price').innerText = "300,000";
+                document.querySelector('#flux').className = 'flux4';  
+                document.querySelector('#item_name').innerText = "예리한 장검"
+                break;
+            case 5:
+                document.querySelector('#sell_price').innerText = "600,000";
+                document.querySelector('#flux').className = 'flux5';   
+                document.querySelector('#item_name').innerText = "본 소드"
+                break;
+            case 6:
+                document.querySelector('#sell_price').innerText = "1,000,000";
+                document.querySelector('#flux').className = 'flux6';   
+                document.querySelector('#item_name').innerText = "다마스커스"
+                if(tier < 2) {
+                    tier = 2;
+                } else {
+                    tier = tier;
+                }
+                break;
+            case 7: 
+                document.querySelector('#sell_price').innerText = "1,500,000";
+                document.querySelector('#flux').className = 'flux7';   
+                document.querySelector('#item_name').innerText = "글라디우스"
+                break;
+            case 8: 
+                document.querySelector('#sell_price').innerText = "2,500,000";
+                document.querySelector('#flux').className = 'flux8';  
+                document.querySelector('#item_name').innerText = "플랑베르쥬"
+                break;
+            case 9:
+                document.querySelector('#sell_price').innerText = "4,000,000";
+                document.querySelector('#flux').className = 'flux9';  
+                document.querySelector('#item_name').innerText = "커틀러스"
+                break;
+            case 10:
+                document.querySelector('#sell_price').innerText = "7,000,000";
+                document.querySelector('#flux').className = 'flux10';  
+                document.querySelector('#item_name').innerText = "전장의 수호자"
+                break;
+            case 11:
+                document.querySelector('#sell_price').innerText = "10,000,000";
+                document.querySelector('#flux').className = 'flux11';  
+                document.querySelector('#item_name').innerText = "창성의 구원자"
+                break;
+            case 12:
+                document.querySelector('#sell_price').innerText = "15,000,000";
+                document.querySelector('#flux').className = 'flux12';  
+                document.querySelector('#item_name').innerText = "마검 그람"
+                if(tier < 3) {
+                    tier = 3;
+                } else {
+                    tier = tier;
+                }
+                break;
+            case 13:
+                document.querySelector('#sell_price').innerText = "30,000,000";
+                document.querySelector('#flux').className = 'flux13';   
+                document.querySelector('#item_name').innerText = "신검 클라우 솔라스"
+                break;
+            case 14:
+                document.querySelector('#sell_price').innerText = "50,000,000";
+                document.querySelector('#flux').className = 'flux14';   
+                document.querySelector('#item_name').innerText = "용살검 : 아스칼론"
+                break;
+            case 15:
+                document.querySelector('#sell_price').innerText = "100,000,000";
+                document.querySelector('#flux').className = 'flux15';   
+                document.querySelector('#item_name').innerText = "신살검 : 갓 이터"
+                if(tier < 4) {
+                    tier = 4;
+                } else {
+                    tier = tier;
+                }
+                break;
+        }
+
+        //일반 강화 버튼 눌렀을때로
+        } else {
+            if (1 <= rand && rand <= 99) {
+            // // 리졸트에 강화 성공 이너 텍스트
+            document.querySelector('.success').style.display = "block";
+            enchant = enchant + 1;
+            // 강화 코인 -1
+            coin = coin - 1;
+            document.querySelector('#coin').innerText = coin;
+            // 강화 상태 표시
+            document.querySelector('#enchant').innerText = enchant;
+
+
+        } else {
+            // 리졸트에 강화 실패 이너 텍스트
+            document.querySelector('.fail').style.display = "block";
+            // 코인 1개 회수
+            coin = coin - 1;
+            document.querySelector('#coin').innerText = coin;
+            // 강화 실패시 보호권 조각 1개 지급
+            piece = piece + 1;
+            document.querySelector('#piece').innerText = piece;
+            // 강화 0강 만들기
+            enchant = 0;
+            // 강화 상태 표시
+            document.querySelector('#enchant').innerText = enchant;
+
+        }
+        switch (enchant) {
+                case 0: 
+                document.querySelector('#sell_price').innerText = "0";
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 1: 
+                document.querySelector('#sell_price').innerText = "20,000";
+                document.querySelector('#flux').className = 'flux1';
+                document.querySelector('#item_name').innerText = "입문자용 목검"
+
+                break;
+            case 2: 
+                document.querySelector('#sell_price').innerText = "80,000";
+                document.querySelector('#flux').className = 'flux2';
+                document.querySelector('#item_name').innerText = "숙련자용 진검"
+                break;
+            case 3:
+                document.querySelector('#sell_price').innerText = "200,000";
+                document.querySelector('#flux').className = 'flux3'; 
+                document.querySelector('#item_name').innerText = "장검"
+                break;
+            case 4:
+                document.querySelector('#sell_price').innerText = "300,000";
+                document.querySelector('#flux').className = 'flux4';  
+                document.querySelector('#item_name').innerText = "예리한 장검"
+                break;
+            case 5:
+                document.querySelector('#sell_price').innerText = "600,000";
+                document.querySelector('#flux').className = 'flux5';   
+                document.querySelector('#item_name').innerText = "본 소드"
+                break;
+            case 6:
+                document.querySelector('#sell_price').innerText = "1,000,000";
+                document.querySelector('#flux').className = 'flux6';   
+                document.querySelector('#item_name').innerText = "다마스커스"
+                if(tier < 2) {
+                    tier = 2;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/골드 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img1');
+                    document.querySelector('#tiert').classList.remove('tier_text1');
+                    document.querySelector('#tieri').classList.add('tier_img2');
+                    document.querySelector('#tiert').classList.add('tier_text2');
+                    document.querySelector('#tier_t').innerText = "Gold";
+                } else {
+                    tier = tier;
+                }
+                break;
+            case 7: 
+                document.querySelector('#sell_price').innerText = "1,500,000";
+                document.querySelector('#flux').className = 'flux7';   
+                document.querySelector('#item_name').innerText = "글라디우스"
+                break;
+            case 8: 
+                document.querySelector('#sell_price').innerText = "2,500,000";
+                document.querySelector('#flux').className = 'flux8';  
+                document.querySelector('#item_name').innerText = "플랑베르쥬"
+                break;
+            case 9:
+                document.querySelector('#sell_price').innerText = "4,000,000";
+                document.querySelector('#flux').className = 'flux9';  
+                document.querySelector('#item_name').innerText = "커틀러스"
+                break;
+            case 10:
+                document.querySelector('#sell_price').innerText = "7,000,000";
+                document.querySelector('#flux').className = 'flux10';  
+                document.querySelector('#item_name').innerText = "전장의 수호자"
+                break;
+            case 11:
+                document.querySelector('#sell_price').innerText = "10,000,000";
+                document.querySelector('#flux').className = 'flux11';  
+                document.querySelector('#item_name').innerText = "창성의 구원자"
+                break;
+            case 12:
+                document.querySelector('#sell_price').innerText = "15,000,000";
+                document.querySelector('#flux').className = 'flux12';  
+                document.querySelector('#item_name').innerText = "마검 그람"
+                if(tier < 3) {
+                    tier = 3;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/마스터 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img2');
+                    document.querySelector('#tiert').classList.remove('tier_text2');
+                    document.querySelector('#tieri').classList.add('tier_img3');
+                    document.querySelector('#tiert').classList.add('tier_text3');
+                    document.querySelector('#tier_t').innerText = "Master";
+                } else {
+                    tier = tier;
+                }
+                break;
+            case 13:
+                document.querySelector('#sell_price').innerText = "30,000,000";
+                document.querySelector('#flux').className = 'flux13';   
+                document.querySelector('#item_name').innerText = "신검 클라우 솔라스"
+                break;
+            case 14:
+                document.querySelector('#sell_price').innerText = "50,000,000";
+                document.querySelector('#flux').className = 'flux14';   
+                document.querySelector('#item_name').innerText = "용살검 : 아스칼론"
+                break;
+            case 15:
+                document.querySelector('#sell_price').innerText = "100,000,000";
+                document.querySelector('#flux').className = 'flux15';   
+                document.querySelector('#item_name').innerText = "신살검 : 갓 이터"
+                if(tier < 4) {
+                    tier = 4;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/그랜드마스터 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img3');
+                    document.querySelector('#tiert').classList.remove('tier_text3');
+                    document.querySelector('#tieri').classList.add('tier_img4');
+                    document.querySelector('#tiert').classList.add('tier_text4');
+                    document.querySelector('#tier_t').innerText = "Grand Master";
+                } else {
+                    tier = tier;
+                }
+                break;
+        }
+        
+            setTimeout(function(){
+                document.querySelector('.success').classList.remove('fade-in-box');
+                document.querySelector('.fail').classList.remove('fade-out-box');
+                document.querySelector('.success').style.display = "none";
+                document.querySelector('.fail').style.display = "none";
+            }, 800);
+    }
+}
+
+
+
+    function sell() {
+        switch (enchant) {
+            case 0: 
+                alert("0강은 판매할 수 없습니다");
+                break;
+            case 1: 
+                alert("판매가 완료되었습니다.");
+                // 판매시 강화별 금액 지급
+                asset = asset + 20000;
+                // 금액 표시
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                // 강화 단계 0으로 변경
+                enchant = 0;
+                // 강화 단계 변경 표시
+                document.querySelector('#enchant').innerText = enchant;
+                // 판매 금액 0원으로 표시
+                document.querySelector('#sell_price').innerText = "0";      
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"         
+                break;
+            case 2:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 80000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 3:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 200000; 
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 4:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 300000;  
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";
+                document.querySelector('#flux').className = 'flux0';   
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 5:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 600000; 
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant; 
+                document.querySelector('#sell_price').innerText = "0";  
+                document.querySelector('#flux').className = 'flux0';   
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 6: 
+                alert("판매가 완료되었습니다.");
+                asset = asset + 1000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 7: 
+                alert("판매가 완료되었습니다.");
+                asset = asset + 1500000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 8:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 2500000;   
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";   
+                document.querySelector('#flux').className = 'flux0'; 
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 9:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 4000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";  
+                document.querySelector('#flux').className = 'flux0';  
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 10:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 7000000; 
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 11:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 10000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 12:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 15000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 13:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 30000000; 
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 14:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 50000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";   
+                document.querySelector('#flux').className = 'flux0'; 
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+            case 15:
+                alert("판매가 완료되었습니다.");
+                asset = asset + 1000000000; 
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                enchant = 0;
+                document.querySelector('#enchant').innerText = enchant;  
+                document.querySelector('#sell_price').innerText = "0";    
+                document.querySelector('#flux').className = 'flux0';
+                document.querySelector('#item_name').innerText = "훈련자용 죽도"
+                break;
+
+        }
+        } 
+
+        function enchant_shop(){ 
+            document.querySelector('#shop_main').classList.add('fade-in-box');
+            document.querySelector('#shop_main').style.display = 'block'; 
+            document.querySelector('.shop_window1').style.display = 'block';
+            document.querySelector('#main').classList.add('fade-out-box');
+            document.querySelector('.shop_window2').style.display = 'none';
+            document.querySelector('.shop_window3').style.display = 'none';
+            setTimeout(function(){
+                document.querySelector('#main').style.display = 'none'; 
+                document.querySelector('#main').classList.remove('fade-out-box');
+            }, 800);
+        }
+
+        function mgacha_shop(){ 
+            document.querySelector('#shop_main').style.display = 'block'; 
+            document.querySelector('.shop_window2').style.display = 'block';  
+            document.querySelector('#main').classList.add('fade-out-box');
+            document.querySelector('.shop_window1').style.display = 'none';
+            document.querySelector('.shop_window3').style.display = 'none';  
+            setTimeout(function(){
+                document.querySelector('#main').style.display = 'none'; 
+                document.querySelector('#main').classList.remove('fade-out-box');
+            }, 800);
+        }
+
+        function engacha_shop() {
+            document.querySelector('#shop_main').style.display = 'block'; 
+            document.querySelector('.shop_window3').style.display = 'block';  
+            document.querySelector('#main').classList.add('fade-out-box');
+            document.querySelector('.shop_window1').style.display = 'none';
+            document.querySelector('.shop_window2').style.display = 'none'; 
+            setTimeout(function(){
+                document.querySelector('#main').style.display = 'none'; 
+                document.querySelector('#main').classList.remove('fade-out-box');
+            }, 800); 
+        }
+
+        function close1() {
+            document.querySelector('#shop_main').classList.add('fade-out-box');
+            document.querySelector('#main').classList.add('fade-in-box');
+            document.querySelector('.shop_window1').style.display = 'none';  
+            document.querySelector('.shop_window2').style.display = 'none';
+            document.querySelector('.shop_window3').style.display = 'none';  
+            document.querySelector('#main').style.display = 'block'; 
+            document.querySelector('#main').classList.remove('fade-out-box');
+            setTimeout(function(){
+                document.querySelector('#shop_main').classList.remove('fade-out-box');
+                document.querySelector('#shop_main').style.display = 'none'; 
+            }, 80);
+        }
+        
+
+        var refreshToggle = false
+        var refresh = document.querySelector("#footer_main")
+        function refreshing() {
+            if (refresh) {
+                if (!refreshToggle) { // toggle이 false이면 변경
+                    document.querySelector('.have_item').style.display = 'block'
+                    document.querySelector('.game_info').style.display = 'none'
+                    refreshToggle = true
+                } else { // toggle이 true이면 변경
+                    document.querySelector('.have_item').style.display = 'none'
+                    document.querySelector('.game_info').style.display = 'block'
+                    refreshToggle = false
+                }
+            }
+        }
+
+        function coin_buy(set) {
+
+            if(set == 1) {
+                
+                if(asset < 100000) {
+                alert('구입하기에는 금액이 부족합니다');
+                return
+            }
+            asset = asset - 100000;
+            document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+            coin = coin + 10;
+            document.querySelector('#coin').innerText = coin;
+            alert('강화 코인 10개 구입하였습니다.');
+
+            }
+            else if(set == 2) {
+
+                if(asset < 500000) {
+                alert('구입하기에는 금액이 부족합니다');
+                return
+            }
+            asset = asset - 500000;
+            document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+            coin = coin + 50;
+            document.querySelector('#coin').innerText = coin;
+            alert('강화 코인 50개 구입하였습니다.');
+
+            } else {
+
+                if(asset < 900000) {
+                alert('구입하기에는 금액이 부족합니다');
+                return
+            }
+            asset = asset - 900000;
+            document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+            coin = coin + 100;
+            document.querySelector('#coin').innerText = coin;
+            alert('강화 코인 100개 구입하였습니다.');
+
+            }
+
+        }
+
+        function ptt_buy(set) {
+
+            if(set == 1) {
+                
+                if(asset < 500000) {
+                alert('구입하기에는 금액이 부족합니다');
+                return
+            }
+            asset = asset - 500000;
+            document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+            ptt = ptt + 1;
+            document.querySelector('#ptt').innerText = ptt;
+            alert('강화 보호권 1개 구입하였습니다.');
+
+            }
+            else if(set == 2) {
+
+                if(asset < 2500000) {
+                alert('구입하기에는 금액이 부족합니다');
+                return
+            }
+            asset = asset - 2500000;
+            document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+            ptt = ptt + 5;
+            document.querySelector('#ptt').innerText = ptt;
+            alert('강화 보호권 5개 구입하였습니다.');
+
+            } else {
+
+                if(asset < 4500000) {
+                alert('구입하기에는 금액이 부족합니다');
+                return
+            }
+            asset = asset - 4500000;
+            document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+            ptt = ptt + 10;
+            document.querySelector('#ptt').innerText = ptt;
+            alert('강화 보호권 10개 구입하였습니다.');
+
+            }
+
+        }
+
+        function mix(set) {
+
+            if(set == 1) {
+                
+                if(piece < 20) {
+                alert('보호권 조각이 부족합니다');
+                return
+            }
+
+            piece = piece - 20;
+            document.querySelector('#piece').innerText = piece;
+            sptt = sptt + 1;
+            document.querySelector('#sptt').innerText = sptt;
+            alert('고급 보호권 1개를 조합하였습니다.');
+
+            }
+            else if(set == 2) {
+
+                if(piece < 100) {
+                    alert('보호권 조각이 부족합니다');
+                return
+            }
+            piece = piece - 100;
+            document.querySelector('#piece').innerText = piece;
+            ptt = ptt + 5;
+            document.querySelector('#sptt').innerText = sptt;
+            alert('고급 보호권 5개를 조합하였습니다.');
+
+            } else {
+
+                if(piece < 200) {
+                    alert('보호권 조각이 부족합니다');
+                return
+            }
+            piece = piece - 200;
+            document.querySelector('#piece').innerText = piece;
+            ptt = ptt + 10;
+            document.querySelector('#sptt').innerText = sptt;
+            alert('고급 보호권 10개를 조합하였습니다.');
+
+            }
+
+        }
+
+        function getTier(a) {
+            switch (a) {
+                case 1:
+                    return 'Silver'
+                    break;
+                case 2:
+                    return 'Gold'
+                    break;
+                case 3:
+                    return 'Master'
+                    break;
+                case 4:
+                    return 'Grand Master'
+                    break;
+        
+            }
+        }
+
+        function mgacha(set) {
+            
+            var rand = Math.floor(Math.random() * 99) + 1;
+            console.log(rand);
+            if(set == 1) {
+                if(asset < 100000) {
+                    alert('구매를 하기에는 금액이 부족합니다');
+                return
+                }
+
+                asset = asset - 100000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                
+                if (1 <= rand && rand <= 50) {
+                    asset = asset + 50000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('낙첨되었습니다. \n현재 소유 자산은 ' + asset + '원 입니다.')
+                }
+                else if (51 <= rand && rand <= 78) {
+                    asset = asset + 150000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('3등에 당첨되어 15만원 지급 받았습니다.' + enter + '현재 소유 자산은 ' + asset + '원 입니다.')
+                }
+                else if (79 <= rand && rand <= 94) {
+                    asset = asset + 300000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('2등에 당첨되어 30만원 지급 받았습니다.' + enter + '현재 소유 자산은' + asset + '원 입니다.')
+                } 
+                else if (95 <= rand && rand <= 100) {
+                    asset = asset + 500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('축하합니다!! 1등에 당첨되어 50만원 지급 받았습니다.' + enter + '현재 소유 자산은' + asset + '원 입니다.')
+                }
+            }
+            else if (set == 2) {
+
+                if(tier < 2) {
+                    alert("티어가 낮아서 구매할 수 없습니다" + enter + "현재 티어는 " + getTier(tier) + " 입니다.")
+                    return
+                }
+                if(asset < 500000) {
+                    alert('구매를 하기에는 금액이 부족합니다');
+                return
+                }
+                asset = asset - 500000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+
+                if (1 <= rand && rand <= 47) {
+                    asset = asset + 250000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('당첨에 실패하였습니다. 위로금 25만원 지급됩니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
+                }
+                else if (48 <= rand && rand <= 78) {
+                    asset = asset + 750000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('3등에 당첨되어 75만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                }
+                else if (79 <= rand && rand <= 94) {
+                    asset = asset + 1500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('2등에 당첨되어 200만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                } 
+                else if (95 <= rand && rand <= 100) {
+                    asset = asset + 2500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('축하합니다!! 1등에 당첨되어 500만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                }
+            }
+            else if (set == 3) {
+                if(tier < 3) {
+                    alert("티어가 낮아서 구매할 수 없습니다" + enter + "현재 티어는 " + getTier(tier) + " 입니다.")
+                    return
+                }
+                if(asset < 1000000) {
+                    alert('구매를 하기에는 금액이 부족합니다');
+                return
+                }
+                asset = asset - 1000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                if (1 <= rand && rand <= 47) {
+                    asset = asset + 500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('당첨에 실패하였습니다. 위로금 50만원 지급됩니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
+                }
+                else if (48 <= rand && rand <= 78) {
+                    asset = asset + 1500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('3등에 당첨되어 150만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                }
+                else if (79 <= rand && rand <= 94) {
+                    asset = asset + 3000000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('2등에 당첨되어 300만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                } 
+                else if (95 <= rand && rand <= 100) {
+                    asset = asset + 5000000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('축하합니다!! 1등에 당첨되어 500만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                }
+                
+            } else {
+                if(tier < 4) {
+                    alert("티어가 낮아서 구매할 수 없습니다" + enter + "현재 티어는 " + getTier(tier) + " 입니다.")
+                    return
+                }
+                if(asset < 5000000) {
+                    alert('구매를 하기에는 금액이 부족합니다');
+                return
+                }
+
+                asset = asset - 5000000;
+                document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                if (1 <= rand && rand <= 47) {
+                    asset = asset + 2500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('당첨에 실패하였습니다. 위로금 250만원 지급됩니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
+                }
+                else if (48 <= rand && rand <= 78) {
+                    asset = asset + 7500000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('3등에 당첨되어 750만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                }
+                else if (79 <= rand && rand <= 94) {
+                    asset = asset + 20000000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('2등에 당첨되어 2000만원 지급 받았습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.') 
+                } 
+                else if (95 <= rand && rand <= 100) {
+                    asset = asset + 50000000;
+                    document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
+                    alert('축하합니다!! 1등에 당첨되어 5000만원 지급 받았습니다.' + enter + '현재 소유 자산은 ' + asset + '원 입니다.') 
+                }
+            }
+
+        }
+
+
+        function doOpenCheck(chk){
+            var obj = document.getElementsByName("ptt");
+            for(var i=0; i<obj.length; i++){
+                if(obj[i] != chk){
+                    obj[i].checked = false;
+                }
+            }
+        }
+
+
+</script>
