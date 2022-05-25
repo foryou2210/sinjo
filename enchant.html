@@ -1965,6 +1965,12 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#item_name').innerText = "다마스커스"
                 if(tier < 2) {
                     tier = 2;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/골드 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img1');
+                    document.querySelector('#tiert').classList.remove('tier_text1');
+                    document.querySelector('#tieri').classList.add('tier_img2');
+                    document.querySelector('#tiert').classList.add('tier_text2');
+                    document.querySelector('#tier_t').innerText = "Gold";
                 } else {
                     tier = tier;
                 }
@@ -2000,6 +2006,12 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#item_name').innerText = "마검 그람"
                 if(tier < 3) {
                     tier = 3;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/마스터 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img2');
+                    document.querySelector('#tiert').classList.remove('tier_text2');
+                    document.querySelector('#tieri').classList.add('tier_img3');
+                    document.querySelector('#tiert').classList.add('tier_text3');
+                    document.querySelector('#tier_t').innerText = "Master";
                 } else {
                     tier = tier;
                 }
@@ -2020,6 +2032,12 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#item_name').innerText = "신살검 : 갓 이터"
                 if(tier < 4) {
                     tier = 4;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/그랜드마스터 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img3');
+                    document.querySelector('#tiert').classList.remove('tier_text3');
+                    document.querySelector('#tieri').classList.add('tier_img4');
+                    document.querySelector('#tiert').classList.add('tier_text4');
+                    document.querySelector('#tier_t').innerText = "Grand Master";
                 } else {
                     tier = tier;
                 }
@@ -2121,6 +2139,12 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#item_name').innerText = "다마스커스"
                 if(tier < 2) {
                     tier = 2;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/골드 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img1');
+                    document.querySelector('#tiert').classList.remove('tier_text1');
+                    document.querySelector('#tieri').classList.add('tier_img2');
+                    document.querySelector('#tiert').classList.add('tier_text2');
+                    document.querySelector('#tier_t').innerText = "Gold";
                 } else {
                     tier = tier;
                 }
@@ -2156,6 +2180,12 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#item_name').innerText = "마검 그람"
                 if(tier < 3) {
                     tier = 3;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/마스터 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img2');
+                    document.querySelector('#tiert').classList.remove('tier_text2');
+                    document.querySelector('#tieri').classList.add('tier_img3');
+                    document.querySelector('#tiert').classList.add('tier_text3');
+                    document.querySelector('#tier_t').innerText = "Master";
                 } else {
                     tier = tier;
                 }
@@ -2176,6 +2206,12 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#item_name').innerText = "신살검 : 갓 이터"
                 if(tier < 4) {
                     tier = 4;
+                    document.querySelector('#tier_i').setAttribute('src', 'img/그랜드마스터 rs.png');
+                    document.querySelector('#tieri').classList.remove('tier_img3');
+                    document.querySelector('#tiert').classList.remove('tier_text3');
+                    document.querySelector('#tieri').classList.add('tier_img4');
+                    document.querySelector('#tiert').classList.add('tier_text4');
+                    document.querySelector('#tier_t').innerText = "Grand Master";
                 } else {
                     tier = tier;
                 }
@@ -2184,7 +2220,7 @@ document.querySelector('#piece').innerText = piece;
 
         //일반 강화 버튼 눌렀을때로
         } else {
-            if (1 <= rand && rand <= 99) {
+            if (1 <= rand && rand <= 50) {
             // // 리졸트에 강화 성공 이너 텍스트
             document.querySelector('.success').style.display = "block";
             enchant = enchant + 1;
