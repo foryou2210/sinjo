@@ -1681,7 +1681,7 @@ var cost = 15000;
 var coin = 50;
 var ptt = 5;
 var sptt = 1;
-var piece = 0;
+var piece = 500;
 var tier = 1;
 var result = document.querySelector("#result");
 var enter = "\n";
@@ -1870,6 +1870,7 @@ document.querySelector('#piece').innerText = piece;
         
         // 강화 퍼센트를 만들기 위한 100까지의 랜덤 숫자 생성
         var rand = Math.floor(Math.random() * 99) + 1;
+
 
         // 강화 보호권 사용 후 실패하면 강화에서 -1강 & 0강인 경우 -1강이 아닌 그냥 0강으로 만들기
         if(radioValue == '강화보호권') {
@@ -2715,7 +2716,7 @@ document.querySelector('#piece').innerText = piece;
             }
             piece = piece - 100;
             document.querySelector('#piece').innerText = piece;
-            ptt = ptt + 5;
+            ptt = sptt + 5;
             document.querySelector('#sptt').innerText = sptt;
             alert('고급 보호권 5개를 조합하였습니다.');
 
@@ -2727,7 +2728,7 @@ document.querySelector('#piece').innerText = piece;
             }
             piece = piece - 200;
             document.querySelector('#piece').innerText = piece;
-            ptt = ptt + 10;
+            ptt = sptt + 10;
             document.querySelector('#sptt').innerText = sptt;
             alert('고급 보호권 10개를 조합하였습니다.');
 
@@ -2801,9 +2802,8 @@ document.querySelector('#piece').innerText = piece;
                 document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
 
                 if (1 <= rand && rand <= 47) {
-                    asset = asset + 250000;
                     document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
-                    alert('당첨에 실패하였습니다. 위로금 25만원 지급됩니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
+                    alert('당첨에 실패하였습니다. ' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
                 }
                 else if (48 <= rand && rand <= 78) {
                     asset = asset + 750000;
@@ -2833,9 +2833,8 @@ document.querySelector('#piece').innerText = piece;
                 asset = asset - 1000000;
                 document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
                 if (1 <= rand && rand <= 47) {
-                    asset = asset + 500000;
                     document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
-                    alert('당첨에 실패하였습니다. 위로금 50만원 지급됩니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
+                    alert('당첨에 실패하였습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
                 }
                 else if (48 <= rand && rand <= 78) {
                     asset = asset + 1500000;
@@ -2866,9 +2865,8 @@ document.querySelector('#piece').innerText = piece;
                 asset = asset - 5000000;
                 document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
                 if (1 <= rand && rand <= 47) {
-                    asset = asset + 2500000;
                     document.querySelector('#asset').innerText = asset.toLocaleString('ko-KR');
-                    alert('당첨에 실패하였습니다. 위로금 250만원 지급됩니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
+                    alert('당첨에 실패하였습니다.' + enter +'현재 소유 자산은 ' + asset + '원 입니다.')   
                 }
                 else if (48 <= rand && rand <= 78) {
                     asset = asset + 7500000;
