@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" value="1000" id="price">
+    <span id="mux"></span>
+    <br>
+    <input type="number" value="1000" id="pricea">
+    <span id="muxa"></span>
+    <br>
+    <input type="number" value="1000" id="priceb">
+    <span id="muxb"></span>
+</body>
+</html>
+
+<script>
+
+const randRate = function() {
+return -30 + Math.floor(Math.random() * 61);
+}
+
+const upDown = function() {
+const oldVal = document.getElementById("price").value;
+const rate = randRate();
+document.getElementById("mux").innerText = rate + '%';
+const mux = 1 + (rate * 0.01);
+document.getElementById("price").value = Math.floor(oldVal * mux);
+}
+
+setInterval(upDown, 1000);
+
+const randRatea = function() {
+return -30 + Math.floor(Math.random() * 61);
+}
+
+const upDowna = function() {
+const oldVal = document.getElementById("pricea").value;
+const rate = randRatea();
+document.getElementById("muxa").innerText = rate + '%';
+const mux = 1 + (rate * 0.01);
+document.getElementById("pricea").value = Math.floor(oldVal * mux);
+}
+
+setInterval(upDowna, 1000);
+
+const randRateb = function() {
+return -30 + Math.floor(Math.random() * 61);
+}
+
+const upDownb = function() {
+const oldVal = document.getElementById("priceb").value;
+const rate = randRatea();
+document.getElementById("muxb").innerText = rate + '%';
+const mux = 1 + (rate * 0.01);
+document.getElementById("priceb").value = Math.floor(oldVal * mux);
+}
+
+setInterval(upDownb, 1000);
+
+
+</script>

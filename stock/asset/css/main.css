@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* background-image: url(../img/pexels-pixabay-534216.jpg); */
+    background-size: cover;
+    background-repeat : no-repeat;
+}
+
+table, th, td {
+    border:1px solid #ccc;
+    text-align: center;
+}
+th, td {
+    width:86px;  /* 셀의 너비 */
+    height: 42px;
+}
+
+
+/* --- 컨테이너 --- */
+#container {
+    width: 1200px;
+    height: 969px;
+}
+    /* --- 헤더 --- */
+    #header {
+        position: relative;
+        width: 1000px;
+        height: 480px;
+        margin-left: 100px;
+    }
+
+        #header .title {
+            width: 600px;
+            height: 70px;
+            margin-left: 200px;
+            border: 1px solid gray;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        #header .board {
+            width: 900px;
+            height: 400px;
+            margin-left: 50px;
+            margin-top: 10px;
+            border: 1px solid gray;
+        }
+            #header .board .line_one {
+                float: left;
+                width: 440px;
+                height: 400px;
+                text-align: center;
+            }
+
+            .line_one .stock_name {
+                position: absolute;
+                left: 9%;
+            }
+
+            .line_one .price {
+                position: absolute;
+                left: 24%;
+            }
+
+            .line_one .change {
+                margin-right: 27px;
+                float: right;
+                margin-top: 4px;
+            }
+
+
+            #header .board .line_two {
+                float: right;
+                width: 440px;
+                height: 400px;
+                text-align: center;
+            }
+
+            .line_two .stock_name {
+                position: absolute;
+                left: 55%;
+            }
+
+            .line_two .price {
+                position: absolute;
+                left: 70%;
+            }
+
+            .line_two .change {
+                margin-right: 27px;
+                float: right;
+            }
+
+            #header .board .item_name {
+                width: 400px;
+                height: 70px;
+                margin: 13px;
+                font-size: 20px;
+            }
+    /* --- 메인 --- */
+    #main {
+        width: 1000px;
+        height: 480px;
+        margin-left: 100px;
+        margin-top: 9px;
+    }
+        
+        #main .myitem {
+            float: left;
+            width: 445px;
+            height: 480px;
+            margin-left: 50px;
+            border: 1px solid gray;
+        }
+
+            .myitem .choice {
+                width: 435px;
+                height: 100px;
+                margin-left: 5px;
+                margin-top: 25px;
+                text-align: center;
+                padding: 29px;
+                font-size: 30px;    
+                border: 1px solid gray;
+            }
+
+            .myitem .buy {
+                position: relative;
+                width: 435px;
+                height: 100px;
+                margin-left: 5px;
+                margin-top: 10px;
+                border: 1px solid gray;
+            }
+            
+            #buy {
+            width: 300px;
+            height: 70px;
+            margin-top: 15px;
+            margin-left: 25px;
+            font-size: 40px;
+            text-align: end;
+            }
+
+            .buy_btn {
+                position: absolute;
+                bottom: 13px;
+                right: 9px;
+                width: 88px;
+                height: 70px;
+            }
+
+            .myitem .asset {
+                width: 435px;
+                height: 100px;
+                margin-left: 5px;
+                margin-top: 10px;
+                text-align: center;
+                border: 1px solid gray;
+            }
+
+            .myitem .sell {
+                position: relative;
+                width: 435px;
+                height: 100px;
+                margin-left: 5px;
+                margin-top: 10px;
+                border: 1px solid gray;
+            }
+
+                #sell {
+                    width: 300px;
+                    height: 70px;
+                    margin-top: 15px;
+                    margin-left: 25px;
+                    font-size: 40px;
+                    text-align: end;
+                    }
+    
+                .sell_btn {
+                    position: absolute;
+                    bottom: 13px;
+                    right: 9px;
+                    width: 88px;
+                    height: 70px;
+                }
+    
+            
+        
+        #main .itemlist {
+            float: right;
+            width: 445px;
+            height: 480px;
+            margin-right: 50px;
+            border: 1px solid gray;
+        }
+
+            .itemlist .list_title {
+                width: 435px;
+                height: 45px;
+                margin-left: 5px;
+                margin-top: 10px;
+                text-align: center;
+                border: 1px solid gray;
+            }
+            .itemlist .mylist {
+                width: 445px;
+                height: 400px;
+                margin-top: 10px;
+                list-style: none;
+                border: 1px solid gray;
+            }

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/css/main.css">
+</head>
+<body>
+    <!-- ----- 컨테이너 ----- -->
+    <div id="container">
+        <!-- ----- 헤더 ----- -->
+        <div id="header">
+            <!-- ----- 타이틀 ----- -->
+            <div class="title">
+                <h1>현황판</h1>
+                <span id="time"></span>
+            </div>
+            <!-- ----- 현황판 ----- -->
+            <div class="board">
+                <div class="line_one">
+                    <button class="item_name" onclick="stock(1)">
+                        <span class="stock_name">오성 전자</span>
+                        <span class="price">현재가 : <span id="price_os">1000</span></span>
+                        <span class="change"><span id="mux_os">0%</span></span>
+                    </button>
+                    <br>
+                    <button class="item_name" onclick="stock(2)">
+                        <span class="stock_name">미래 자동차</span>
+                        <span class="price">현재가 : <span id="price_mr">1000</span></span>
+                        <span class="change"><span id="mux_mr">0%</span></span>
+                    </button>
+                    <br>
+                    <button class="item_name" onclick="stock(3)">
+                        <span class="stock_name">파파야 게임즈</span>
+                        <span class="price">현재가 : <span id="price_pp">1000</span></span>
+                        <span class="change"><span id="mux_pp">0%</span></span>
+                    </button>
+                    <br>
+                    <button class="item_name" onclick="stock(4)">
+                        <span class="stock_name">알지화학</span>
+                        <span class="price">현재가 : <span id="price_rg">1000</span></span>
+                        <span class="change"><span id="mux_rg">0%</span></span>
+                    </button>
+                </div>
+                <div class="line_two">
+                    <button class="item_name" onclick="stock(5)">
+                        <span class="stock_name">떼쓸라</span>
+                        <span class="price">현재가 : <span id="price_ts">1000</span></span>
+                        <span class="change"><span id="mux_ts">0%</span></span>
+                    </button>
+                    <br>
+                    <button class="item_name" onclick="stock(6)">
+                        <span class="stock_name">코카골라</span>
+                        <span class="price">현재가 : <span id="price_co">1000</span></span>
+                        <span class="change"><span id="mux_co">0%</span></span>
+                    </button>
+                    <br>
+                    <button class="item_name" onclick="stock(7)">
+                        <span class="stock_name">뒤즈니</span>
+                        <span class="price">현재가 : <span id="price_dg">1000</span></span>
+                        <span class="change"><span id="mux_dg">0%</span></span>
+                    </button>
+                    <br>
+                    <button class="item_name" onclick="stock(8)">
+                        <span class="stock_name">넷플렉스</span>
+                        <span class="price">현재가 : <span id="price_np">1000</span></span>
+                        <span class="change"><span id="mux_np">0%</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- ----- 메인 ----- -->
+        <div id="main">
+            <!-- ----- 정보 창 ----- -->
+            <div class="myitem">
+                <div class="choice">
+                    <p id="choice_stock">종목 선택</p>
+                </div>
+                <div class="buy">
+                    <input type="number" id="buy" placeholder="수량 입력">
+                    <button class="buy_btn" onclick="buy()">구매</button>
+                </div>
+                <div class="sell">
+                    <input type="number" id="sell" placeholder="수량 입력">
+                    <button class="sell_btn" onclick="sell()">판매</button>
+                </div>
+                <div class="asset">
+                    <span id="asset"></span>
+                </div>
+
+            </div>
+            <!-- ----- 보유 항목 창 ----- -->
+            <div class="itemlist">
+                <div class="list_title">
+                    <h1>보유중인 항목</h1>
+                </div>
+                <div class="mylist">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>종목</th>
+                                <th>보유량</th>
+                                <th>구매가</th>
+                                <th>현재가</th>
+                                <th>수익률</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th style="width: 115px;">오성전자</th>
+                                <td id="display_os">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>미래 자동차</th>
+                                <td id="display_mr">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>파파야 게임즈</th>
+                                <td id="display_pp">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>알지화학</th>
+                                <td id="display_rg">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>떼쓸라</th>
+                                <td id="display_ts">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>코카골라</th>
+                                <td id="display_co">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>뒤즈니</th>
+                                <td id="display_dg">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th>넷플렉스</th>
+                                <td id="display_np">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
+<script src="asset/js/main.js"></script>
