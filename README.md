@@ -18,6 +18,8 @@ https://foryou2210.github.io/sinjo/myDiary/index
 
 강화하기 게임 - https://foryou2210.github.io/sinjo/enchant
 
+주식 투자 게임(수정중) https://foryou2210.github.io/sinjo/stock/stock
+
 달팽이 경마 게임(코드 따옴, 참고용) - https://foryou2210.github.io/sinjo/gyungma
 
 애니메이션 효과 부여 사이트 - http://www.justinaguilar.com/animations/index.html
