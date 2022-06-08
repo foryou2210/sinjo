@@ -138,8 +138,8 @@ function buy() {
             } else {
                 mr = mr + buyValue;
                 document.querySelector('#display_mr').innerText = mr.toLocaleString('ko-KR');
-                total_mr = total_mr + val_mr * buyValue;
-                purpri_mr = total_mr / mr
+                total_mr = Math.floor(total_mr + val_mr * buyValue);
+                purpri_mr = Math.floor(total_mr / mr);
                 document.querySelector('#purpri_mr').innerText = purpri_mr;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
@@ -155,8 +155,8 @@ function buy() {
             } else {
                 pp = pp + buyValue;
                 document.querySelector('#display_pp').innerText = pp.toLocaleString('ko-KR');
-                total_pp = total_pp + val_pp * buyValue;
-                purpri_pp = total_pp / pp
+                total_pp = Math.floor(total_pp + val_pp * buyValue);
+                purpri_pp = Math.floor(total_pp / pp);
                 document.querySelector('#purpri_pp').innerText = purpri_pp;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
@@ -172,8 +172,8 @@ function buy() {
             } else {
                 rg = rg + buyValue;
                 document.querySelector('#display_rg').innerText = rg.toLocaleString('ko-KR');
-                total_rg = total_rg + val_rg * buyValue;
-                purpri_rg = total_rg / rg
+                total_rg = Math.floor(total_rg + val_rg * buyValue);
+                purpri_rg = Math.floor(total_rg / rg);
                 document.querySelector('#purpri_rg').innerText = purpri_rg;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
@@ -189,8 +189,8 @@ function buy() {
             } else {
                 ts = ts + buyValue;
                 document.querySelector('#display_ts').innerText = ts.toLocaleString('ko-KR');
-                total_ts = total_ts + val_ts * buyValue;
-                purpri_ts = total_ts / ts
+                total_ts = Math.floor(total_ts + val_ts * buyValue);
+                purpri_ts = Math.floor(total_ts / ts);
                 document.querySelector('#purpri_ts').innerText = purpri_ts;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
@@ -206,8 +206,8 @@ function buy() {
             } else {
                 co = co + buyValue;
                 document.querySelector('#display_co').innerText = co.toLocaleString('ko-KR');
-                total_co = total_co + val_co * buyValue;
-                purpri_co = total_co / co
+                total_co = Math.floor(total_co + val_co * buyValue);
+                purpri_co = Math.floor(total_co / co);
                 document.querySelector('#purpri_co').innerText = purpri_co;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
@@ -223,8 +223,8 @@ function buy() {
             } else {
                 dg = dg + buyValue;
                 document.querySelector('#display_dg').innerText = dg.toLocaleString('ko-KR');
-                total_dg = total_dg + val_dg * buyValue;
-                purpri_dg = total_dg / dg
+                total_dg = Math.floor(total_dg + val_dg * buyValue);
+                purpri_dg = Math.floor(total_dg / dg);
                 document.querySelector('#purpri_dg').innerText = purpri_dg;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
@@ -240,8 +240,8 @@ function buy() {
             } else {
                 np = np + buyValue;
                 document.querySelector('#display_np').innerText = np.toLocaleString('ko-KR');
-                total_np = total_np + val_np * buyValue;
-                purpri_np = total_np / np
+                total_np = Math.floor(total_np + val_np * buyValue);
+                purpri_np = Math.floor(total_np / np);
                 document.querySelector('#purpri_np').innerText = purpri_np;
                 asset = asset - buystock
                 document.querySelector('#asset').innerText = asset;
