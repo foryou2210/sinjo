@@ -1,6 +1,6 @@
 var asset = 1000000;
 var item = 0;
-var total_os = 0;
+var total_os = 0; //총 구매 금액
 var total_mr = 0;
 var total_pp = 0;
 var total_rg = 0;
@@ -8,7 +8,7 @@ var total_ts = 0;
 var total_co = 0;
 var total_dg = 0;
 var total_np = 0;
-var val_os = 1000;
+var val_os = 1000; //현재가
 var val_mr = 1000;
 var val_pp = 1000;
 var val_rg = 1000;
@@ -16,7 +16,7 @@ var val_ts = 1000;
 var val_co = 1000;
 var val_dg = 1000;
 var val_np = 1000;
-var purpri_os = 0;
+var purpri_os = 0; //구매가
 var purpri_mr = 0;
 var purpri_pp = 0;
 var purpri_rg = 0;
@@ -24,7 +24,7 @@ var purpri_ts = 0;
 var purpri_co = 0;
 var purpri_dg = 0;
 var purpri_np = 0;
-var os = 0;
+var os = 0; // 보유량
 var mr = 0;
 var pp = 0;
 var rg = 0;
@@ -103,17 +103,30 @@ function buy() {
                 alert('구매하기에는 자산이 부족합니다')
                 return
             } else {
-                // 구매가 된 경우 종목에 밸류값만큼의 수량 추가
                 os = os + buyValue;
+
+                console.log("보유량 = " + os);
+
                 document.querySelector('#display_os').innerText = os.toLocaleString('ko-KR');
-                // 구매가 된 경우 총 매입 자금 입력
-                total_os = total_os + val_os * buyValue;
+
+                console.log("총 구매금액 = " + total_os + " + " + "현재 주가 = " + val_os + " * " + "구매 밸류 = " + buyValue)
+
+                total_os = Math.floor(total_os + val_os * buyValue);
+
+                console.log("현재가 = " + val_os);
+
                 purpri_os = Math.floor(total_os / os);
+
+                console.log("구매가 = " + purpri_os + ":" + total_os + " / " + os);
+
                 document.querySelector('#purpri_os').innerText = purpri_os;
-                // 자산에 종목 가격 * 밸류값 만큼의 가격 차감
+
                 asset = asset - buystock
+
                 document.querySelector('#asset').innerText = asset;
+
                 document.querySelector('#buy').value = 0;
+                
             }
             break;
         case 2:
@@ -252,6 +265,7 @@ function sell() {
                 alert('판매를 위한 소유 주식이 부족합니다.')
                 return
             } else {
+                // total_os = total_os - val_os * sellValue;
                 // 판매한 만큼의 소유 주식을 차감
                 os = os - sellValue;
                 document.querySelector('#display_os').innerText = os.toLocaleString('ko-KR');
@@ -259,8 +273,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_os == 0){
+                total_os = total_os - sellValue * purpri_os
+                if(os == 0){
                     document.getElementById("purpri_os").innerText = 0;
+                    purpri_os = 0;
+                    document.getElementById("rate_os").innerText = 0 + '%';
                 }
             }
             break;
@@ -276,8 +293,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_mr == 0){
+                total_mr = total_mr - sellValue * purpri_mr
+                if(mr == 0){
                     document.getElementById("purpri_mr").innerText = 0;
+                    purpri_mr = 0;
+                    document.getElementById("rate_mr").innerText = 0 + '%';
                 }
             }
             break;
@@ -293,8 +313,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_pp == 0){
+                total_pp = total_pp - sellValue * purpri_pp
+                if(pp == 0){
                     document.getElementById("purpri_pp").innerText = 0;
+                    purpri_pp = 0;
+                    document.getElementById("rate_pp").innerText = 0 + '%';
                 }
             }
             break;
@@ -310,8 +333,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_rg == 0){
+                total_rg = total_rg - sellValue * purpri_rg
+                if(rg == 0){
                     document.getElementById("purpri_rg").innerText = 0;
+                    purpri_rg = 0;
+                    document.getElementById("rate_rg").innerText = 0 + '%';
                 }
             }
             break;
@@ -327,8 +353,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_ts == 0){
+                total_ts = total_ts - sellValue * purpri_ts
+                if(ts == 0){
                     document.getElementById("purpri_ts").innerText = 0;
+                    purpri_ts = 0;
+                    document.getElementById("rate_ts").innerText = 0 + '%';
                 }
             }
             break;
@@ -344,8 +373,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_co == 0){
+                total_co = total_co - sellValue * purpri_co
+                if(co == 0){
                     document.getElementById("purpri_co").innerText = 0;
+                    purpri_co = 0;
+                    document.getElementById("rate_co").innerText = 0 + '%';
                 }
             }
             break;
@@ -361,8 +393,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_dg == 0){
+                total_dg = total_dg - sellValue * purpri_dg
+                if(dg == 0){
                     document.getElementById("purpri_dg").innerText = 0;
+                    purpri_dg = 0;
+                    document.getElementById("rate_dg").innerText = 0 + '%';
                 }
             }
             break;
@@ -378,8 +413,11 @@ function sell() {
                 asset = asset + sellstock
                 document.querySelector('#asset').innerText = asset;
                 document.querySelector('#sell').value = 0;
-                if(display_np == 0){
+                total_np = total_np - sellValue * purpri_np
+                if(np == 0){
                     document.getElementById("purpri_np").innerText = 0;
+                    purpri_np = 0;
+                    document.getElementById("rate_np").innerText = 0 + '%';
                 }
             }
             break;

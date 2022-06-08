@@ -161,7 +161,9 @@ th, td {
                 margin-left: 5px;
                 margin-top: 10px;
                 text-align: center;
+                font-size: 30px;
                 border: 1px solid gray;
+                padding: 28px;
             }
 
             .myitem .sell {
