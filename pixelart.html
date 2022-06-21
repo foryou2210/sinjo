@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #pix {
+        width: 500px;
+        height: 500px;
+        padding: 2px;
+    }
+
+    #pix div, button {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        margin-left: -2px;
+        margin-top: -2px;
+        margin-bottom: 0px;
+        float: left;
+    }
+
+    br {
+        margin: -1px;
+    }
+    
+
+</style>
+<body>
+    <h1>2D 도트 그리기</h1>
+    <br>
+    <label for="colorBox">색상 선택</label>
+    <input type="color" id="colorBox" onchange="changColor()">
+    <p>빠른 색 선택</p>
+    <button onclick="chCoB()" style="background-color: black; width: 30px; height: 30px;"></button>
+    <button onclick="chCoW()" style="background-color: white; width: 30px; height: 30px; margin-left: 10px;"></button>
+    <br><br><br>
+<div id="pix">
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+    <div><button onclick="pix(this)"></button></div>
+</div>
+
+</body>
+</html>
+<script>
+
+    function changColor(obj) {
+        let colorbox = document.querySelector('#colorBox').value;
+        document.querySelector('#result').style.color = colorbox;
+        console.log(colorbox);
+    }
+
+    function textBold(event) {
+        if(event.target.checked) {
+            document.querySelector('#result').style.fontWeight = "bold";
+        }else{
+            document.querySelector('#result').style.fontWeight = "normal";
+        }
+    }
+
+    function textInput() {
+        let textA = document.querySelector('#textA').value;
+        document.querySelector('#result').innerText = textA;
+    }
+
+        // var radioValue;
+    //     for(var i=0; i<2; i++) {
+    //         if(document.getElementsByName("ptt")[i].checked) {                
+    //             radioValue = document.getElementsByName("ptt")[i].value;
+    //         }
+    //     }
+
+    function pix(e) {
+        let colorbox = document.querySelector('#colorBox').value;
+        e.style.backgroundColor = colorbox;
+
+    }
+
+    function chCoB() {
+        document.querySelector('#colorBox').value = '#000000';
+    }
+    function chCoW() {
+        document.querySelector('#colorBox').value = '#ffffff';
+    }
+
+
+</script>
