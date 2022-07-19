@@ -435,7 +435,7 @@ function sell() {
 // 현재 내 지식선에서 가능한건 난수를 100줘서 1부터 50까지는 지정된 % 올리기 51~100까지는 ~% 내리기 이정도까진데..
 
 const randRate_os = function() {
-    return -30 + Math.floor(Math.random() * 61);
+    return -30 + Math.floor(Math.random() * 61); 
     }
     
     const upDown_os = function() {

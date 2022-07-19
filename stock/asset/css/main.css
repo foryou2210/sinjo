@@ -57,6 +57,12 @@ th, td {
                 text-align: center;
             }
 
+            .board::after {
+                clear: both;
+                content: "";
+                display: table;
+            }
+
             .line_one .stock_name {
                 position: absolute;
                 left: 9%;
@@ -217,3 +223,219 @@ th, td {
                 list-style: none;
                 border: 1px solid gray;
             }
+
+@media (max-width:601px) {
+    table, th, td {
+        border:1px solid #ccc;
+        text-align: center;
+    }
+    th, td {
+        width: 72px;
+        height: 30px;
+    }
+    
+    
+    /* --- 컨테이너 --- */
+    #container {
+        width: unset;
+        height: unset;
+    }
+        /* --- 헤더 --- */
+        #header {
+            position: unset;
+            width: unset;
+            height: unset;
+            margin-left: unset;
+        }
+    
+            #header .title {
+                width: unset;
+                height: unset;
+                margin-left: unset;
+                border: unset;
+                text-align: center;
+                padding-top: unset;
+            }
+    
+            #header .board {
+                width: unset;
+                height: unset;
+                margin-left: unset;
+                margin-top: unset;
+                border: unset;
+            }
+                #header .board .line_one {
+                    float: unset;
+                    width: unset;
+                    height: unset;
+                    text-align: center;
+                }
+    
+                .board::after {
+                    clear: both;
+                    content: "";
+                    display: table;
+                }
+    
+                .line_one .stock_name {
+                    position: unset;
+                    left: unset;
+                }
+    
+                .line_one .price {
+                    position: unset;
+                    left: unset;
+                }
+    
+                .line_one .change {
+                    margin-right: unset;
+                    float: unset;
+                    margin-top: unset;
+                }
+    
+    
+                #header .board .line_two {
+                    float: unset;
+                    width: unset;
+                    height: unset;
+                    text-align: center;
+                }
+    
+                .line_two .stock_name {
+                    position: unset;
+                    left: unset;
+                }
+    
+                .line_two .price {
+                    position: unset;
+                    left: unset;
+                }
+    
+                .line_two .change {
+                    margin-right: unset;
+                    float: unset;
+                }
+    
+                #header .board .item_name {
+                    width: 339px;
+                    height: 30px;
+                    margin: 5px;
+                    font-size: 15px;
+                }
+        /* --- 메인 --- */
+        #main {
+            width: unset;
+            height: unset;
+            margin-left: unset;
+            margin-top: unset;
+        }
+            
+            #main .myitem {
+                float: unset;
+                width: unset;
+                height: unset;
+                margin-left: 4px;
+                /* border: 1px solid gray; */
+                text-align: center;
+            }
+    
+                .myitem .choice {
+                    width: unset;
+                    height: unset;
+                    margin-left: unset;
+                    margin-top: unset;
+                    text-align: center;
+                    padding: unset;
+                    font-size: unset;    
+                    border: unset;
+                }
+    
+                .myitem .buy {
+                    position: unset;
+                    width: unset;
+                    height: unset;
+                    margin-left: unset;
+                    margin-top: unset;
+                    border: unset;
+                }
+                
+                #buy {
+                width: unset;
+                height: unset;
+                margin-top: unset;
+                margin-left: unset;
+                font-size: unset;
+                text-align: end;
+                }
+    
+                .buy_btn {
+                    position: unset;
+                    bottom: unset;
+                    right: unset;
+                    width: unset;
+                    height: unset;
+                }
+    
+                .myitem .asset {
+                    width: unset;
+                    height: unset;
+                    margin-left: unset;
+                    margin-top: unset;
+                    text-align: center;
+                    font-size: unset;
+                    border: unset;
+                    padding: unset;
+                }
+    
+                .myitem .sell {
+                    position: unset;
+                    width: unset;
+                    height: unset;
+                    margin-left: unset;
+                    margin-top: unset;
+                    border: unset;
+                }
+    
+                    #sell {
+                        width: unset;
+                        height: unset;
+                        margin-top: unset;
+                        margin-left: unset;
+                        font-size: unset;
+                        text-align: end;
+                        }
+        
+                    .sell_btn {
+                        position: unset;
+                        bottom: unset;
+                        right: unset;
+                        width: unset;
+                        height: unset;
+                    }
+        
+                
+            
+            #main .itemlist {
+                float: unset;
+                width: unset;
+                height: unset;
+                margin-right: unset;
+                border: unset;
+            }
+    
+                .itemlist .list_title {
+                    width: unset;
+                    height: unset;
+                    margin-left: unset;
+                    margin-top: unset;
+                    text-align: center;
+                    border: unset;
+                }
+                .itemlist .mylist {
+                    width: unset;
+                    height: unset;
+                    margin-top: unset;
+                    list-style: none;
+                    border: unset;
+                }
+}
