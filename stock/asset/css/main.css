@@ -337,7 +337,18 @@ th, td {
                 margin-left: 4px;
                 /* border: 1px solid gray; */
                 text-align: center;
+                padding: 0px 22px;
             }
+
+            .myitem::after {
+                clear: both;
+                content: "";
+                display: table;
+            }
+
+                #choice_stock {
+                    margin-bottom: 5px;
+                }
     
                 .myitem .choice {
                     width: unset;
@@ -357,34 +368,40 @@ th, td {
                     margin-left: unset;
                     margin-top: unset;
                     border: unset;
+                    
                 }
                 
                 #buy {
-                width: unset;
-                height: unset;
                 margin-top: unset;
                 margin-left: unset;
                 font-size: unset;
                 text-align: end;
+                float: left;
+                width: 100px;
+                height: 50px;
+                margin-right: 5px;
                 }
     
                 .buy_btn {
                     position: unset;
                     bottom: unset;
                     right: unset;
-                    width: unset;
-                    height: unset;
+                    float: left;
+                    width: 60px;
+                    height: 50px;
+                    margin-right: 5px;
                 }
     
                 .myitem .asset {
                     width: unset;
                     height: unset;
                     margin-left: unset;
-                    margin-top: unset;
                     text-align: center;
                     font-size: unset;
                     border: unset;
                     padding: unset;
+                    margin-top: 60px;
+
                 }
     
                 .myitem .sell {
@@ -397,20 +414,24 @@ th, td {
                 }
     
                     #sell {
-                        width: unset;
-                        height: unset;
                         margin-top: unset;
                         margin-left: unset;
                         font-size: unset;
                         text-align: end;
+                        float: left;
+                        width: 100px;
+                        height: 50px;
+                        margin-right: 5px;
                         }
         
                     .sell_btn {
                         position: unset;
                         bottom: unset;
                         right: unset;
-                        width: unset;
-                        height: unset;
+                        float: left;
+                        width: 60px;
+                        height: 50px;
+                        margin-right: 5px;
                     }
         
                 
