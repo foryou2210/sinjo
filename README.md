@@ -36,4 +36,6 @@ https://foryou2210.github.io/sinjo/myDiary/index
 
 버튼 스타일 모음 - https://inpa.tistory.com/entry/CSS-%F0%9F%92%8D-%EB%B2%84%ED%8A%BC-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%AA%A8%EC%9D%8C
 
+로고 만드는 사이트(유용함) - https://www10.flamingtext.com/
+
 https://github.com/kyungryul/htmlbasic
